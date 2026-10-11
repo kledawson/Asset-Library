@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-11T20:41:00.986Z",
+  "capturedAt": "2026-10-11T20:47:49.034Z",
   "files": [
     {
       "path": ".asset-backups/high-comparison/before-medium-triangle.glb",
@@ -928,8 +928,8 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 1198,
-      "sha256": "68a34f84b0e3851221bd021566e8224e7beaf1ff22022ccee3d0361e32b681e5"
+      "bytes": 2550,
+      "sha256": "2ec24d1e3eee0b34329983ae9f8d885cefdd3aa003df8d8875e79b84d72166d9"
     },
     {
       "path": "inspiration/ASSET_LIBRARY.md",
@@ -1290,6 +1290,11 @@
       "path": "screenshots/final-seated-nails-rounded-rack-pencil.png",
       "bytes": 90434,
       "sha256": "a5e9c15c7093e202f14df6fbefc95d1445dd6cedbdfcffbe7bbad4feb832b1d3"
+    },
+    {
+      "path": "screenshots/github-pages-live.png",
+      "bytes": 78390,
+      "sha256": "09b637ec033cc41828f1a22bf808c67c2cecfa39acf5efd679d618e0514120b3"
     },
     {
       "path": "screenshots/hammer-balanced-claw.png",
@@ -1785,6 +1790,11 @@
       "path": "scripts/triangle-horizontal-labels.mjs",
       "bytes": 1803,
       "sha256": "0babb6b34d73b547521289dc97b71d8392d71b16685db661c488cf49a6b49bbc"
+    },
+    {
+      "path": "scripts/verify-deployment.cjs",
+      "bytes": 1502,
+      "sha256": "cfb903f4e97dacc41a8f5a12ca84edb044e243fbb840ce6150308b8a9048ba9f"
     },
     {
       "path": "scripts/verify-library.cjs",
