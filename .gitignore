@@ -1,0 +1,11 @@
+node_modules/
+build/
+coverage/
+.npm-cache/
+*.log
+.env
+.env.*
+!.env.example
+assemble-library.cjs
+.DS_Store
+Thumbs.db

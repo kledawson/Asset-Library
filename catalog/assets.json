@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-11T13:13:45.930Z",
+  "author": "Dawson Le",
+  "assets": [
+    {
+      "id": "tool-rack",
+      "name": "Workshop Tool Rack",
+      "versions": [
+        {
+          "id": "light",
+          "model": "public/models/workshop-tool-rack-light.glb",
+          "source": "public/models/editor-sources/workshop-tool-rack-light.glb"
+        },
+        {
+          "id": "medium",
+          "model": "public/models/workshop-tool-rack-medium.glb",
+          "source": "public/models/editor-sources/workshop-tool-rack-medium.glb"
+        },
+        {
+          "id": "high",
+          "model": "public/models/workshop-tool-rack-high.glb",
+          "source": "public/models/editor-sources/workshop-tool-rack-high.glb"
+        },
+        {
+          "id": "final",
+          "model": "public/models/workshop-tool-rack-final.glb",
+          "source": "public/models/editor-sources/workshop-tool-rack-final.glb"
+        }
+      ]
+    },
+    {
+      "id": "tool-screwdriver",
+      "name": "screwdriver",
+      "model": "public/models/workshop-screwdriver.glb",
+      "source": "public/models/editor-sources/workshop-screwdriver.glb"
+    },
+    {
+      "id": "tool-wrench",
+      "name": "wrench",
+      "model": "public/models/workshop-wrench.glb",
+      "source": "public/models/editor-sources/workshop-wrench.glb"
+    },
+    {
+      "id": "tool-cog",
+      "name": "cog",
+      "model": "public/models/workshop-cog.glb",
+      "source": "public/models/editor-sources/workshop-cog.glb"
+    },
+    {
+      "id": "tool-triangle",
+      "name": "triangle",
+      "model": "public/models/workshop-triangle.glb",
+      "source": "public/models/editor-sources/workshop-triangle.glb"
+    },
+    {
+      "id": "tool-hammer",
+      "name": "hammer",
+      "model": "public/models/workshop-hammer.glb",
+      "source": "public/models/editor-sources/workshop-hammer.glb"
+    },
+    {
+      "id": "tool-plant",
+      "name": "plant",
+      "model": "public/models/workshop-plant.glb",
+      "source": "public/models/editor-sources/workshop-plant.glb"
+    },
+    {
+      "id": "tool-pencil",
+      "name": "pencil",
+      "model": "public/models/workshop-pencil.glb",
+      "source": "public/models/editor-sources/workshop-pencil.glb"
+    },
+    {
+      "id": "tool-notebook",
+      "name": "notebook",
+      "model": "public/models/workshop-notebook.glb",
+      "source": "public/models/editor-sources/workshop-notebook.glb"
+    }
+  ]
+}

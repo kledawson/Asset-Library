@@ -1,0 +1,9 @@
+const fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..');let count=0;
+function walk(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isDirectory())walk(file);else if(file.endsWith('.glb')){const b=fs.readFileSync(file);if(b.toString('ascii',0,4)!=='glTF'||b.readUInt32LE(4)!==2||b.readUInt32LE(8)!==b.length)throw Error('Invalid GLB: '+file);const j=JSON.parse(b.subarray(20,20+b.readUInt32LE(12)).toString());for(const resource of [...j.buffers||[],...j.images||[]])if(resource.uri&&!resource.uri.startsWith('data:')&&!fs.existsSync(path.resolve(path.dirname(file),resource.uri)))throw Error('Missing GLB resource: '+resource.uri);count++;}}}
+walk(path.join(root,'public/models'));
+for(const version of ['light','medium','high','final'])if(!fs.existsSync(path.join(root,'public/models/editor-sources/workshop-tool-rack-'+version+'.glb')))throw Error('Missing rack '+version);
+for(const asset of ['wrench','cog','hammer','screwdriver','triangle','plant','pencil','notebook'])for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'workshop-'+asset+'.glb')))throw Error('Missing '+asset);
+for(const name of fs.readdirSync(path.join(root,'src'))){const file=path.join(root,'src',name);if(!fs.statSync(file).isFile())continue;for(const match of fs.readFileSync(file,'utf8').matchAll(/(?:from\s*|import\s*)['"](\.\/[^'"]+)['"]/g)){const base=path.resolve(path.dirname(file),match[1]);if(!['','.js','.jsx','.mjs','.css'].some(ext=>fs.existsSync(base+ext)))throw Error('Missing import '+match[1]+' in '+name);}}
+JSON.parse(fs.readFileSync(path.join(root,'public/models/asset-saves.json')));
+console.log('Verified '+count+' GLBs, catalog sources, embedded resources, save metadata and local imports.');

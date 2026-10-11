@@ -1,0 +1,1875 @@
+{
+  "capturedAt": "2026-10-11T13:17:57.752Z",
+  "files": [
+    {
+      "path": ".asset-backups/high-comparison/before-medium-triangle.glb",
+      "bytes": 1408360,
+      "sha256": "891dd67ee0664f0b59eec76be74ebe76883d477a1fa2a75b49ef591b4be47419"
+    },
+    {
+      "path": ".asset-backups/high-comparison/before-simplification.glb",
+      "bytes": 2306236,
+      "sha256": "53b29cb7d633ca08eba3233badb4413cacae41ca0b7f72d00208df0c7ba64e30"
+    },
+    {
+      "path": ".asset-backups/high-comparison/final-hash.txt",
+      "bytes": 64,
+      "sha256": "909f6b17658f78336c4084113d2ad7fabc1407e06329586e290f1ba427a507f0"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/editor-source.glb",
+      "bytes": 1858960,
+      "sha256": "cf3be851b608f6d563db610575ee19e3b062310b1f084be042bb395098619c7e"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/manifest.json",
+      "bytes": 16371,
+      "sha256": "f75b906c5d9968dc57fe8551443ebf2231f235aa47563599a0b4c9f543fcd299"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/next/manifest.json",
+      "bytes": 16340,
+      "sha256": "4fda4de29c9c02bbf737278406e4dd984f53184a33b98cb60fb0a7c0b3e50c35"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/next/source-workshop-cog.glb",
+      "bytes": 1889920,
+      "sha256": "ab916db0f77d52bb64d549bccd94dbe0d1a5af0845b5b22b0ae22ebab4bcf3e9"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/next/source-workshop-tool-rack-final.glb",
+      "bytes": 6180812,
+      "sha256": "fc4e5b791ffbdde2e475c0f0184730de427a673c4e99274d81a8e44ffb7945c3"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/next/workshop-cog.glb",
+      "bytes": 881856,
+      "sha256": "c11bbfe69d5c00e517eb2636b49c6277f4ebc5d2487f44fa1fb3264f3955832c"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/next/workshop-tool-rack-final.glb",
+      "bytes": 6180812,
+      "sha256": "fc4e5b791ffbdde2e475c0f0184730de427a673c4e99274d81a8e44ffb7945c3"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/workshop-cog.glb",
+      "bytes": 1266944,
+      "sha256": "c3b7b5039b4026afba24d860c34e59f303c2e3553ec217aa8a9e1526372196ad"
+    },
+    {
+      "path": ".asset-backups/tool-cog-high/workshop-tool-rack-final.glb",
+      "bytes": 6565904,
+      "sha256": "0f4e343d396d4a5258c83963ba6f440ae044dc6e44a1d469762c8242bbe978fa"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/editor-source.glb",
+      "bytes": 520384,
+      "sha256": "3d6000820bdb1c8980f06f0f4788f6307c7f7cd609220580eb4358ccff7fa35e"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/manifest.json",
+      "bytes": 15306,
+      "sha256": "c5cf7d07e644c288f7624ac61945ef3c0e8c9241cc6b3ef7602191a353b1323e"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/next/manifest.json",
+      "bytes": 11677,
+      "sha256": "f9fa2bab98851e3c2abd9c56569f43d1fa5cf747ab02bd63e6ab887a22fce590"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/next/source-workshop-hammer.glb",
+      "bytes": 497600,
+      "sha256": "f6799ba10e69f3c04d87972e0c3c2dbca392a308d244cee31be3fbd132088788"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/next/source-workshop-tool-rack-final.glb",
+      "bytes": 2754316,
+      "sha256": "97af24bf16fb06ab4282c9913e34d9efaea33124851e89eff15fe6b298962bad"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/next/workshop-hammer.glb",
+      "bytes": 497396,
+      "sha256": "0fd6106a830b5c9915d4794e134f7b86c5effe6d4b54f76ec8069012d4d2f760"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/next/workshop-tool-rack-final.glb",
+      "bytes": 2754316,
+      "sha256": "97af24bf16fb06ab4282c9913e34d9efaea33124851e89eff15fe6b298962bad"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/workshop-hammer.glb",
+      "bytes": 519752,
+      "sha256": "fe55f6c7fc20bae8bf080aea9234445b79586e9b1afc600eab32cf84071d7c1a"
+    },
+    {
+      "path": ".asset-backups/tool-hammer-high/workshop-tool-rack-final.glb",
+      "bytes": 2767480,
+      "sha256": "c2c3bf91f63fc2cca83cd2a7651ed47388fd31b400f67d1c17fd915f96ad786b"
+    },
+    {
+      "path": ".asset-backups/tool-notebook-high/editor-source.glb",
+      "bytes": 1661432,
+      "sha256": "eda5638cced84612a45cc0b6468cc1a7aaf9adea0794c223b0ac69feb7f33c0e"
+    },
+    {
+      "path": ".asset-backups/tool-notebook-high/manifest.json",
+      "bytes": 106742,
+      "sha256": "15fa1a45307cbd49c5ca937f266b3c513572dba6cf0244e632eea22c2600a0b1"
+    },
+    {
+      "path": ".asset-backups/tool-notebook-high/workshop-notebook.glb",
+      "bytes": 1661432,
+      "sha256": "eda5638cced84612a45cc0b6468cc1a7aaf9adea0794c223b0ac69feb7f33c0e"
+    },
+    {
+      "path": ".asset-backups/tool-notebook-high/workshop-tool-rack-final.glb",
+      "bytes": 5944736,
+      "sha256": "fef4b2459bceb914545b5269c27c23789265752af0e5049e97d3220416182b29"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/editor-source.glb",
+      "bytes": 103448,
+      "sha256": "9d6dd97acb4cec60fd5fb9d7a50315dbd6a8bbb2e15bb0b11c217873fee0c50a"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/manifest.json",
+      "bytes": 216534,
+      "sha256": "e9e0a50cbfd2afe0f1a0ba1b348b6b7d999c08504cd78f297e65591bd2879e37"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/next/manifest.json",
+      "bytes": 215635,
+      "sha256": "394ec568275973328a9e57b38b601c104196129579e713015cc779a633199fba"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/next/source-workshop-pencil.glb",
+      "bytes": 25904,
+      "sha256": "fa74e7ed488b88e6e933e6ea8376e4dc21ceeacc90800ee7c9c388698374bd27"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/next/source-workshop-tool-rack-final.glb",
+      "bytes": 7551768,
+      "sha256": "dd669cdbba72c83b1daf1518bc7b7cf32f9e1600c492224c495acbae62299054"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/next/workshop-pencil.glb",
+      "bytes": 26112,
+      "sha256": "1f0458f565bee483f086d375a9f968518e1485464eaa94ad0ed9465d08399664"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/next/workshop-tool-rack-final.glb",
+      "bytes": 7551768,
+      "sha256": "dd669cdbba72c83b1daf1518bc7b7cf32f9e1600c492224c495acbae62299054"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/workshop-pencil.glb",
+      "bytes": 103412,
+      "sha256": "24ea07ccb0505ccbd79c9d78404fcf3c77352470ffdc64e9fc4b4ca78b22fa4c"
+    },
+    {
+      "path": ".asset-backups/tool-pencil-high/workshop-tool-rack-final.glb",
+      "bytes": 7629668,
+      "sha256": "81526be89213e055e07a8864394311693c9df51b02c43735403cdf577c72d25a"
+    },
+    {
+      "path": ".asset-backups/tool-plant-high/manifest.json",
+      "bytes": 494,
+      "sha256": "290de33aa83d6ec1261dd7da018af730fb1e607269acde5126a6f2f11d12d6fc"
+    },
+    {
+      "path": ".asset-backups/tool-plant-high/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": ".asset-backups/tool-plant-high/workshop-tool-rack-final.glb",
+      "bytes": 2306236,
+      "sha256": "53b29cb7d633ca08eba3233badb4413cacae41ca0b7f72d00208df0c7ba64e30"
+    },
+    {
+      "path": ".asset-backups/tool-plant-high/workshop-tool-rack-high.glb",
+      "bytes": 2306236,
+      "sha256": "53b29cb7d633ca08eba3233badb4413cacae41ca0b7f72d00208df0c7ba64e30"
+    },
+    {
+      "path": ".asset-backups/tool-plant-high/workshop-tool-rack-light.glb",
+      "bytes": 543116,
+      "sha256": "2870439c18b56061923dba226ae21850f484b4cf3b710e8e89f93059d6704a6c"
+    },
+    {
+      "path": ".asset-backups/tool-plant-high/workshop-tool-rack-medium.glb",
+      "bytes": 957984,
+      "sha256": "29d4ce06bc28aac9288240e640309b3f79e504c1d7c4971187457d934db8be7e"
+    },
+    {
+      "path": ".asset-backups/tool-rack-final/editor-source.glb",
+      "bytes": 9085812,
+      "sha256": "6e7f0d44c6ebe83350f813b2a63d664bb302f3b4f694f3475fb6fced3c06f91f"
+    },
+    {
+      "path": ".asset-backups/tool-rack-final/manifest.json",
+      "bytes": 216522,
+      "sha256": "b1eefac2f17075f438b0a7aeaa087a5ba1053faf9af0eae21b1e20601c43376f"
+    },
+    {
+      "path": ".asset-backups/tool-rack-final/next/manifest.json",
+      "bytes": 216924,
+      "sha256": "3095b39f9056687aff0b17b66ac69b08b23c086cbd17ebbf66148d3d46b636ba"
+    },
+    {
+      "path": ".asset-backups/tool-rack-final/next/source-workshop-tool-rack-final.glb",
+      "bytes": 7626376,
+      "sha256": "e2a56a6ae7f044eb8e09eec9e790e76125ecedf5616f123a06885c6af8b37071"
+    },
+    {
+      "path": ".asset-backups/tool-rack-final/next/workshop-tool-rack-final.glb",
+      "bytes": 7625572,
+      "sha256": "4547c80471d3534f432f34706ba821ffa3196c140f49e757503dbe79c9c4a598"
+    },
+    {
+      "path": ".asset-backups/tool-rack-final/workshop-tool-rack-final.glb",
+      "bytes": 7626376,
+      "sha256": "e2a56a6ae7f044eb8e09eec9e790e76125ecedf5616f123a06885c6af8b37071"
+    },
+    {
+      "path": ".asset-backups/tool-screwdriver-high/editor-source.glb",
+      "bytes": 60096,
+      "sha256": "c687ab6af8b3acd2bf9710691acc72c5ae20ebbbdbd698937f8b449715f376a3"
+    },
+    {
+      "path": ".asset-backups/tool-screwdriver-high/manifest.json",
+      "bytes": 2966,
+      "sha256": "b3c4cd67a2b528b720c33e3cf5bfbf373851f347ca648bcf454b1dbfe632deaf"
+    },
+    {
+      "path": ".asset-backups/tool-screwdriver-high/workshop-screwdriver.glb",
+      "bytes": 60096,
+      "sha256": "c687ab6af8b3acd2bf9710691acc72c5ae20ebbbdbd698937f8b449715f376a3"
+    },
+    {
+      "path": ".asset-backups/tool-screwdriver-high/workshop-tool-rack-final.glb",
+      "bytes": 2403120,
+      "sha256": "d89a808428259cfafb2a02e72f26d5f2c56e1acce6613c7bdfd06abb73211a38"
+    },
+    {
+      "path": ".asset-backups/tool-triangle-high/editor-source.glb",
+      "bytes": 698852,
+      "sha256": "9adbfd19a2c94ee35b846493e1ddd4cd3a7e2020de5f9f8e588f950d66f8e830"
+    },
+    {
+      "path": ".asset-backups/tool-triangle-high/manifest.json",
+      "bytes": 128046,
+      "sha256": "1488afbcacf87af65c61844cce87c71a5c06f1dd450c6e5dfec8f17e40b676e7"
+    },
+    {
+      "path": ".asset-backups/tool-triangle-high/workshop-tool-rack-final.glb",
+      "bytes": 6952516,
+      "sha256": "e9a24db6e852d89e524642bcfbe9f8c9fa313eaa5431ba7c11331d3836e11665"
+    },
+    {
+      "path": ".asset-backups/tool-triangle-high/workshop-triangle.glb",
+      "bytes": 715564,
+      "sha256": "3e4aaf767f9d73d70cc46cb60739c0ee8defc7421a0c7dea423e2af2a4035995"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/editor-source.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/manifest.json",
+      "bytes": 16398,
+      "sha256": "11ac3b5736b0a4d276ec9bfe73627f0a6e47e418f1b17e4fab06da6491030eb6"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/next/manifest.json",
+      "bytes": 2836,
+      "sha256": "a8322cd70656aa1b955065a4840607ecec1009a90f85bbfb519b408a97fc6b09"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/next/source-workshop-tool-rack-final.glb",
+      "bytes": 2403120,
+      "sha256": "d89a808428259cfafb2a02e72f26d5f2c56e1acce6613c7bdfd06abb73211a38"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/next/source-workshop-wrench.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/next/workshop-tool-rack-final.glb",
+      "bytes": 2403120,
+      "sha256": "d89a808428259cfafb2a02e72f26d5f2c56e1acce6613c7bdfd06abb73211a38"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/next/workshop-wrench.glb",
+      "bytes": 411692,
+      "sha256": "c4cd6b2cfb2b79c83ffed58cb0a8bfb43e4dbb203ff0113a4ecd87d2218b3404"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/workshop-tool-rack-final.glb",
+      "bytes": 6565908,
+      "sha256": "66b5425a75d81e1fe2ab9ac91b49ade303d4239d642858ecbc49ee87ad2ffcf1"
+    },
+    {
+      "path": ".asset-backups/tool-wrench-high/workshop-wrench.glb",
+      "bytes": 411692,
+      "sha256": "c4cd6b2cfb2b79c83ffed58cb0a8bfb43e4dbb203ff0113a4ecd87d2218b3404"
+    },
+    {
+      "path": ".asset-backups/triangle-detail/model.glb",
+      "bytes": 385900,
+      "sha256": "020ed29e90856e6f3ae5a63c37bb8b72d439a6c584fc04d0b787f8a24a2f0854"
+    },
+    {
+      "path": ".asset-backups/triangle-detail/source.glb",
+      "bytes": 385900,
+      "sha256": "020ed29e90856e6f3ae5a63c37bb8b72d439a6c584fc04d0b787f8a24a2f0854"
+    },
+    {
+      "path": ".asset-candidates/check-pencil-details.mjs",
+      "bytes": 688,
+      "sha256": "dd8e580feeada9571a43fb072211bc636bbfb66c08b3c6afe3b6a99da077fa57"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-cog-high/manifest.json",
+      "bytes": 1253,
+      "sha256": "2d598094e773095e2bdc0eb6a0927d976a5e11ffdfddc533c8abb3312c0e6a7d"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-cog-high/workshop-cog.glb",
+      "bytes": 583592,
+      "sha256": "401945fdf6ebcf2cc22c326e6ca50adc55b1990e876b560606bc2af66bd6cdce"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-cog-high/workshop-tool-rack-final.glb",
+      "bytes": 2784996,
+      "sha256": "47dc50aabbf551bac6d47386e089a92396f0c544f328b4d0f7159949da841eba"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-hammer-high/manifest.json",
+      "bytes": 598,
+      "sha256": "116ffa93665f6aa4fd64b2b394ec6ccf0401b04d3e4538ac349aacfd3c0673d9"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-hammer-high/workshop-hammer.glb",
+      "bytes": 519756,
+      "sha256": "d7de13a1c8b83d8ef76fdb17b60126b49b507b11aa00d281f6e878abbdab5908"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-hammer-high/workshop-tool-rack-final.glb",
+      "bytes": 2785272,
+      "sha256": "1391c84a3fddacfa6b5715f7da3022c14b8f7a89f51febc4c0bf11a8f7172071"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-plant-high/manifest.json",
+      "bytes": 601,
+      "sha256": "e3d8572ba5b56f7e1078ed72f4ce1dd57ba3a73558f265710aac2af2424a5f74"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-plant-high/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-plant-high/workshop-tool-rack-final.glb",
+      "bytes": 2785432,
+      "sha256": "be81346449a5085bf3215f32bc92a8696da088e60de9d17d640f9af408ec6e66"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-screwdriver-high/manifest.json",
+      "bytes": 5873,
+      "sha256": "f5e2717d2152444cbe66daaa99a2b5cf32d486d3d6d05d500eb0b2c4996a3a89"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-screwdriver-high/workshop-screwdriver.glb",
+      "bytes": 61784,
+      "sha256": "45742f06f010da0266c94cc0b57dcd6a696b93725be5e87c71629be1fc85a72c"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-screwdriver-high/workshop-tool-rack-final.glb",
+      "bytes": 2784100,
+      "sha256": "0e715a92661dce1c26725b528741034fc9899d074fc7cd555cf9d85d873ced73"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-triangle-high/manifest.json",
+      "bytes": 1146,
+      "sha256": "a39fede2683ea3533d212543346fce6cecfedb0a455af7b7658a687bacbdd4c6"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-triangle-high/workshop-tool-rack-final.glb",
+      "bytes": 2785148,
+      "sha256": "7734b16a4d2a87b69ee215270892e53bcddebb05089f88a4f24f92f8f197b5d6"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-triangle-high/workshop-triangle.glb",
+      "bytes": 368608,
+      "sha256": "973c8c481f7d079017cba83554e75525a20a911968936ebd504b3cfdd7fc2f7c"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-wrench-high/manifest.json",
+      "bytes": 134,
+      "sha256": "3b48d6a89a8c3238d88c0cfab9912fd6334cff43e1b14995e036c6c0c5a88736"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-wrench-high/workshop-tool-rack-final.glb",
+      "bytes": 2776776,
+      "sha256": "27ca899a37192dae87f7caf239d9d523a2253ec77a1322f227408e966cbe14ac"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/backups/tool-wrench-high/workshop-wrench.glb",
+      "bytes": 411692,
+      "sha256": "c4cd6b2cfb2b79c83ffed58cb0a8bfb43e4dbb203ff0113a4ecd87d2218b3404"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/asset-saves.json",
+      "bytes": 5222,
+      "sha256": "a7c9684644bca43d54b14dddb4033a60d79fed419de668be1b9b3392adfdadd0"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-cog.glb",
+      "bytes": 583592,
+      "sha256": "401945fdf6ebcf2cc22c326e6ca50adc55b1990e876b560606bc2af66bd6cdce"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-hammer.glb",
+      "bytes": 520296,
+      "sha256": "ce8eb261253c58bdb1133de3abd7122f1370358af7f90becf6db77cb245ab938"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-screwdriver.glb",
+      "bytes": 50764,
+      "sha256": "d17de220c77a1a114f152821ba0a73150945795f5855eb41caeb1c824d4e9445"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-tool-rack-final.glb",
+      "bytes": 2784340,
+      "sha256": "49a5825fc3561c725349ea6bf9f61df32ecd32d550d06e172c5dd26d9d9e07ad"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-tool-rack-high-base.glb",
+      "bytes": 475060,
+      "sha256": "b95c22a6dc207b026e565923ff06bf868c7dde53f33632e46dcca89a205debe5"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-triangle.glb",
+      "bytes": 368608,
+      "sha256": "973c8c481f7d079017cba83554e75525a20a911968936ebd504b3cfdd7fc2f7c"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/editor-sources/workshop-wrench.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-cog.glb",
+      "bytes": 583776,
+      "sha256": "9b7eb84761e585edd5b82eb7ccebf00a58343795b41d00f19f9c5e1df2d8c9d3"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-hammer.glb",
+      "bytes": 519760,
+      "sha256": "e2acac5cd9c87086e995eaff2aceb9668c7a0dc52a14d3b706e4337e69436e5d"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-plant.glb",
+      "bytes": 349308,
+      "sha256": "591ca862cd720d11626df280ed54ffd6e5b7ddeddc1aeff72908de47b617df07"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-screwdriver.glb",
+      "bytes": 61788,
+      "sha256": "76782db77f0223e2c33a58c1c718f1f802976aca9512df6dc877528b91c8243c"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-tool-rack-final.glb",
+      "bytes": 2784340,
+      "sha256": "49a5825fc3561c725349ea6bf9f61df32ecd32d550d06e172c5dd26d9d9e07ad"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-triangle.glb",
+      "bytes": 368800,
+      "sha256": "55e10a13004102a959f16d0dd51c9dc6cefdca4f073563b63833ab1a8d40e753"
+    },
+    {
+      "path": ".asset-candidates/individual-sync-test/models/workshop-wrench.glb",
+      "bytes": 428112,
+      "sha256": "627a4b580000892e5b7f0b83e626dfe664b5978e1c8d4adf4cca131578c107ab"
+    },
+    {
+      "path": ".asset-candidates/inspect-pencil.mjs",
+      "bytes": 496,
+      "sha256": "e963393df8926a7330d9edda3e17ee1362d36b856b1ca744a89a6290ba9f08ab"
+    },
+    {
+      "path": ".asset-candidates/notebook-inspection.glb",
+      "bytes": 773456,
+      "sha256": "1fa52334a7c67d75a24552b046f7b69291798766e5fcd70ae26c3ab09efa67d6"
+    },
+    {
+      "path": ".asset-candidates/pencil-copyright.glb",
+      "bytes": 100080,
+      "sha256": "e4476ced33496da0c3ffebfa8dd9b4ade5f6a615faf460187531a9b3dc94d008"
+    },
+    {
+      "path": ".asset-candidates/pencil-final-details.glb",
+      "bytes": 61280,
+      "sha256": "5501243b3fbd3a3b1761a74e31ab7712bda3415c9de40e20af5008f931473f4b"
+    },
+    {
+      "path": ".asset-candidates/pencil-green-stamps.glb",
+      "bytes": 95264,
+      "sha256": "621e61bc45df53c5a757750cc2a2b2ed189e95fe05d8046b539dbaa9b5dfd534"
+    },
+    {
+      "path": ".asset-candidates/pencil-light-collar.glb",
+      "bytes": 27604,
+      "sha256": "25b6f0943e72936d16abd1c5a23c894e771a5a5c7ef394875174481add035dfe"
+    },
+    {
+      "path": ".asset-candidates/pencil-nostalgic-name.glb",
+      "bytes": 93468,
+      "sha256": "e18365d58d501f66d5cdfde8dfacdd10faaa1215555cd787b8238cee9692003c"
+    },
+    {
+      "path": ".asset-candidates/pencil-red-faceted.glb",
+      "bytes": 25904,
+      "sha256": "fa74e7ed488b88e6e933e6ea8376e4dc21ceeacc90800ee7c9c388698374bd27"
+    },
+    {
+      "path": ".asset-candidates/pencil-red-visible.glb",
+      "bytes": 26148,
+      "sha256": "814233e39d67c6f7e0ae5a07bb6e1e2869bf661144080a28d6ab5d406cb53ede"
+    },
+    {
+      "path": ".asset-candidates/pencil-sharp-facets.glb",
+      "bytes": 27564,
+      "sha256": "db3161e5475b9f542d6b3816bc6aacf0f6a3b5e9ab058a3c728741d766751787"
+    },
+    {
+      "path": ".asset-candidates/pencil-trademark.glb",
+      "bytes": 103448,
+      "sha256": "9d6dd97acb4cec60fd5fb9d7a50315dbd6a8bbb2e15bb0b11c217873fee0c50a"
+    },
+    {
+      "path": ".asset-candidates/portfolio-log-size.txt",
+      "bytes": 3,
+      "sha256": "cbf2f7864f1c988391a9ab199627a29bd60987da067748c2812b75785d7ec151"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/manifest.json",
+      "bytes": 226,
+      "sha256": "2eba18fb26a60f2f4327e32a719dcece8b1aa13c046accbb63cb10d72056e097"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/next/manifest.json",
+      "bytes": 203,
+      "sha256": "946c09e52de5ec4c1c00ce49a9723e9e86a2e3f4bc515516e24a24b3d21186e2"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/next/source-workshop-tool-rack-final.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/next/source-workshop-wrench.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/next/workshop-tool-rack-final.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/next/workshop-wrench.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/workshop-tool-rack-final.glb",
+      "bytes": 2419552,
+      "sha256": "d4385d56f4dab6cf7afb9f635799adde1e9ce76aeea3826301c1a7b0249c15d4"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/backups/tool-wrench-high/workshop-wrench.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/models/asset-saves.json",
+      "bytes": 256,
+      "sha256": "762a9924678fc4460794ce937e03dc9b18ae4f4784c73c5fbeb542891dae1656"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/models/editor-sources/workshop-tool-rack-final.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/models/editor-sources/workshop-wrench.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/models/workshop-tool-rack-final.glb",
+      "bytes": 428112,
+      "sha256": "c5a73a729baf6fb10c726c474c5bb041d9798301dc3b0716c9a409d659a30c7a"
+    },
+    {
+      "path": ".asset-candidates/save-restore-test/models/workshop-wrench.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".asset-candidates/workshop-cog-bronze-copper-more.glb",
+      "bytes": 786996,
+      "sha256": "f66eed6b6febf7cb6db34f78a5c602e1e2cde8455533cfa6bfa817616148c646"
+    },
+    {
+      "path": ".asset-candidates/workshop-cog-bronze-copper.glb",
+      "bytes": 786956,
+      "sha256": "214b75dcfe342afaf9702daa8625b3775d9a0594449cd761051dd6b7554d52c8"
+    },
+    {
+      "path": ".asset-candidates/workshop-cog-fine-metal-streaks.glb",
+      "bytes": 1935076,
+      "sha256": "8eb05cdcb41c5b8e86f4ac00f427a4017a20993de65d9d9790589c3eccf4ef35"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-balanced-claw.glb",
+      "bytes": 497600,
+      "sha256": "f6799ba10e69f3c04d87972e0c3c2dbca392a308d244cee31be3fbd132088788"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-claw-grain.glb",
+      "bytes": 733560,
+      "sha256": "e598516e5bc149e871cc604b3331d4181fdae11bdccb9cbc72e320702cd3d6e9"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-clean-neck.glb",
+      "bytes": 498116,
+      "sha256": "1bc823ef44ab35ee1384fdb1d5f5f2f9e328892c90fc82dba6ff49bd7f962c9d"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-detailed.glb",
+      "bytes": 359584,
+      "sha256": "c86418b1df9600cc5e39874102c0e671a94a3557375a6877e415deecf3877797"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-grip-lines.glb",
+      "bytes": 520476,
+      "sha256": "80ba878fba74d21483deb311b4241445d91d62fedc58693c4aa281c12a25d548"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-inset.glb",
+      "bytes": 487396,
+      "sha256": "316b5a4a80cf238351d58d93952e8656d06de4a305c26e1d4bdaf17f32bf99dc"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-natural-claw.glb",
+      "bytes": 497516,
+      "sha256": "fd0d22577de831defd38bfdb030e00d5004b797f9479a7348c79ef148037eea5"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-natural.glb",
+      "bytes": 562456,
+      "sha256": "c34fd3cb601b25ee3bae6a3f57d6e44479c282ae476d0c5d55fd58f48a81640e"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-smaller-steel.glb",
+      "bytes": 497488,
+      "sha256": "ea955e3de416ede9331f7e418fd1822f3bea3161b3bbd324b1534ec35bedd63a"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-softened.glb",
+      "bytes": 513228,
+      "sha256": "6baedb3bb2f461b40f154fcdb837d716e3a4051cadceb207d94894fcd86b97c8"
+    },
+    {
+      "path": ".asset-candidates/workshop-hammer-symmetric.glb",
+      "bytes": 428540,
+      "sha256": "19ca9ca23d6007db62edf733f53979401b101c556225c62559404daf32a1ce5c"
+    },
+    {
+      "path": ".asset-candidates/workshop-notebook.glb",
+      "bytes": 1661432,
+      "sha256": "eda5638cced84612a45cc0b6468cc1a7aaf9adea0794c223b0ac69feb7f33c0e"
+    },
+    {
+      "path": ".asset-candidates/workshop-pencil.glb",
+      "bytes": 13956,
+      "sha256": "ce48983c9be80492b4bcd084eea7421d0048980f381b2e67c54d45ad7617f884"
+    },
+    {
+      "path": ".asset-candidates/workshop-rack-grouped-hooks.glb",
+      "bytes": 7007532,
+      "sha256": "03119dcdbc76156365061892ab3276ddb33fd04a7f92124a5c2e46f5af77a724"
+    },
+    {
+      "path": ".asset-candidates/workshop-rack-hammer-triangle-hooks.glb",
+      "bytes": 7425904,
+      "sha256": "5de99c8fa3d261eca8ada56643ad7bb2b0a83fa2f8e088431d9ae7aa8fa5b10a"
+    },
+    {
+      "path": ".asset-candidates/workshop-rack-item-selection.glb",
+      "bytes": 9085812,
+      "sha256": "6e7f0d44c6ebe83350f813b2a63d664bb302f3b4f694f3475fb6fced3c06f91f"
+    },
+    {
+      "path": ".asset-candidates/workshop-rack-longer-cog-hook.glb",
+      "bytes": 7378820,
+      "sha256": "375dc9ea6278fe6a2a8f8d53e54a9767534c92baaaa51476037e5edbd819e5c6"
+    },
+    {
+      "path": ".asset-candidates/workshop-rack-restored-cog.glb",
+      "bytes": 7378820,
+      "sha256": "c1226442709a470c24a5435991cfcb9ca9ca04c1fb96115913e0e0cfba15961c"
+    },
+    {
+      "path": ".asset-candidates/workshop-rack-solid-hooks.glb",
+      "bytes": 7452992,
+      "sha256": "12f140bfbcc85d87afaa525b2ed6b8be31dc1036ed5336f5c954a262cc849aef"
+    },
+    {
+      "path": ".asset-candidates/workshop-screwdriver.glb",
+      "bytes": 50764,
+      "sha256": "d17de220c77a1a114f152821ba0a73150945795f5855eb41caeb1c824d4e9445"
+    },
+    {
+      "path": ".asset-candidates/workshop-tool-rack-original-border.glb",
+      "bytes": 5852876,
+      "sha256": "9ff6d70f532cf454a4aff409403e6d3bb6009e5d565db92b21875ccfe2b40d0b"
+    },
+    {
+      "path": ".asset-candidates/workshop-tool-rack-paper-centered.glb",
+      "bytes": 5954220,
+      "sha256": "ef29f37683d0f20932f0bf34889b372c22f2c8791cfb0c9e73b507517c28570d"
+    },
+    {
+      "path": ".asset-candidates/workshop-tool-rack-pencil-sync.glb",
+      "bytes": 5996016,
+      "sha256": "c40b1ce4dc2ee1aaefb1742c0d15af3f6bb00fb036d46b8b32ee131967669c84"
+    },
+    {
+      "path": ".asset-candidates/workshop-tool-rack-refined.glb",
+      "bytes": 5947288,
+      "sha256": "273fbc38e1ad24a314527be1d027dfa6c5639c5169dddb3bee908623132df924"
+    },
+    {
+      "path": ".asset-candidates/workshop-tool-rack-seated.glb",
+      "bytes": 2778208,
+      "sha256": "2bc8ec0becf20972d5db363e8d6a5557f6a0719988cb3fa40535e95b210565b9"
+    },
+    {
+      "path": ".asset-candidates/workshop-triangle-aligned-numbers.glb",
+      "bytes": 698960,
+      "sha256": "f2d5bc79200bf95f6a16dd2ee09fab4146f4d40d2541154cb46c8504a7e33059"
+    },
+    {
+      "path": ".asset-candidates/workshop-triangle-horizontal-labels.glb",
+      "bytes": 603168,
+      "sha256": "aed5badb1ad67f2dfd90f86689df0a64efb58443bbe74b45b002acc81507df9b"
+    },
+    {
+      "path": ".asset-candidates/workshop-triangle-small-details.glb",
+      "bytes": 460736,
+      "sha256": "fc568d886205539f0adb8d8877f5857d2c85d496e2ded4aa8532a3ebe2212c88"
+    },
+    {
+      "path": ".asset-candidates/workshop-triangle-spaced-raised.glb",
+      "bytes": 698852,
+      "sha256": "9adbfd19a2c94ee35b846493e1ddd4cd3a7e2020de5f9f8e588f950d66f8e830"
+    },
+    {
+      "path": ".asset-candidates/workshop-wrench-small-details.glb",
+      "bytes": 482808,
+      "sha256": "6dfce9d508be1a46db973aa5ffd6697b7ade347bdb522e77b8d42cefab0759cd"
+    },
+    {
+      "path": ".asset-candidates/workshop-wrench.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".asset-pending/tool-cog-high/previous.json",
+      "bytes": 16246,
+      "sha256": "34d30b79578945a865208ff85c0d2be516008747717aa623d579282a03c223fb"
+    },
+    {
+      "path": ".asset-pending/tool-cog-high/source.glb",
+      "bytes": 1858960,
+      "sha256": "cf3be851b608f6d563db610575ee19e3b062310b1f084be042bb395098619c7e"
+    },
+    {
+      "path": ".asset-pending/tool-hammer-high/previous.json",
+      "bytes": 15175,
+      "sha256": "2b26e2181130cc4a0acf2736b7f069a1b4004f41b155c9df9d736b5a77392ed3"
+    },
+    {
+      "path": ".asset-pending/tool-hammer-high/source.glb",
+      "bytes": 520384,
+      "sha256": "3d6000820bdb1c8980f06f0f4788f6307c7f7cd609220580eb4358ccff7fa35e"
+    },
+    {
+      "path": ".asset-pending/tool-notebook-high/previous.json",
+      "bytes": 106571,
+      "sha256": "dd14fd3f4a447325073827f7582555386aea1fb5ad862bcf7d8b49c2fadd3f19"
+    },
+    {
+      "path": ".asset-pending/tool-notebook-high/source.glb",
+      "bytes": 1661432,
+      "sha256": "eda5638cced84612a45cc0b6468cc1a7aaf9adea0794c223b0ac69feb7f33c0e"
+    },
+    {
+      "path": ".asset-pending/tool-pencil-high/previous.json",
+      "bytes": 216403,
+      "sha256": "13340b5f099598abc059aef4d8474581e867668eb4656e17992da682a3fbc5ae"
+    },
+    {
+      "path": ".asset-pending/tool-pencil-high/source.glb",
+      "bytes": 103448,
+      "sha256": "9d6dd97acb4cec60fd5fb9d7a50315dbd6a8bbb2e15bb0b11c217873fee0c50a"
+    },
+    {
+      "path": ".asset-pending/tool-rack-final/previous.json",
+      "bytes": 293508,
+      "sha256": "fef7afbc102bacb724b111b160a9c810331705695ddc5de13f61d2c0260b1f50"
+    },
+    {
+      "path": ".asset-pending/tool-rack-final/source.glb",
+      "bytes": 9085812,
+      "sha256": "6e7f0d44c6ebe83350f813b2a63d664bb302f3b4f694f3475fb6fced3c06f91f"
+    },
+    {
+      "path": ".asset-pending/tool-screwdriver-high/previous.json",
+      "bytes": 2786,
+      "sha256": "7c91aa3f618669bff2ef4b7e99b5d0b83455705b0adff226ad07b22fb7e62de2"
+    },
+    {
+      "path": ".asset-pending/tool-screwdriver-high/source.glb",
+      "bytes": 60096,
+      "sha256": "c687ab6af8b3acd2bf9710691acc72c5ae20ebbbdbd698937f8b449715f376a3"
+    },
+    {
+      "path": ".asset-pending/tool-triangle-high/previous.json",
+      "bytes": 127911,
+      "sha256": "552eaaed75a13881d6e645f46ca2e77bdbbae8b3fba150edf895d034adf203ee"
+    },
+    {
+      "path": ".asset-pending/tool-triangle-high/source.glb",
+      "bytes": 698852,
+      "sha256": "9adbfd19a2c94ee35b846493e1ddd4cd3a7e2020de5f9f8e588f950d66f8e830"
+    },
+    {
+      "path": ".asset-pending/tool-wrench-high/previous.json",
+      "bytes": 16246,
+      "sha256": "dbed93bacd3844a50419e3be4dc0ddd43edee7962ea3a0521dac15a69b045e2e"
+    },
+    {
+      "path": ".asset-pending/tool-wrench-high/source.glb",
+      "bytes": 428064,
+      "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 117,
+      "sha256": "75c0b61da73a860244aec79562c54789a29a25d0860be84431a331e86660b812"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 512,
+      "sha256": "b1c46e7cab38f8d5947215d8d378f7194e76a2eefc4b4e15832e79c2eb75d453"
+    },
+    {
+      "path": "assets/models/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "assets/previews/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "assets/textures/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "catalog/assets.json",
+      "bytes": 2453,
+      "sha256": "56d7f9e3b762c4530ce9fd95d2ba286d8ddaceb1b488b61286d8508c3eb59072"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 5076,
+      "sha256": "ce97f811b00f9f02eb8db2a7ff6f5410cb850d58e3fa248a9c685566528d5f90"
+    },
+    {
+      "path": "docs/SNAPSHOT.json",
+      "bytes": 66115,
+      "sha256": "bb235074b44f1886641ae09138815cb8769657d464a4ac7d7efa3c8b02c0d10e"
+    },
+    {
+      "path": "inspiration/ASSET_LIBRARY.md",
+      "bytes": 3162,
+      "sha256": "9f392ed255df46c1b607c5e90c384bf080dc132c06e0a1d8e5a80c3d7f8df11b"
+    },
+    {
+      "path": "inspiration/ASSET_WORKFLOW.md",
+      "bytes": 2796,
+      "sha256": "487ca71284d549d86cc3e46cde71e5ffea76cbeb4550f2b1eca0761d25228f3f"
+    },
+    {
+      "path": "inspiration/TOOL_RACK_COMPARISON.md",
+      "bytes": 2068,
+      "sha256": "027da2533904c342098d19934dbb48195e303ba1a3ea276634e064ce57a5ab1f"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1067,
+      "sha256": "39ca70f8f0a25eb1ecaeda06bc55786085c70659a50ab31bce33c909a53536b3"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 1156391,
+      "sha256": "dcd7d2e60968f8f5435f1a5bb509ba99cfa90f2c39731a4411c9373a4d54d861"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1406,
+      "sha256": "c0b51ac99dcfb4ad8fed93411a67f6e6d3f14cb89be64621f1e018d1c9d5e433"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 480,
+      "sha256": "f14f8e307bbd552c9e476364addffcf046140fbb1a6acd856369680e615c8420"
+    },
+    {
+      "path": "public/models/asset-saves.json",
+      "bytes": 115169,
+      "sha256": "56ad4a1efd629d0f537f8a87b5922dbd2d6c3c88ec81d7108f82f4557ae71698"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-cog.glb",
+      "bytes": 1935076,
+      "sha256": "8eb05cdcb41c5b8e86f4ac00f427a4017a20993de65d9d9790589c3eccf4ef35"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-hammer.glb",
+      "bytes": 520476,
+      "sha256": "80ba878fba74d21483deb311b4241445d91d62fedc58693c4aa281c12a25d548"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-notebook.glb",
+      "bytes": 1661432,
+      "sha256": "eda5638cced84612a45cc0b6468cc1a7aaf9adea0794c223b0ac69feb7f33c0e"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-pencil.glb",
+      "bytes": 100080,
+      "sha256": "e4476ced33496da0c3ffebfa8dd9b4ade5f6a615faf460187531a9b3dc94d008"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-screwdriver.glb",
+      "bytes": 50764,
+      "sha256": "d17de220c77a1a114f152821ba0a73150945795f5855eb41caeb1c824d4e9445"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-final.glb",
+      "bytes": 7626376,
+      "sha256": "e2a56a6ae7f044eb8e09eec9e790e76125ecedf5616f123a06885c6af8b37071"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-high-base.glb",
+      "bytes": 475060,
+      "sha256": "b95c22a6dc207b026e565923ff06bf868c7dde53f33632e46dcca89a205debe5"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-high-no-plants.glb",
+      "bytes": 1951268,
+      "sha256": "21783019257c5101bd5f9993e9fb5e1437a85838e67d7e2dc6f8b56808e9d8f4"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-high.glb",
+      "bytes": 1442776,
+      "sha256": "d5d1405d8e102ccd4d016c768d2c1f569874ed4da08b1e6a392e456a42ca7a4a"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-light-no-plants.glb",
+      "bytes": 188372,
+      "sha256": "7e4bcafc0fc20e5cbf53aee9c5b79442e4cbdabf31ecf504ef48eea4ba313335"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-light.glb",
+      "bytes": 358940,
+      "sha256": "4b8b256eee3b25e01fa29e8e6cb4f793697a028a2c96d01851460cd76dcb9aad"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-medium-no-plants.glb",
+      "bytes": 603184,
+      "sha256": "eb56fdd4d1a5aa3d41f19896d0004f413a0b434589539b942ed0b0f647e4e5e3"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-medium.glb",
+      "bytes": 797608,
+      "sha256": "da8923ee0861bd6cbc7da3656b51436b99ba3219c97b80ab15d29ff76a2aaaf6"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-triangle.glb",
+      "bytes": 603168,
+      "sha256": "aed5badb1ad67f2dfd90f86689df0a64efb58443bbe74b45b002acc81507df9b"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-wrench.glb",
+      "bytes": 446916,
+      "sha256": "171833a837c79597aa4370144f49854c448e86a6c9f12a0dce2d2ee4d6848c9e"
+    },
+    {
+      "path": "public/models/workshop-cog.glb",
+      "bytes": 1266948,
+      "sha256": "0ea568cd1c0187eb2020776deea5f21ab2ef6dcb76a6dd558bbd566da8193c10"
+    },
+    {
+      "path": "public/models/workshop-hammer.glb",
+      "bytes": 519748,
+      "sha256": "bd9ac6c08a764392c2b34be6970f7b3d3c5cec825d258fdf0d1aad577e885f9c"
+    },
+    {
+      "path": "public/models/workshop-notebook.glb",
+      "bytes": 1661532,
+      "sha256": "680726a52ca9b306e19e6976028bf19a89255730e5b8aabc11a1b977b313ba52"
+    },
+    {
+      "path": "public/models/workshop-pencil.glb",
+      "bytes": 100036,
+      "sha256": "3e0fce8b602582fe639f87295de3d5256476b4bde07be7b4024776d64ee979fa"
+    },
+    {
+      "path": "public/models/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": "public/models/workshop-screwdriver.glb",
+      "bytes": 61784,
+      "sha256": "45742f06f010da0266c94cc0b57dcd6a696b93725be5e87c71629be1fc85a72c"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-final.glb",
+      "bytes": 7626376,
+      "sha256": "e2a56a6ae7f044eb8e09eec9e790e76125ecedf5616f123a06885c6af8b37071"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-high-base.glb",
+      "bytes": 475060,
+      "sha256": "b95c22a6dc207b026e565923ff06bf868c7dde53f33632e46dcca89a205debe5"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-high-no-plants.glb",
+      "bytes": 1934904,
+      "sha256": "a2c06c39ab53d5c51bbcae5ecd43542e75323f6626e550bcfa57a176355afd6e"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-high.glb",
+      "bytes": 1442776,
+      "sha256": "d5d1405d8e102ccd4d016c768d2c1f569874ed4da08b1e6a392e456a42ca7a4a"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-light-no-plants.glb",
+      "bytes": 188372,
+      "sha256": "7e4bcafc0fc20e5cbf53aee9c5b79442e4cbdabf31ecf504ef48eea4ba313335"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-light.glb",
+      "bytes": 358940,
+      "sha256": "4b8b256eee3b25e01fa29e8e6cb4f793697a028a2c96d01851460cd76dcb9aad"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-medium-no-plants.glb",
+      "bytes": 603184,
+      "sha256": "eb56fdd4d1a5aa3d41f19896d0004f413a0b434589539b942ed0b0f647e4e5e3"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-medium.glb",
+      "bytes": 797608,
+      "sha256": "da8923ee0861bd6cbc7da3656b51436b99ba3219c97b80ab15d29ff76a2aaaf6"
+    },
+    {
+      "path": "public/models/workshop-triangle.glb",
+      "bytes": 614976,
+      "sha256": "2559bc81c88ec3ab098f638996dd95511636902fb3203a3de1c07d86ca551c2a"
+    },
+    {
+      "path": "public/models/workshop-wrench.glb",
+      "bytes": 446988,
+      "sha256": "d7692a1c23a532527267c81700cea22111f99030a48fe475a44080b5e9924cf6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4735,
+      "sha256": "b27503933d765ba4ee759bba49c194df07d4d9334e97626b7a937b5e073fe63f"
+    },
+    {
+      "path": "screenshots/all-view-labels-restored.png",
+      "bytes": 92891,
+      "sha256": "b6aba3a226bf4542e109963113f39fe82e9289abbb8f1c5cf76f36565347798d"
+    },
+    {
+      "path": "screenshots/asset-package-dropdown.png",
+      "bytes": 90789,
+      "sha256": "b36a37bee2cb208214518102d2a5f1074d0b866da726b26281d6175cb85983d1"
+    },
+    {
+      "path": "screenshots/click-navigation-fixed.png",
+      "bytes": 113175,
+      "sha256": "983f2b90a926e67463b91ed6a24c510eae2c7fbe14352e018d418bcf0f95d7b8"
+    },
+    {
+      "path": "screenshots/cog-brass-bronze-soft.png",
+      "bytes": 63715,
+      "sha256": "33a351253e6cbeb09d69c4ab0222a61addfd8d5c360816fd4c0d7dde2ab8d947"
+    },
+    {
+      "path": "screenshots/cog-bronze-variations.png",
+      "bytes": 84408,
+      "sha256": "61459ace74a436ac7070dca15749f8eccdd3c9b7241076b2b009bd985957a200"
+    },
+    {
+      "path": "screenshots/cog-color-restored.png",
+      "bytes": 119407,
+      "sha256": "e866f050a0ed754d19fd4dcb13b2eedc03dad16774b13e75ddaf59feedc5d41b"
+    },
+    {
+      "path": "screenshots/cog-final-rack.png",
+      "bytes": 180398,
+      "sha256": "fc6ee90bed416210d1302b35a5180ef6c329d00af56b13077f4186905a5d23a4"
+    },
+    {
+      "path": "screenshots/cog-four-finishes.png",
+      "bytes": 77810,
+      "sha256": "62b99ac7bab31da2b0a84f6f1dedd3f8b9371c4d606075dafd5b69b84069986b"
+    },
+    {
+      "path": "screenshots/cog-hook-longer.png",
+      "bytes": 113422,
+      "sha256": "b6c34d8ba8ffa0ba666dc1e9dd98feb781144a5916b9e09302fdf0ce12c08ef4"
+    },
+    {
+      "path": "screenshots/cog-irregular-brush.png",
+      "bytes": 63700,
+      "sha256": "7d642f36affc76f8e38081ab954d4a55ef01a2c5707db5c6b870714b84c27b42"
+    },
+    {
+      "path": "screenshots/cog-metal-finish.png",
+      "bytes": 84048,
+      "sha256": "38537cc3aa924206cc80c951622c145305600c81a4718cf3cec11eadcb96c1f8"
+    },
+    {
+      "path": "screenshots/cog-soft-face.png",
+      "bytes": 62465,
+      "sha256": "d55a0663d4c463851064aef8d7aeff409f72b9a4a8f668552c1851b3cbea9fdc"
+    },
+    {
+      "path": "screenshots/double-click-return-all.png",
+      "bytes": 82174,
+      "sha256": "c6356358d34a07009c40c64f2dee365e186006e95a1a2197ccd62cb5ec717f03"
+    },
+    {
+      "path": "screenshots/drop-ring-centered-rotation.png",
+      "bytes": 50689,
+      "sha256": "26378a27d758d9209f2b8d116122d4bb6f9f5be097b831cf23bbdfe2e00de75b"
+    },
+    {
+      "path": "screenshots/drop-world-y-rotation.png",
+      "bytes": 52540,
+      "sha256": "a908bc07b33e75188ddf2def434b437f7956f28a7836f3576017853e07ae4ed4"
+    },
+    {
+      "path": "screenshots/editor-save-connection-fixed.png",
+      "bytes": 62602,
+      "sha256": "a86ccec134b7e575460bc42ccc1b327c88671700023024a29e42ac6e00e7acc2"
+    },
+    {
+      "path": "screenshots/editor-selection-modes.png",
+      "bytes": 115703,
+      "sha256": "a5ee4f367cfc3c33382c7d766fd421756c61ed9367c61560f76b0f634f368fbf"
+    },
+    {
+      "path": "screenshots/final-board-aligned-raised-dots.png",
+      "bytes": 111486,
+      "sha256": "9de751243e6c2d8a2c6b8819cf06ae14c795e8ae26d738a237d622ef310f2714"
+    },
+    {
+      "path": "screenshots/final-hammer-brown-grip.png",
+      "bytes": 112085,
+      "sha256": "1b95909c29861b2a70b874cacff6ffbd3ef50516db62231b12a072069eeef762"
+    },
+    {
+      "path": "screenshots/final-hammer-clean-grip.png",
+      "bytes": 112101,
+      "sha256": "a602759346df25f4983a4820a8f05d90badf7a3096fcfeeee17bf077767c9b9e"
+    },
+    {
+      "path": "screenshots/final-notebook-full-closed-spiral.png",
+      "bytes": 128610,
+      "sha256": "43cfabc0e784f94e2c342dcf9c692f2947addba3d8074cf1ea718d2b9ec9a876"
+    },
+    {
+      "path": "screenshots/final-notebook-ruling-turned.png",
+      "bytes": 112225,
+      "sha256": "78190f5ce228552074065d9d2202f3ecbeee6d1e3af1bfb0cfec5194c51c0e1b"
+    },
+    {
+      "path": "screenshots/final-notebook-spiral-flipped.png",
+      "bytes": 111447,
+      "sha256": "1a6282a2208686a277e1053c3b8b7baad010078c6435c042c39dcc2f525de9ad"
+    },
+    {
+      "path": "screenshots/final-notebook-spiral-reoriented.png",
+      "bytes": 111481,
+      "sha256": "bc0931d55f982b459ff4098db4e66e26e71dbe3cced7230914d053d1771742e7"
+    },
+    {
+      "path": "screenshots/final-notebook-tucked-spiral-pencil-shift.png",
+      "bytes": 111525,
+      "sha256": "aee79cfb376c59660c714a31c3ccdfd1a540639d5edcc9f4e3eac21804140d66"
+    },
+    {
+      "path": "screenshots/final-original-yellow-handles.png",
+      "bytes": 111703,
+      "sha256": "48b78e7bb4cd7c88e090253ed258c60ab7baa93fd9279dc8d096cec8702b6c51"
+    },
+    {
+      "path": "screenshots/final-pencil-as-separate-item.png",
+      "bytes": 111539,
+      "sha256": "929fd11ac803a52a2ddc040f6268b16b203e2eb346e39591f46f536f2ef9b75e"
+    },
+    {
+      "path": "screenshots/final-raised-brown-dots.png",
+      "bytes": 81959,
+      "sha256": "ab4bbb4575114796ca7ab0a324a87cb4b92ea4bf599c3bcf01f2dacb27b51f30"
+    },
+    {
+      "path": "screenshots/final-refined-yellow-handles.png",
+      "bytes": 111383,
+      "sha256": "4df3f34ba12c3d70310c01d446398430c67d151cd0c1aca52975f5c2360504ac"
+    },
+    {
+      "path": "screenshots/final-seated-hardware.png",
+      "bytes": 114229,
+      "sha256": "d50597bbb47424e16727a6d394762f5df50be5091a009349fa37388c3d5f77b4"
+    },
+    {
+      "path": "screenshots/final-seated-nails-rounded-rack-pencil.png",
+      "bytes": 90434,
+      "sha256": "a5e9c15c7093e202f14df6fbefc95d1445dd6cedbdfcffbe7bbad4feb832b1d3"
+    },
+    {
+      "path": "screenshots/hammer-balanced-claw.png",
+      "bytes": 73715,
+      "sha256": "0343dc7d83853dd3ba545fc4a2115d179e156fd287aaf1355fced9033dbb7cf6"
+    },
+    {
+      "path": "screenshots/hammer-brown-lines.png",
+      "bytes": 78517,
+      "sha256": "b90845fdace607a7a93109a523295297eea4689d99f1c83cc1b5a17907cd2036"
+    },
+    {
+      "path": "screenshots/hammer-clean-metal-details.png",
+      "bytes": 69077,
+      "sha256": "63419c22c1faef2dc78ec714cf67efa681ecd7897ac10900b5db5b805edd3b20"
+    },
+    {
+      "path": "screenshots/hammer-clean-neck.png",
+      "bytes": 70792,
+      "sha256": "7305d06c1c8f7b849b797a8c34f2e19efc9492a4996793c33ba499bfa97863f7"
+    },
+    {
+      "path": "screenshots/hammer-darker-brown-lines.png",
+      "bytes": 75865,
+      "sha256": "c198d4139456f6e7fb5866d4f925404bfeff4044b1c547e68bdbcd6e05aec9ac"
+    },
+    {
+      "path": "screenshots/hammer-natural-claw.png",
+      "bytes": 74306,
+      "sha256": "be1a7212307b82f02f7365050969017c00407f555ced41da6c06c3844083ab0e"
+    },
+    {
+      "path": "screenshots/hammer-refined-claw-side-grain.png",
+      "bytes": 78051,
+      "sha256": "6424f3c1ecf55c91d766e071d52f09ade155767b664e362b2e7becdd67827079"
+    },
+    {
+      "path": "screenshots/hammer-refined-claw.png",
+      "bytes": 75337,
+      "sha256": "066dbe3f371d0cabc87874c7dc9614730fc9c14b77f332369a10429f9f0ab6bb"
+    },
+    {
+      "path": "screenshots/hammer-restored-inset.png",
+      "bytes": 73942,
+      "sha256": "77450badc7e30bea02610743e876e60037316b3e160cff9e11f81354d29145e1"
+    },
+    {
+      "path": "screenshots/hammer-restored-original.png",
+      "bytes": 68741,
+      "sha256": "d4280dcae12302d50f8184d246d6f825c33209c87f97d9ec7932d5ad3b7d7886"
+    },
+    {
+      "path": "screenshots/hammer-smaller-steel.png",
+      "bytes": 70456,
+      "sha256": "40b91e7076d08af6023a9f9a4fd27be52166e96cc15f14fed48f217d7e234b4d"
+    },
+    {
+      "path": "screenshots/hammer-smooth-inset-back.png",
+      "bytes": 66640,
+      "sha256": "166fd2e863b15b893f91678b413762a9c52360a6c9b02b00097b4a7f7d66c0f4"
+    },
+    {
+      "path": "screenshots/hammer-soft-claw-simple-grain.png",
+      "bytes": 69673,
+      "sha256": "bc1471f6c48bce6d33c494cbbfc7f54bc5319d6281f407def46921b641a11781"
+    },
+    {
+      "path": "screenshots/hammer-symmetric-claw-back.png",
+      "bytes": 62160,
+      "sha256": "cd465ac663bb0b1460dd57aeb44fd0365552817c7f2b9b216b989d0c4264a1fd"
+    },
+    {
+      "path": "screenshots/hammer-symmetric-claw-front.png",
+      "bytes": 67468,
+      "sha256": "234fb2f81db7b2842c4a663bf16cb01414948555626a1f164a31cd43f7df426b"
+    },
+    {
+      "path": "screenshots/hammer-symmetric-head-padding.png",
+      "bytes": 55017,
+      "sha256": "ddb641b843d1bc9a52f0ff78e50ae702ef076fb65acd7a1e2c759af586281b7d"
+    },
+    {
+      "path": "screenshots/hammer-wood-forged-head.png",
+      "bytes": 74185,
+      "sha256": "ecdb6e2cd8d866b4806dad7d7a9a2d44ae6fcf286320d66f8643d578cdf14e24"
+    },
+    {
+      "path": "screenshots/high-medium-triangle.png",
+      "bytes": 87658,
+      "sha256": "dbfe1f0e1b71ceebd3d4febc75e8062bfcb9b85e0c68e5f54cc7eb08eb4f3092"
+    },
+    {
+      "path": "screenshots/independent-asset-library.png",
+      "bytes": 58219,
+      "sha256": "6ba935c58d20629272e1500bf8737e2e2c56f79ce53e6194812570f4485af57f"
+    },
+    {
+      "path": "screenshots/individual-ring-rotation-fixed.png",
+      "bytes": 67066,
+      "sha256": "0dbf063ed0da22b3d5406c097fdc55aa3a32197d08139970354eb62f9780a075"
+    },
+    {
+      "path": "screenshots/pencil-dawson-le.png",
+      "bytes": 59848,
+      "sha256": "e1cbc4fac570c7d4fe2a6e52bf46995211b98b3814187daff5f57862ab383380"
+    },
+    {
+      "path": "screenshots/pencil-DL-final.png",
+      "bytes": 126290,
+      "sha256": "e7241f45c249220d5b153bf5ba9fa2e23a009969336ccbdbaabe7a130fb44aed"
+    },
+    {
+      "path": "screenshots/pencil-facets-soft-red.png",
+      "bytes": 42404,
+      "sha256": "84e4e014ad9f3acdfbf5c800b8da1771eead95225f35e8682fbc5e869fec53f7"
+    },
+    {
+      "path": "screenshots/pencil-red-final-verified.png",
+      "bytes": 112149,
+      "sha256": "76a7f1e0cd654093950a9a95d5598eec5dd3d679f73126b1526e28f7610eaba5"
+    },
+    {
+      "path": "screenshots/pencil-standalone-movable-item.png",
+      "bytes": 70952,
+      "sha256": "02d135885b7dc6291aab7981c685f6ce9e76368711a1074e0d5a0a9d375de8b5"
+    },
+    {
+      "path": "screenshots/previous-next-save.png",
+      "bytes": 62470,
+      "sha256": "fdd2bc5ee99acaf3d0548916fc0102870efa92db6c848d62ccca5ef15aba3d70"
+    },
+    {
+      "path": "screenshots/rack-element-selection.png",
+      "bytes": 119833,
+      "sha256": "aa32fc6522079d5ebe7144df65ca7f745ccae6928348d65d6b39cd4989f7b443"
+    },
+    {
+      "path": "screenshots/rack-grouped-hooks.png",
+      "bytes": 117595,
+      "sha256": "23c0c81b53f60d68ed6e4552e8cde8c399670aa044485727e7dc2310a2843cef"
+    },
+    {
+      "path": "screenshots/rack-solid-hooks-top.png",
+      "bytes": 173486,
+      "sha256": "e155dd7cbe82f4d35926073259311aac6376a63747d08036d9eceedbee57748a"
+    },
+    {
+      "path": "screenshots/rack-whole-item-selection.png",
+      "bytes": 117862,
+      "sha256": "3e9853d6aed66d58d21025a39f095a6a30068467f2a4ab8ecc02dbbe26d2f20e"
+    },
+    {
+      "path": "screenshots/randomized-asset-drop.png",
+      "bytes": 42281,
+      "sha256": "bcc78684ecc088cfe1079ae0e6455e5b829fa59e8df75cbe6917220dc81953ca"
+    },
+    {
+      "path": "screenshots/screwdriver-cleaned-draft.png",
+      "bytes": 56548,
+      "sha256": "35b5a167801a4ab651d87bdaccb738c4d58375b6aed3a20f7c14462553df5b37"
+    },
+    {
+      "path": "screenshots/screwdriver-crossed-flat-draft.png",
+      "bytes": 58706,
+      "sha256": "f59a13cbccf6a0e708f71312703536b0ebfba8cb789debb6386c1792977fff66"
+    },
+    {
+      "path": "screenshots/screwdriver-crosshead-draft.png",
+      "bytes": 56500,
+      "sha256": "a29f8e713e86dd76aa67e3dce015ef19a80bdc8ca9178c5d4008709cfbd9e60c"
+    },
+    {
+      "path": "screenshots/screwdriver-pointed-tip.png",
+      "bytes": 58537,
+      "sha256": "1c2e3a5ecf5e817eb7ea393b5c87377c486e8f12674a9877701d3416f2643074"
+    },
+    {
+      "path": "screenshots/screwdriver-readable-cross-tip.png",
+      "bytes": 60749,
+      "sha256": "474880d83c4027a8f3062ffa7c9407cf2796deaf52240ec175a7460c01c1b71b"
+    },
+    {
+      "path": "screenshots/selection-double-click-all.png",
+      "bytes": 85245,
+      "sha256": "167a80566de5add2cbeb4bbd715991e986e577c75bb410c40ef211599ee8d07a"
+    },
+    {
+      "path": "screenshots/tool-detail-ideas.png",
+      "bytes": 45694,
+      "sha256": "5214f95cc4dfa2a82d81683954f022d02cdeceae8d7cf60754248f10f53f4e10"
+    },
+    {
+      "path": "screenshots/tool-rack-high-simplified.png",
+      "bytes": 84961,
+      "sha256": "30edb2a3c523f9065602245a29bc07026157d4aca91b6ed51e25b697380e2bfa"
+    },
+    {
+      "path": "screenshots/triangle-aligned-numbers.png",
+      "bytes": 64639,
+      "sha256": "efa46fa7f08ee404d03d33d2b29b35b3de9ec6623c81e0efe0c795a36bf058ff"
+    },
+    {
+      "path": "screenshots/triangle-group-verified.png",
+      "bytes": 175070,
+      "sha256": "0650063323fdb71ec995aa3111109b6ba8f13ccc7eb207ffce82d6e682328a94"
+    },
+    {
+      "path": "screenshots/triangle-hammer-hooks.png",
+      "bytes": 114787,
+      "sha256": "03c18e1631d3cc24a03dcbb9ad69e4c60275d1841c1a4625890df266290b51c7"
+    },
+    {
+      "path": "screenshots/triangle-labels-corrected.png",
+      "bytes": 63659,
+      "sha256": "d8b9e2884235fa8398c221471df6b83d5452d1d2a70009953fee94d0edd4b714"
+    },
+    {
+      "path": "screenshots/triangle-small-details.png",
+      "bytes": 63434,
+      "sha256": "563ae68ca80b3ab550ea1b6989294964481a7f5cf45ecb12bc79939a42b53319"
+    },
+    {
+      "path": "screenshots/triangle-spaced-raised.png",
+      "bytes": 63764,
+      "sha256": "062478397f30d3651a82a32e584774ae8a3cc9710fa6edc39745beec60e5f52b"
+    },
+    {
+      "path": "screenshots/wrench-attached-pads.png",
+      "bytes": 62397,
+      "sha256": "35e0647055aa455d8fc698a90000c7e0ae1273b9eb67583a3c7b511c0aded699"
+    },
+    {
+      "path": "screenshots/wrench-latest-draft-restored.png",
+      "bytes": 62635,
+      "sha256": "0e0d1005b18100b1e08e72aeff948ddd862c6de980d95023e5a07c2898d6d8f4"
+    },
+    {
+      "path": "screenshots/wrench-relief-draft.png",
+      "bytes": 63115,
+      "sha256": "7e3c6d42add172a77118e7df2ee67a82b87d5fe8f0e9071f8baa3f666eb8fc83"
+    },
+    {
+      "path": "screenshots/wrench-small-details.png",
+      "bytes": 63839,
+      "sha256": "2e8a171ea9bdcde29611b67cba7449735b1bec173829a3891a98f095dd4dec6b"
+    },
+    {
+      "path": "screenshots/wrench-solid-relief-back.png",
+      "bytes": 55796,
+      "sha256": "6bb750e82a8c6f6b52cde2706c4ff04c4c42323b1c07711a89bcae7a2551189e"
+    },
+    {
+      "path": "screenshots/wrench-solid-relief-draft.png",
+      "bytes": 56080,
+      "sha256": "fd9fc47d39ec5ecedd51814870b95e159f3b9c0d77d9d3d73c61cfa1e2e82fbe"
+    },
+    {
+      "path": "scripts/add-hammer-grip-lines.mjs",
+      "bytes": 1747,
+      "sha256": "5a89e7578f021cae52a5ac0d8c629a4d3d31a51048b992fe7971aa45988dc0cd"
+    },
+    {
+      "path": "scripts/add-hammer-triangle-hooks.cjs",
+      "bytes": 1155,
+      "sha256": "81ffc4bd64435741776a798dc3bbc0361692619ec95b03ce147d23f1a88127a0"
+    },
+    {
+      "path": "scripts/add-tool-small-details.mjs",
+      "bytes": 2046,
+      "sha256": "98ce4f343eba1d2503744f557c07d72d101155866aa74cad66b2c58bae10b0df"
+    },
+    {
+      "path": "scripts/align-triangle-numbers.mjs",
+      "bytes": 1829,
+      "sha256": "a026a3243dfdb1f60bb18218d70aee153c504f499d9372220dc33d7a4ab32993"
+    },
+    {
+      "path": "scripts/asset-save-server.cjs",
+      "bytes": 9652,
+      "sha256": "a642755e6262102189f879de9eb4c90c7a7473749a0af985f9c2f6f8563a553d"
+    },
+    {
+      "path": "scripts/clean-hammer-neck.mjs",
+      "bytes": 1847,
+      "sha256": "2a62332d4d89255ef04b8329b4e6fb19d092436f89096388f43f78af97b2cfb3"
+    },
+    {
+      "path": "scripts/close-rack-hooks.cjs",
+      "bytes": 2847,
+      "sha256": "40eef8e0fdfc7da61ba8dda9fce561403758a95e5d657f651e129c13e23d188d"
+    },
+    {
+      "path": "scripts/create-cog-streaks.mjs",
+      "bytes": 5559,
+      "sha256": "57cc2733ce93f0495cd410d940ef3c07a561b7e1e062f064428f5610299cf071"
+    },
+    {
+      "path": "scripts/create-tool-rack-high-comparison.mjs",
+      "bytes": 16509,
+      "sha256": "1420a753593ac54f818d2dc7360f81bc2eecb5cc4df5d3574fcc04a3355a0e3f"
+    },
+    {
+      "path": "scripts/create-tool-rack-high.mjs",
+      "bytes": 19669,
+      "sha256": "f417476345934039ca55ca181ae690dfa6708afc0e49769e393a0ab7fbc9be81"
+    },
+    {
+      "path": "scripts/create-tool-rack-light.mjs",
+      "bytes": 8371,
+      "sha256": "2332faa05f10521c6a1af9b41a8e7b6aa7545f68631755cb2fa7ab771af75bd3"
+    },
+    {
+      "path": "scripts/create-tool-rack-medium.mjs",
+      "bytes": 11447,
+      "sha256": "51f2207d32d2b048c5dbe66a4674a81cf17a8e7f2b7d870c8d39125945a645bb"
+    },
+    {
+      "path": "scripts/detail-hammer.mjs",
+      "bytes": 2867,
+      "sha256": "f253bc28cbac8a5efb25ea6df40a85c4512ffbe1a70fc784989cea2b4c1e4f45"
+    },
+    {
+      "path": "scripts/extend-cog-hook.cjs",
+      "bytes": 1349,
+      "sha256": "0b99a073545de6e41606b00a5644d384c145a042c4eb6691b810d242ec1079a0"
+    },
+    {
+      "path": "scripts/extract-notebook.mjs",
+      "bytes": 1920,
+      "sha256": "5dc7703806615afe2795aeb143de9d744ab125957eca9cee93d16c6e7c195c38"
+    },
+    {
+      "path": "scripts/group-rack-hooks.cjs",
+      "bytes": 3144,
+      "sha256": "3856511535ce541e1e395a2bf5245f6fcf58743bf022925469be4482b9b0a509"
+    },
+    {
+      "path": "scripts/implement-rack-selection.cjs",
+      "bytes": 4773,
+      "sha256": "d3043df235845828e74d2c9a5ba9475a509cef54791289b9a0370105e522ef07"
+    },
+    {
+      "path": "scripts/inventory-library.cjs",
+      "bytes": 851,
+      "sha256": "54390558139d8182f1dc8e6ed1f8733c22fc31ab526502d147ad8b21412039b3"
+    },
+    {
+      "path": "scripts/natural-hammer.mjs",
+      "bytes": 3492,
+      "sha256": "02ad07d538ccfcf4cae87c3e65173a5f9883589366b94ff8f7cb7bd4ed5357a0"
+    },
+    {
+      "path": "scripts/pencil-copyright.mjs",
+      "bytes": 1648,
+      "sha256": "d3ff814a18f2e59df99b6f03c9d4b6ac24acc71fb1315a79bc73fe5a89cf4c9a"
+    },
+    {
+      "path": "scripts/pencil-final-details.mjs",
+      "bytes": 2476,
+      "sha256": "203226e7f97b2e1a2340422ef7816b4743adaf32af2e6efcaf6a2a3b60147af0"
+    },
+    {
+      "path": "scripts/pencil-green-stamps.mjs",
+      "bytes": 1682,
+      "sha256": "6fb555edc6cc30882acc41eba4410846461fad816c6dd7e48a4513018cb4a175"
+    },
+    {
+      "path": "scripts/pencil-light-collar.mjs",
+      "bytes": 725,
+      "sha256": "88ea79a598928909aced2a64c675c4bd74c6352a9a4b3b1b5d949cfc7ea05e41"
+    },
+    {
+      "path": "scripts/pencil-nostalgic-name.mjs",
+      "bytes": 2149,
+      "sha256": "e7a685d31f0e1d56ea34f94e79dab5c08ee950dffcb76c0cd5393fd6f681ad08"
+    },
+    {
+      "path": "scripts/pencil-sharp-facets.mjs",
+      "bytes": 950,
+      "sha256": "ad958f82d438ca8d2c469e0e256df54910680d9510595f6c0f6cfbbc54700316"
+    },
+    {
+      "path": "scripts/pencil-trademark.mjs",
+      "bytes": 1647,
+      "sha256": "60ebe973cfa550b56aeb1c5266cc021974d08055a73da38574b317b859ebf294"
+    },
+    {
+      "path": "scripts/pencil-visible-color.mjs",
+      "bytes": 739,
+      "sha256": "8dff6ff53c0c5de34bac0b4f9db813f1227ae97bda1a36dcce18696c9728a91e"
+    },
+    {
+      "path": "scripts/refine-claw-and-grain.mjs",
+      "bytes": 4070,
+      "sha256": "c753a1f8fdba29dbcba402090c7c69204cb6c49c0f2bf12bc70cf0ca3e1fcf93"
+    },
+    {
+      "path": "scripts/refine-hammer-inset.mjs",
+      "bytes": 2660,
+      "sha256": "1fa372ee013ecc21a6e19457a37dda42a84ff47327a77441fe4ccbfafd51c805"
+    },
+    {
+      "path": "scripts/refine-hammer-natural-claw.mjs",
+      "bytes": 2992,
+      "sha256": "75cc1f751f0df1f8b67dcf847601590af9e0a062457ab33665d1f6e81071b86f"
+    },
+    {
+      "path": "scripts/refine-hammer-symmetric.mjs",
+      "bytes": 5166,
+      "sha256": "fafc053257b1f6feacdafd4532f4a580879bc6970890f9d887c24dfc39a8c618"
+    },
+    {
+      "path": "scripts/refine-hammer.mjs",
+      "bytes": 2445,
+      "sha256": "b896ec60afcad8b4881374bb77b5297c0c03f8790d4e7bec6f088e77bed03a4e"
+    },
+    {
+      "path": "scripts/refine-pencil-shape.mjs",
+      "bytes": 1516,
+      "sha256": "9525ce22d8386d2f7b1620f60df0f5fa0e39baaec97489dfc7e0e08a2894216e"
+    },
+    {
+      "path": "scripts/refine-rack-appearance.mjs",
+      "bytes": 739,
+      "sha256": "cc11263a46e22de2bf38e4a5fecf404874e8bf9e226f8d17ba35273c227095ca"
+    },
+    {
+      "path": "scripts/refine-screwdriver.mjs",
+      "bytes": 4656,
+      "sha256": "d6b4e46a3bbe03cd562c1ac938957dcfcc01ca3f4cd654423ccd6254a5b04f64"
+    },
+    {
+      "path": "scripts/refine-wrench.mjs",
+      "bytes": 4873,
+      "sha256": "f0811caf09f2f9f32a8335f65297a739b87f7b7a613ee458825e1339b6c75079"
+    },
+    {
+      "path": "scripts/resize-hammer-steel.mjs",
+      "bytes": 2230,
+      "sha256": "58f0843becaf1d58b83ae7a9bc580c5c777f4904b3fda34f1bf40c143d4ca89a"
+    },
+    {
+      "path": "scripts/seat-rack-hardware.mjs",
+      "bytes": 728,
+      "sha256": "f6fd0a9e15ba5d38a4ee29ad092e80a7958dfad0a149e75d11a1a04989ef78c8"
+    },
+    {
+      "path": "scripts/soften-hammer-grain.mjs",
+      "bytes": 1478,
+      "sha256": "c7344c3b70cb0c9cb1a6176f722f832a3d4e1393fef408a26af17b4f5716c755"
+    },
+    {
+      "path": "scripts/space-triangle-details.mjs",
+      "bytes": 2148,
+      "sha256": "00ad467e782e8a64972b6bec00610e78cec76f72e7059cc860e1cfd16d6bc0b8"
+    },
+    {
+      "path": "scripts/split-rack-small-assets.cjs",
+      "bytes": 2872,
+      "sha256": "8bba0c0433250d47f46c63e9d04312f4c9948c2ee3aa54095a76f847e10c6bf9"
+    },
+    {
+      "path": "scripts/stage-asset.cjs",
+      "bytes": 1533,
+      "sha256": "afda1af480baf0e7feb5edda6468caaf032cb0fcdcda0eb52d5d94391424dad2"
+    },
+    {
+      "path": "scripts/start-app.cjs",
+      "bytes": 109,
+      "sha256": "491b6ae8d1c8d9fe5977209279de077497398fe9ff00db564a2e9cff0b7e7be3"
+    },
+    {
+      "path": "scripts/tag-rack-items.cjs",
+      "bytes": 1188,
+      "sha256": "ad455309e54047617e6e923fecf84c57a4cc2a8be59afdda64eaebd5c9e0ba4a"
+    },
+    {
+      "path": "scripts/test-asset-save.cjs",
+      "bytes": 2854,
+      "sha256": "c485ff88653d2544a8433661e783b876da27510ca89e1cc2d857586eb395ffb8"
+    },
+    {
+      "path": "scripts/test-individual-rack-sync.mjs",
+      "bytes": 7119,
+      "sha256": "450b7f3770a5fb4484db78c4c6eeee52ce12c7eb19232b4236073f6cbe099e81"
+    },
+    {
+      "path": "scripts/triangle-horizontal-labels.mjs",
+      "bytes": 1803,
+      "sha256": "0babb6b34d73b547521289dc97b71d8392d71b16685db661c488cf49a6b49bbc"
+    },
+    {
+      "path": "scripts/verify-library.cjs",
+      "bytes": 1838,
+      "sha256": "6abcf3566e63df8cab8d1b5ba475ca5ba814d0bdcfc019f746236b9ec7b722ea"
+    },
+    {
+      "path": "src/asset-library.css",
+      "bytes": 16774,
+      "sha256": "39ad29355f8ccc5ae9f81bf638efbab50a4f0a4205930ea490f83ce7b6d8c215"
+    },
+    {
+      "path": "src/assetFiles.js",
+      "bytes": 6408,
+      "sha256": "7228b5b78d62c2b5371bc516febd6b44778205bf3b0d64aa8d3696616c575c28"
+    },
+    {
+      "path": "src/assetIndex.jsx",
+      "bytes": 1096,
+      "sha256": "4192c0c970a9a1c0d924db6273c2f5e9daf2028909db9360cb069e333cac9759"
+    },
+    {
+      "path": "src/assetLibrary.js",
+      "bytes": 2075,
+      "sha256": "0a482b2400979de00a6c43f1662c332612af81fd27bea1c286576ecc4be770e5"
+    },
+    {
+      "path": "src/AssetPreview.jsx",
+      "bytes": 33562,
+      "sha256": "032b00f6bcf4c285257652ef71a955009cfaab27b380a812a2fe7e49f9ceb272"
+    },
+    {
+      "path": "src/CogBronzeComparison.jsx",
+      "bytes": 3615,
+      "sha256": "289f798ed7ca3a6cf743eb793c88140c86426de6ddbfb451bd2de436b32cc1ff"
+    },
+    {
+      "path": "src/CogFinishStable.jsx",
+      "bytes": 1978,
+      "sha256": "b8e575f8a81951f7e9ab4be5acba8cd8d522a860cff70a606f29e2391899ae49"
+    },
+    {
+      "path": "src/CogMetalFinish.jsx",
+      "bytes": 1978,
+      "sha256": "b8e575f8a81951f7e9ab4be5acba8cd8d522a860cff70a606f29e2391899ae49"
+    },
+    {
+      "path": "src/cogReflection.js",
+      "bytes": 85,
+      "sha256": "966955fcdf427b2d33efe264039a5dccfef191225eff03ddd3fb73d07b48639b"
+    },
+    {
+      "path": "src/EditableModel.jsx",
+      "bytes": 8008,
+      "sha256": "5206d64c0252a4aa7b37284d71c4ea43ea19398e63caa9d8f78218fdadac1adb"
+    },
+    {
+      "path": "src/index.js",
+      "bytes": 1096,
+      "sha256": "4192c0c970a9a1c0d924db6273c2f5e9daf2028909db9360cb069e333cac9759"
+    },
+    {
+      "path": "src/ItemSelectionBounds.jsx",
+      "bytes": 42,
+      "sha256": "ea159017790b83da575f758810c405150f5b53ccbfe46dd17a0331274a488881"
+    },
+    {
+      "path": "src/rackHardware.mjs",
+      "bytes": 2691,
+      "sha256": "553160a5f781c345aa06f66cef4fcd5afbfcda6a7160f768f6d5fdabc27c7ed4"
+    },
+    {
+      "path": "src/RackItemBounds.jsx",
+      "bytes": 1226,
+      "sha256": "6bb4b3816f7a6c358ed7788ab357665ba3bd41d9fcffbfdc6da2906447916112"
+    },
+    {
+      "path": "src/rackOriginalHandles.mjs",
+      "bytes": 395827,
+      "sha256": "f24c4be6869494d9d498970e529ec820bf830788b49f7ed2dad6e486f2ed5ffe"
+    },
+    {
+      "path": "src/rackRefinement.mjs",
+      "bytes": 7247,
+      "sha256": "8d5386ec7e3dd900c7d05f7cec1162d68a84736d45e7272b2b1807bf661fdaed"
+    },
+    {
+      "path": "src/savedModels.jsx",
+      "bytes": 4680,
+      "sha256": "f972a9f21f0624d2926c171718ffe7726e0f3d7e4c2081d41f1e1c5a17d05e5f"
+    },
+    {
+      "path": "src/ToolDetailComparison.jsx",
+      "bytes": 3065,
+      "sha256": "4e3882b82b3cf9ce82f26b138225c94cb1e837dd25bdbb5ef0bf6997e9bad754"
+    },
+    {
+      "path": "src/ToolDetailPreview.jsx",
+      "bytes": 3065,
+      "sha256": "4e3882b82b3cf9ce82f26b138225c94cb1e837dd25bdbb5ef0bf6997e9bad754"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 666,
+      "sha256": "56b0b01329f915cfa2be703d1266a267bdd1fbc0f99ce112f9895842b9e9cec2"
+    }
+  ]
+}

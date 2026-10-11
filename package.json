@@ -1,0 +1,55 @@
+{
+  "name": "asset-library",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@react-three/cannon": "6.4.0",
+    "@react-three/drei": "9.34.4",
+    "@react-three/fiber": "8.18.0",
+    "@react-three/rapier": "1.5.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1",
+    "three": "0.145.0",
+    "web-vitals": "^2.1.4",
+    "express": "4.22.1"
+  },
+  "scripts": {
+    "start": "node scripts/start-app.cjs",
+    "start:assets": "node scripts/start-app.cjs",
+    "asset-server": "node scripts/asset-save-server.cjs",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "verify:assets": "node scripts/verify-library.cjs"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "A playful 3D asset workshop by Dawson Le",
+  "license": "MIT",
+  "author": "Dawson Le",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kledawson/Asset-Library.git"
+  }
+}
