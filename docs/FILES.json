@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-11T13:17:57.752Z",
+  "capturedAt": "2026-10-11T13:19:47.654Z",
   "files": [
     {
       "path": ".asset-backups/high-comparison/before-medium-triangle.glb",
@@ -915,6 +915,11 @@
       "path": "docs/SNAPSHOT.json",
       "bytes": 66115,
       "sha256": "bb235074b44f1886641ae09138815cb8769657d464a4ac7d7efa3c8b02c0d10e"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 1198,
+      "sha256": "68a34f84b0e3851221bd021566e8224e7beaf1ff22022ccee3d0361e32b681e5"
     },
     {
       "path": "inspiration/ASSET_LIBRARY.md",
