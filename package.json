@@ -2,7 +2,7 @@
   "name": "asset-library",
   "version": "1.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://kledawson.github.io/Asset-Library",
   "dependencies": {
     "@react-three/cannon": "6.4.0",
     "@react-three/drei": "9.34.4",

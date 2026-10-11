@@ -4,6 +4,7 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EditableModel } from './EditableModel';
 import { addCogReflection, isCogPart } from './CogFinishStable';
+import { hosted, hostedSnapshot, publicPath } from './hostedStorage';
 
 const storageKey = 'pocketWorkshop.savedModels.v1';
 let models;
@@ -13,11 +14,11 @@ const subscribe = listener => { listeners.add(listener); return () => listeners.
 const snapshot = () => models;
 async function syncSavedModels() {
   try {
-    const response = await fetch('/models/asset-saves.json', { cache: 'no-store' });
+    const response = hosted ? { ok: true, json: async () => hostedSnapshot() } : await fetch(publicPath('/models/asset-saves.json'), { cache: 'no-store' });
     if (!response.ok) return;
     const saved = await response.json();
-    const next = { ...models };
-    let changed = false;
+    const next = hosted ? { ...saved } : { ...models };
+    let changed = hosted && JSON.stringify(saved) !== JSON.stringify(models);
     for (const [key, value] of Object.entries(saved)) {
       if ((value.revision || 0) > (models[key]?.revision || 0)) {
         next[key] = value;
@@ -32,7 +33,7 @@ window.addEventListener('focus', syncSavedModels);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) syncSavedModels(); });
 setInterval(() => { if (!document.hidden) syncSavedModels(); }, 5000);
 function publish(next) {
-  localStorage.setItem(storageKey, JSON.stringify(next));
+  if (!hosted) localStorage.setItem(storageKey, JSON.stringify(next));
   models = next;
   window.dispatchEvent(new Event('asset-files-updated'));
   listeners.forEach(listener => listener());

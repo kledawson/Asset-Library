@@ -87,11 +87,17 @@ node scripts/stage-asset.cjs tool-pencil:high path/to/candidate.glb
 
 Open the asset and click Save Model. Historical generation scripts are preserved for provenance; some directly write models or rely on earlier geometry. Run those on a separate working copy.
 
-## Deployment status
+## Live website
 
-Deployment was deferred to preserve the remaining usage budget. GitHub Pages can display static models but cannot run the local file-writing service. Hosted saving requires a separately secured backend.
+**[Open Asset Library](https://kledawson.github.io/Asset-Library/)**
 
-Model URLs currently start at `/models/`; a project site under `/Asset-Library/` needs path adaptation and browser testing. Private-repository Pages availability depends on the GitHub plan. The repository stays private. Set `REACT_APP_WORKSHOP_URL` to enable an optional link to the separate website.
+The repository is public at the author's request. GitHub Actions builds and publishes the application on pushes to main. All rack versions and individual assets are included.
+
+On the hosted site, Save Model saves binary GLBs in this browser's IndexedDB and updates linked Final instances. Previous Save / Next Save work for saves made in this browser. These edits survive reloads, but are not written to GitHub or shared with another device. Clearing site data removes local edits. Historical disk backups remain in the repository; hosted history begins with your first browser save.
+
+Local development continues to use the file-writing service. An optional `REACT_APP_WORKSHOP_URL` enables a link to the separate workshop website.
+
+Chrome storage/performance: binary Blob storage, shared Final/source data, no duplicated saved metadata in localStorage, staggered preloading, and obsolete preload-revision cleanup. The source repository keeps the full model and development history; the published website includes only production code and public models.
 
 ## Development record
 
@@ -100,3 +106,4 @@ See [CHANGELOG.md](CHANGELOG.md) for the October 10–11 session. [Capture metad
 ## License
 
 Copyright © 2026 Dawson Le. Original code and models use the [MIT License](LICENSE). Dependencies retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
+

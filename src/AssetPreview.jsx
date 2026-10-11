@@ -1,3 +1,4 @@
+import { hosted } from './hostedStorage';
 import { Canvas, useLoader, useThree } from '@react-three/fiber';
 import { CuboidCollider, Physics, RigidBody } from '@react-three/rapier';
 import { Bounds, Html, OrbitControls } from '@react-three/drei';
@@ -246,7 +247,9 @@ export default function AssetPreview() {
     setSelectedId(id); setVariant('all');
     });
   }
+  const preloadedUrls = useRef(new Set());
   useEffect(() => {
+    const pending = [];
     for (const item of assetLibrary) {
       if (!item.id.startsWith('tool-')) continue;
       for (const version of item.versions) {
@@ -254,9 +257,20 @@ export default function AssetPreview() {
         const linkedRevision = item.id === 'tool-rack' && version.id === 'final'
           ? Math.max(...['plant', 'triangle', 'pencil', 'notebook'].map(id => savedModels[`tool-${id}:high`]?.revision || 0)) : 0;
         const revision = Math.max(saved?.revision || 0, saved?.sourceRevision || 0, linkedRevision);
-        useLoader.preload(GLTFLoader, version.url + (version.url.includes('?') ? '&' : '?') + 'saved=' + revision);
+        pending.push(version.url + (version.url.includes('?') ? '&' : '?') + 'saved=' + revision);
       }
     }
+    const next = new Set(pending);
+    for (const url of preloadedUrls.current) if (!next.has(url)) useLoader.clear(GLTFLoader, url);
+    preloadedUrls.current = next;
+    let timer, cancelled = false;
+    const preloadNext = () => {
+      if (cancelled || !pending.length) return;
+      useLoader.preload(GLTFLoader, pending.shift());
+      timer = window.setTimeout(preloadNext, 150);
+    };
+    timer = window.setTimeout(preloadNext, 500);
+    return () => { cancelled = true; window.clearTimeout(timer); };
   }, [savedModels]);
   const baseVersions = variant === 'all' ? asset.versions : asset.versions.filter(item => item.id === variant);
   const versions = baseVersions.map(version=>({...version,label:asset.versions.length===1?'Default':version.label,url:version.url.startsWith('blob:')?version.url:version.url+(version.url.includes('?')?'&':'?')+'saved='+Math.max(Math.max(savedModels[`${asset.id}:${version.id}`]?.revision||0,savedModels[`${asset.id}:${version.id}`]?.sourceRevision||0),asset.id==='tool-rack'&&version.id==='final'?Math.max(savedModels['tool-plant:high']?.revision||0,savedModels['tool-triangle:high']?.revision||0,savedModels['tool-pencil:high']?.revision||0,savedModels['tool-notebook:high']?.revision||0):0)}));
@@ -390,7 +404,7 @@ export default function AssetPreview() {
           </div></details>
         </>}
         <div className="model-editor-actions">
-          <button disabled={saving || (!dirty && editKey !== 'tool-pencil:high') || showOriginal} onClick={async()=>{setSaving(true);try { const saved=await saveModel(editKey,objectItems);draftsRef.current={...draftsRef.current,[editKey]:saved};if(!editKey.startsWith('tool-rack:')){for(const v of ['final']){delete draftsRef.current[`tool-rack:${v}`];delete histories.current[`tool-rack:${v}`];}setSourceModels(current=>Object.fromEntries(Object.entries(current).filter(([key])=>!key.startsWith('tool-rack:'))));}setDraftsByAsset(draftsRef.current);setSelectedItemId('');setSaveMessage('Model saved. All instances now use this version.'); } catch (error) {setSaveMessage(error.message); } finally {setSaving(false);}}}>{saving ? 'Saving…' : 'Save Model'}</button>
+          <button disabled={saving || (!dirty && editKey !== 'tool-pencil:high') || showOriginal} onClick={async()=>{setSaving(true);try { const saved=await saveModel(editKey,objectItems);draftsRef.current={...draftsRef.current,[editKey]:saved};if(!editKey.startsWith('tool-rack:')){for(const v of ['final']){delete draftsRef.current[`tool-rack:${v}`];delete histories.current[`tool-rack:${v}`];}setSourceModels(current=>Object.fromEntries(Object.entries(current).filter(([key])=>!key.startsWith('tool-rack:'))));}setDraftsByAsset(draftsRef.current);setSelectedItemId('');setSaveMessage(hosted ? 'Saved in this browser. All instances now use this version.' : 'Model saved. All instances now use this version.'); } catch (error) {setSaveMessage(error.message); } finally {setSaving(false);}}}>{saving ? 'Saving…' : 'Save Model'}</button>
           <button disabled={saving || showOriginal || !savedModels[editKey]?.history?.length} onClick={async()=>{setSaving(true);try { const previous=await restorePreviousModel(editKey);const affected=!editKey.startsWith('tool-rack:')?[editKey,...['final'].map(v=>`tool-rack:${v}`)]:[editKey];for(const key of affected)delete draftsRef.current[key];if(previous)draftsRef.current[editKey]=previous;localStorage.setItem('pocketWorkshop.modelDrafts.v2',JSON.stringify(draftsRef.current));window.location.reload(); } catch (error) {setSaveMessage(error.message);} finally {setSaving(false);}}}>Previous Save</button>
           <button disabled={saving || showOriginal || !savedModels[editKey]?.nextAvailable} onClick={async()=>{setSaving(true);try { const previous=await restorePreviousModel(editKey,'next');const affected=!editKey.startsWith('tool-rack:')?[editKey,...['final'].map(v=>`tool-rack:${v}`)]:[editKey];for(const key of affected)delete draftsRef.current[key];if(previous)draftsRef.current[editKey]=previous;localStorage.setItem('pocketWorkshop.modelDrafts.v2',JSON.stringify(draftsRef.current));window.location.reload(); } catch (error) {setSaveMessage(error.message);} finally {setSaving(false);}}}>Next Save</button>
         </div>
@@ -407,6 +421,7 @@ export default function AssetPreview() {
     </FloatingPane>
   </main>;
 }
+
 
 
 

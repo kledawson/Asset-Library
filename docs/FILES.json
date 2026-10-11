@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-11T13:19:47.654Z",
+  "capturedAt": "2026-10-11T20:38:22.617Z",
   "files": [
     {
       "path": ".asset-backups/high-comparison/before-medium-triangle.glb",
@@ -877,6 +877,11 @@
       "sha256": "2b093642c4c1a982e23befd2b643b756ca966971273ff1910eab7b59f594be48"
     },
     {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 867,
+      "sha256": "cc3b1eaa03263dc4dc12a28fcf45668a24742985a037ae73321517328ec26528"
+    },
+    {
       "path": ".gitignore",
       "bytes": 117,
       "sha256": "75c0b61da73a860244aec79562c54789a29a25d0860be84431a331e86660b812"
@@ -908,8 +913,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5076,
-      "sha256": "ce97f811b00f9f02eb8db2a7ff6f5410cb850d58e3fa248a9c685566528d5f90"
+      "bytes": 5798,
+      "sha256": "4898c806a008514e17aeb70acd26da4f8d35cea238f767f39c2cd8f6786e7131"
     },
     {
       "path": "docs/SNAPSHOT.json",
@@ -948,8 +953,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 1406,
-      "sha256": "c0b51ac99dcfb4ad8fed93411a67f6e6d3f14cb89be64621f1e018d1c9d5e433"
+      "bytes": 1446,
+      "sha256": "a918aefec89ed3d0be9727fb31dea8e7edd93e9e7bd7b57510113a069eb23944"
     },
     {
       "path": "public/index.html",
@@ -1123,8 +1128,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4735,
-      "sha256": "b27503933d765ba4ee759bba49c194df07d4d9334e97626b7a937b5e073fe63f"
+      "bytes": 5351,
+      "sha256": "350e29aee9ee58ecf2e384a020b227dadfb071607692ef5b9745a2c5746878cb"
     },
     {
       "path": "screenshots/all-view-labels-restored.png",
@@ -1783,8 +1788,8 @@
     },
     {
       "path": "src/assetFiles.js",
-      "bytes": 6408,
-      "sha256": "7228b5b78d62c2b5371bc516febd6b44778205bf3b0d64aa8d3696616c575c28"
+      "bytes": 6512,
+      "sha256": "30d8daaaf67d6b4812dca24d48470d85e9deb71b9d60d4b5ebdc5cc4bb38837f"
     },
     {
       "path": "src/assetIndex.jsx",
@@ -1798,8 +1803,8 @@
     },
     {
       "path": "src/AssetPreview.jsx",
-      "bytes": 33562,
-      "sha256": "032b00f6bcf4c285257652ef71a955009cfaab27b380a812a2fe7e49f9ceb272"
+      "bytes": 34239,
+      "sha256": "5055dae4db1fc63315e67089b919e0e7494af65976d1115b0f94744b552b3391"
     },
     {
       "path": "src/CogBronzeComparison.jsx",
@@ -1827,9 +1832,14 @@
       "sha256": "5206d64c0252a4aa7b37284d71c4ea43ea19398e63caa9d8f78218fdadac1adb"
     },
     {
+      "path": "src/hostedStorage.js",
+      "bytes": 4499,
+      "sha256": "f58a76da9847bb6a11180ca2ecc47f56af57b1215122f53c5bcfd809bce19a2d"
+    },
+    {
       "path": "src/index.js",
-      "bytes": 1096,
-      "sha256": "4192c0c970a9a1c0d924db6273c2f5e9daf2028909db9360cb069e333cac9759"
+      "bytes": 238,
+      "sha256": "efd5b2e70498765833bdd555bc3646c379c2f81ffd69ccc4b1010905d6522f98"
     },
     {
       "path": "src/ItemSelectionBounds.jsx",
@@ -1858,8 +1868,8 @@
     },
     {
       "path": "src/savedModels.jsx",
-      "bytes": 4680,
-      "sha256": "f972a9f21f0624d2926c171718ffe7726e0f3d7e4c2081d41f1e1c5a17d05e5f"
+      "bytes": 4912,
+      "sha256": "5fde5b57a5f4399fe6e271a8c6d834205ef9b22b6dd2114a5c69aa36d5441294"
     },
     {
       "path": "src/ToolDetailComparison.jsx",

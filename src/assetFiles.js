@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
 import { seatRackHardware } from './rackHardware.mjs';
 import { refineRackAppearance } from './rackRefinement.mjs';
+import { hosted, hostedRequest } from './hostedStorage';
 
 const loader = new GLTFLoader();
 async function load(name) { return (await loader.loadAsync(`/models/editor-sources/${name}?v=${Date.now()}`)).scene; }
@@ -95,6 +96,7 @@ export async function writeModelFiles(key,items,models,snapshot) {
 }
 export async function restoreModelFiles(key,direction) { return request('/restore',{key,direction}); }
 async function request(route,body) {
+  if(hosted) return hostedRequest(route,body);
   let response;
   try {response=await fetch(`http://127.0.0.1:3001${route}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});}catch{throw Error('Start the local asset save service (npm run asset-server), then try again.');}
   if(!response.ok)throw Error((await response.json().catch(()=>({}))).error||'Unable to write model files.');

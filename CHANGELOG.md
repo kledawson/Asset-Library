@@ -69,3 +69,12 @@ Session scope: **October 10, 2026, 2 pm PDT through capture**. This records chan
 - This packaging operation does not constitute a complete browser regression pass.
 - Car collisions are outside the library and remain unimplemented.
 - GitHub Pages requires project-path adaptation/testing; static hosting cannot run the save backend.
+
+## GitHub Pages — October 11, 2026
+
+- Published from the public repository at https://kledawson.github.io/Asset-Library/.
+- Added a GitHub Actions build/deployment workflow and corrected project-subpath model URLs.
+- Added hosted IndexedDB saving, Final synchronization, and previous/next save restoration. Hosted saves are local to the current browser and do not commit to GitHub.
+- Stored saved GLBs as binary Blobs; shared the Final export/source Blob and avoided redundant metadata copies in localStorage.
+- Staggered background model preloading and cleared obsolete preloaded revisions after saves.
+- Preserved every approved model, editor source and historical version; no approved geometry or lighting changed.
