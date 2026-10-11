@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-11T20:38:22.617Z",
+  "capturedAt": "2026-10-11T20:41:00.986Z",
   "files": [
     {
       "path": ".asset-backups/high-comparison/before-medium-triangle.glb",
@@ -878,13 +878,18 @@
     },
     {
       "path": ".github/workflows/pages.yml",
-      "bytes": 867,
-      "sha256": "cc3b1eaa03263dc4dc12a28fcf45668a24742985a037ae73321517328ec26528"
+      "bytes": 917,
+      "sha256": "c11535cab16e049a56467f005aa07f424e9a2674434be5c17490d13cc83115f9"
     },
     {
       "path": ".gitignore",
       "bytes": 117,
       "sha256": "75c0b61da73a860244aec79562c54789a29a25d0860be84431a331e86660b812"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 22,
+      "sha256": "a093bb2fed59d699b7f9a62a5203cc196054c624e9c39c6d908c9e7db5dd2464"
     },
     {
       "path": "AGENTS.md",
@@ -949,7 +954,7 @@
     {
       "path": "package-lock.json",
       "bytes": 1156391,
-      "sha256": "dcd7d2e60968f8f5435f1a5bb509ba99cfa90f2c39731a4411c9373a4d54d861"
+      "sha256": "4543fca95563a266637855525c3d2d12adacfb5df0316fddfae50cc8b742a288"
     },
     {
       "path": "package.json",
@@ -1765,6 +1770,11 @@
       "path": "scripts/test-asset-save.cjs",
       "bytes": 2854,
       "sha256": "c485ff88653d2544a8433661e783b876da27510ca89e1cc2d857586eb395ffb8"
+    },
+    {
+      "path": "scripts/test-hosted-storage.cjs",
+      "bytes": 3384,
+      "sha256": "620abf24ea32d0934feffeba4c779f19476b2da2cb8b303019787046f5a3e004"
     },
     {
       "path": "scripts/test-individual-rack-sync.mjs",

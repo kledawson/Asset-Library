@@ -21,6 +21,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run verify:assets
+      - run: node scripts/test-hosted-storage.cjs
       - run: npm run build
         env:
           CI: 'false'
