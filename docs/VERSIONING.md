@@ -1,5 +1,7 @@
 # Asset Library versions
 
+Published checkpoints also receive a separate live demo under `/Asset-Library/versions/<Release.Patch>/`. The main address follows the latest `main` code. The Pages workflow automatically preserves tagged demos and adds their links to GitHub release notes; see [Live release archives](RELEASE-ARCHIVES.md). Keep published tags fixed so their snapshots retain the original code and assets.
+
 ## Format: Release.Patch
 
 - **1.0** identifies the original published website.

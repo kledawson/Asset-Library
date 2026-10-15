@@ -4,11 +4,13 @@ An interactive 3D asset collection and model editor by **Dawson Le**.
 
 Warm wood, soft colors, brushed metal, and playful forms. Explore complete scenes, inspect individual props, experiment with physics, and edit the parts that bring each asset to life.
 
-[Live Demo](https://kledawson.github.io/Asset-Library/) · [Changelog](CHANGELOG.md) · [Run Locally](#run-locally) · [MIT License](LICENSE)
+[Live Demo](https://kledawson.github.io/Asset-Library/) · [Version History](https://kledawson.github.io/Asset-Library/versions/) · [Changelog](CHANGELOG.md) · [Run Locally](#run-locally) · [MIT License](LICENSE)
 
 **Checkpoint 1.1** — Two asset collections, twenty Play Props, and a shared editor with material colors and interactive help.
 
 [1.0 · October 11, 2026](https://github.com/kledawson/Asset-Library/releases/tag/v1.0) → [1.1 · October 14, 2026](https://github.com/kledawson/Asset-Library/releases/tag/v1.1)
+
+Try the original demos: [Open 1.0](https://kledawson.github.io/Asset-Library/versions/1.0/) · [Open 1.1](https://kledawson.github.io/Asset-Library/versions/1.1/). Each archive keeps its tagged code and assets; the main Live Demo follows the latest updates.
 
 ![Actual Asset Library screenshot of Play Props in the Organized layout](assets/progress/play-props/2026-10-15_01-17-41_-0700_organized-in-app-readme-v01.jpg)
 

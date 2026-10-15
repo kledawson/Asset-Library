@@ -2,6 +2,9 @@ name: Deploy Asset Library
 on:
   push:
     branches: [main]
+    tags: ['v*']
+  release:
+    types: [published]
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -22,9 +28,23 @@ jobs:
       - run: npm ci
       - run: npm run verify:assets
       - run: node scripts/test-hosted-storage.cjs
+      - run: node scripts/test-archive-storage.cjs
       - run: npm run build
         env:
           CI: 'false'
+      - name: Identify release tags
+        id: release-tags
+        run: echo "digest=$(git show-ref --tags | sha256sum | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - name: Restore frozen archive builds
+        uses: actions/cache@v4
+        with:
+          path: .release-site-cache
+          key: release-sites-${{ runner.os }}-${{ hashFiles('scripts/build-release-archives.cjs', 'scripts/archive-storage.cjs') }}-${{ steps.release-tags.outputs.digest }}
+          restore-keys: release-sites-${{ runner.os }}-${{ hashFiles('scripts/build-release-archives.cjs', 'scripts/archive-storage.cjs') }}-
+      - name: Build tagged release demos
+        run: node scripts/build-release-archives.cjs
+      - name: Verify archived pages and resource paths
+        run: node scripts/verify-release-archives.cjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -39,3 +59,26 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+  release-links:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Link release demos
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const releases = await github.paginate(github.rest.repos.listReleases, { owner, repo, per_page: 100 });
+            for (const release of releases) {
+              if (release.draft || !/^v\d+\.\d+$/.test(release.tag_name)) continue;
+              const version = release.tag_name.slice(1);
+              const base = `https://${owner}.github.io/${repo}`;
+              const block = `<!-- version-demo:start -->\n## Live Demo\n[Open Version ${version}](${base}/versions/${version}/) · [Latest Asset Library](${base}/) · [Version History](${base}/versions/)\n\nThis demo uses the code and models from ${release.tag_name}. Browser edits stay in this version.\n<!-- version-demo:end -->`;
+              const body = release.body || '';
+              const updated = body.includes('<!-- version-demo:start -->')
+                ? body.replace(/<!-- version-demo:start -->[\s\S]*?<!-- version-demo:end -->/, block)
+                : `${body.trim()}\n\n${block}`;
+              if (updated !== body) await github.rest.repos.updateRelease({ owner, repo, release_id: release.id, body: updated });
+            }
