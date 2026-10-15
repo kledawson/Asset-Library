@@ -215,7 +215,7 @@ This section groups the resulting features and fixes by area. The [preserved dev
 - Targeted individual-save, variant-sync, and restore checks covered preservation of unrelated props and assembly placement; ball physics checks covered rebound, rolling, and settling.
 - The new color/export smoke check passed for a variant in both set layouts, including isolation of unrelated colors and a missing-backup check.
 - Browser checks covered the new color fields, collapsible sections, Close Editor & Drop flow, local GLB import/rejection, label visibility, and returning to the original asset.
-- These are recorded development checks. The 1.1 publication is gated on a successful production build, GitHub Pages workflow, and live model/browser checks.
+- Published checkpoint v1.1 after the production build and Pages workflow passed. Live checks verified all 88 GLBs and the main preview, editor, and help flows; see the [verification record](docs/VERIFICATION.md) for scope and the archived deployment screenshot.
 
 ---
 

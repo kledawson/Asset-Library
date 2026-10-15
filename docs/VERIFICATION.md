@@ -9,7 +9,11 @@
 - A color-edit smoke test passed through the temporary save service and both Play Prop Set assemblies, preserving unrelated colors and placements. Missing-backup handling left the tested GLB intact.
 - Checked README/changelog targets and gallery images, and scanned source/metadata for common credential patterns.
 - Retained approved model exports, sources, history, concepts, and progress captures; recorded model sizes and SHA-256 hashes in [the 1.1 manifest](releases/1.1-manifest.json).
-- Publication requires the main-branch Pages workflow and live asset/browser checks. GitHub Actions and the release PR provide the final deployment record.
+- Merged [release PR #1](https://github.com/kledawson/Asset-Library/pull/1) into main and published [checkpoint v1.1](https://github.com/kledawson/Asset-Library/releases/tag/v1.1), pointing to `a1f2639048f0a85f6f742b9cc153beb5a2e92885`.
+- The [Pages build and deployment](https://github.com/kledawson/Asset-Library/actions/runs/38687572991) completed successfully. Live checks passed for the index page, saved metadata, and all 88 GLBs.
+- Browser checks on the published 1.1 app confirmed Loose and Organized layouts, the Final rack, individual color tabs and material controls, the editor Drop Test guard, Drop/Reset, and help expansion/keyboard isolation. No warnings or errors were captured during this pass. These are smoke checks rather than an exhaustive test of every interaction.
+- Confirmed all four README showcase/gallery images load on GitHub. Archived the [published Play Props capture](../assets/progress/play-props/2026-10-14_22-38-34_-0700_published-checkpoint-1-1-v01.png).
+- The final verification record and screenshot are a documentation follow-up to 1.1; they do not change assets or application code or increment the version. The next substantial update is 1.2.
 
 The October 11 records below describe the earlier checkpoint and its deployment.
 
