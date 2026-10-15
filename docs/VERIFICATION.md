@@ -1,5 +1,17 @@
 # Snapshot verification
 
+## Live release archives — October 15, 2026
+
+- [Deployment 38708855289](https://github.com/kledawson/Asset-Library/actions/runs/38708855289) passed the Latest build, archive storage tests, both tagged builds, nested resource checks, Pages publication, and automatic release-note links. Deployed application/tooling commit: `0b58e3f580100b0992036ab952edadd8e5dcb58f`.
+- [Version 1.0](https://kledawson.github.io/Asset-Library/versions/1.0/) uses original commit `b2f4c371673b28b77711778d1b46262a3c2faf6d`. All 32 model files, saved metadata, archive commit marker, and script paths passed live checks.
+- [Version 1.1](https://kledawson.github.io/Asset-Library/versions/1.1/) uses tagged commit `a1f2639048f0a85f6f742b9cc153beb5a2e92885`. All 88 model files and the same page/metadata checks passed. The latest main site also passed all 88 model checks after publication.
+- Browser checks confirmed the original 1.0 rack/editor and 1.1 Organized Play Props render with their own archive labels and navigation. Neither archive captured console warnings/errors during the pass.
+- Made a tiny reversible transform in the 1.0 Wrench, saved it in that archive's browser storage, and restored it with Previous Save. The 1.1 archive opened independently with its default view. Storage tests separately verified namespace separation and that clearing one archive leaves Latest and other versions intact.
+- Both GitHub release descriptions now contain their version-specific Live Demo links. [Version History](https://kledawson.github.io/Asset-Library/versions/) lists October 11 and October 14 checkpoint dates and a Latest link.
+- Progress captures: [1.0](../assets/progress/asset-library/2026-10-15_02-01-23_-0700_live-archive-1-0-v01.jpg), [1.1](../assets/progress/asset-library/2026-10-15_02-01-23_-0700_live-archive-1-1-v01.jpg), and [history page](../assets/progress/asset-library/2026-10-15_02-01-23_-0700_live-version-history-v01.jpg).
+
+This record and the screenshots are documentation only. They do not change the deployed app or tagged snapshots. Archive build details are in [Live release archives](RELEASE-ARCHIVES.md).
+
 ## Checkpoint 1.1 — October 14, 2026
 
 - Verified 88 GLBs and their required editor sources, embedded resources, saved metadata, and local imports.
