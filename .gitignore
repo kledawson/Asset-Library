@@ -9,3 +9,6 @@ coverage/
 assemble-library.cjs
 .DS_Store
 Thumbs.db
+
+.asset-candidates/play-props-test/
+

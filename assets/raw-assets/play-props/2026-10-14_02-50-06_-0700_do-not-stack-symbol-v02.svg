@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 1024 1024">
+  <title>Do Not Stack</title>
+  <desc>A package rests below another package crossed out with an X.</desc>
+  <g fill="none" stroke="#242822" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="271" y="527" width="482" height="284" rx="9"/>
+    <path d="M512 545v248"/>
+    <rect x="350" y="194" width="324" height="226" rx="9"/>
+    <path stroke-width="36" d="M383 225 641 389m0-164L383 389"/>
+  </g>
+</svg>

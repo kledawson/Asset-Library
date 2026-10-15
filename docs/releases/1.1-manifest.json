@@ -1,0 +1,451 @@
+{
+  "release": "1.1",
+  "packageVersion": "1.1.0",
+  "preparedAt": "2026-10-15T05:29:44.301Z",
+  "previousCheckpoint": "b2f4c371673b28b77711778d1b46262a3c2faf6d",
+  "nextCheckpoint": "1.2",
+  "modelFileCount": 88,
+  "models": [
+    {
+      "path": "public/models/editor-sources/play-ball-coral.glb",
+      "bytes": 97788,
+      "sha256": "6389af6e32ecae20f44e8d2143c00ffa1a01386c582ca280088b94d9e923b273"
+    },
+    {
+      "path": "public/models/editor-sources/play-ball-teal.glb",
+      "bytes": 97784,
+      "sha256": "06dcf1d8fc0c9b7379e786d368ff0800cd409e9e87060d4ff124c19d3f09143d"
+    },
+    {
+      "path": "public/models/editor-sources/play-ball-yellow.glb",
+      "bytes": 97788,
+      "sha256": "bae2c0b90cf5ac4da2e93f3229cb8c34bfcaa3affd4d57f3e4a48b2483436339"
+    },
+    {
+      "path": "public/models/editor-sources/play-ball.glb",
+      "bytes": 97644,
+      "sha256": "3f56738fe8fc33231b0d872ada4fe6082cf6597331d46332d75608741e9e3a70"
+    },
+    {
+      "path": "public/models/editor-sources/play-coral-block-coral.glb",
+      "bytes": 134244,
+      "sha256": "7e5e4316aa3eee25fd3c3d2e5cee09945d44b4a98fb3b89a7cd5fece0a2a4dc6"
+    },
+    {
+      "path": "public/models/editor-sources/play-coral-block-teal.glb",
+      "bytes": 135940,
+      "sha256": "60ca610ee6f87e5303c5329cb01926c108dbbd5d44c901a789e40659ae4aa166"
+    },
+    {
+      "path": "public/models/editor-sources/play-coral-block-yellow.glb",
+      "bytes": 135800,
+      "sha256": "085b04ade83b515c535a157bb1dd909cf8eb8ff92f4aba05ac57b42b6eec6950"
+    },
+    {
+      "path": "public/models/editor-sources/play-coral-block.glb",
+      "bytes": 209004,
+      "sha256": "9c46c9b07a2441cceade2c6d8afc0a8c869ef7b41d60885b09cb5200c72ed62c"
+    },
+    {
+      "path": "public/models/editor-sources/play-cube.glb",
+      "bytes": 772908,
+      "sha256": "ef150287c1e378f4f3f9aea8098a31fe9e265ca400dfd6e3e3a3bffce83a2c56"
+    },
+    {
+      "path": "public/models/editor-sources/play-orange-block-coral.glb",
+      "bytes": 136316,
+      "sha256": "3f76ec94b4d75cb9d9ac452e8b12c9d1fbe814f56ec4ce46e285821ee56aedcd"
+    },
+    {
+      "path": "public/models/editor-sources/play-orange-block-orange.glb",
+      "bytes": 137204,
+      "sha256": "66850d932c15a4f7200073464b88fea4a91a73dee49951451f78f07c8a30819d"
+    },
+    {
+      "path": "public/models/editor-sources/play-orange-block-teal.glb",
+      "bytes": 136820,
+      "sha256": "812f51ec4cd48f209b661f6295d044ceb5ee7d0dca580863838bcb04b5705ff2"
+    },
+    {
+      "path": "public/models/editor-sources/play-orange-block.glb",
+      "bytes": 208960,
+      "sha256": "570cd210aa4795dfdd831ead3c68bce9f3388b32197ad232c2963eafd4a48eb8"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-large-coral.glb",
+      "bytes": 668932,
+      "sha256": "898950ff91fe03307510ef606aef0ae877941f1c64b8dfdf25e0760e6e8f72dc"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-large-teal.glb",
+      "bytes": 2083260,
+      "sha256": "fc8ba64be40e15e32f49f23a27fb0b3493a6d738445bc0375a9cf81fa8a20c3c"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-large-yellow.glb",
+      "bytes": 1937748,
+      "sha256": "5edddd8393d9b853d9c78afbb9796f0d60ecbea064e941ab260606a31c720e24"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-large.glb",
+      "bytes": 329464,
+      "sha256": "16c40d867752f9912045e29c74f7128b068b95e67ce7f74677d9f8f00096a5ed"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-small-coral.glb",
+      "bytes": 620092,
+      "sha256": "30b079b4da8df704c943962e2e7f60c8e83670cd6bf45a98fbec04dd419492b6"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-small-teal.glb",
+      "bytes": 2033480,
+      "sha256": "02d95ee164354d1495bd264ea99df7ee9b7e5b60e044c505938f064acc22bdf3"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-small-yellow.glb",
+      "bytes": 1887988,
+      "sha256": "8acefcfaac41840641f6cd5ccf18c4c4d09cfd2f116d3de7446a9b0c9340bf71"
+    },
+    {
+      "path": "public/models/editor-sources/play-parcel-small.glb",
+      "bytes": 329492,
+      "sha256": "2130ca9b697405948412f7dd243cb33f43ebb9a6bbb892aac660369626f6d523"
+    },
+    {
+      "path": "public/models/editor-sources/play-props-organized.glb",
+      "bytes": 14100828,
+      "sha256": "21e4ef35485973c3c6e7f906e9166bc8a4ee04c220e2f0d1fad2e08f1ffd0591"
+    },
+    {
+      "path": "public/models/editor-sources/play-props.glb",
+      "bytes": 14110668,
+      "sha256": "bc6894badd4f7d865e4eaa4d6f24af23c7d2d1cccd47a6eb9761c4dd039a8a6d"
+    },
+    {
+      "path": "public/models/editor-sources/play-ramp.glb",
+      "bytes": 607480,
+      "sha256": "2d5a79c10eb4b4959cd57b8a6b542c54184bba86bcb56e38f35104478047c3b4"
+    },
+    {
+      "path": "public/models/editor-sources/play-wedge-coral.glb",
+      "bytes": 4488,
+      "sha256": "1091ce46cc930519c3a978e7f863a08d63dbe27dbfe6ba0058e4d1598a2501bd"
+    },
+    {
+      "path": "public/models/editor-sources/play-wedge-teal.glb",
+      "bytes": 4488,
+      "sha256": "46ce0454acf8add7b419f453f84c3a36df147e532b4b9484f348969403f5c7b5"
+    },
+    {
+      "path": "public/models/editor-sources/play-wedge-yellow.glb",
+      "bytes": 4492,
+      "sha256": "5fbecfe364ac992c17590a1502fcf9cfb020dce5960486d377d9d80484d83d77"
+    },
+    {
+      "path": "public/models/editor-sources/play-wedge.glb",
+      "bytes": 4472,
+      "sha256": "4e2b66cf02a43a487178fb4e3550bba69f9b6a27f752e84e5611c4c26bacc50c"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-cog.glb",
+      "bytes": 1935076,
+      "sha256": "8eb05cdcb41c5b8e86f4ac00f427a4017a20993de65d9d9790589c3eccf4ef35"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-hammer.glb",
+      "bytes": 520476,
+      "sha256": "80ba878fba74d21483deb311b4241445d91d62fedc58693c4aa281c12a25d548"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-notebook.glb",
+      "bytes": 1661432,
+      "sha256": "eda5638cced84612a45cc0b6468cc1a7aaf9adea0794c223b0ac69feb7f33c0e"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-pencil.glb",
+      "bytes": 100080,
+      "sha256": "e4476ced33496da0c3ffebfa8dd9b4ade5f6a615faf460187531a9b3dc94d008"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-screwdriver.glb",
+      "bytes": 50764,
+      "sha256": "d17de220c77a1a114f152821ba0a73150945795f5855eb41caeb1c824d4e9445"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-final.glb",
+      "bytes": 7687460,
+      "sha256": "261b5a0586d2fa3f277069c086080545d0d62348969cff6a37f9a9a826426e4d"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-high-base.glb",
+      "bytes": 475060,
+      "sha256": "b95c22a6dc207b026e565923ff06bf868c7dde53f33632e46dcca89a205debe5"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-high-no-plants.glb",
+      "bytes": 1951268,
+      "sha256": "21783019257c5101bd5f9993e9fb5e1437a85838e67d7e2dc6f8b56808e9d8f4"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-high.glb",
+      "bytes": 1442776,
+      "sha256": "d5d1405d8e102ccd4d016c768d2c1f569874ed4da08b1e6a392e456a42ca7a4a"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-light-no-plants.glb",
+      "bytes": 188372,
+      "sha256": "7e4bcafc0fc20e5cbf53aee9c5b79442e4cbdabf31ecf504ef48eea4ba313335"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-light.glb",
+      "bytes": 358940,
+      "sha256": "4b8b256eee3b25e01fa29e8e6cb4f793697a028a2c96d01851460cd76dcb9aad"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-medium-no-plants.glb",
+      "bytes": 603184,
+      "sha256": "eb56fdd4d1a5aa3d41f19896d0004f413a0b434589539b942ed0b0f647e4e5e3"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-tool-rack-medium.glb",
+      "bytes": 797608,
+      "sha256": "da8923ee0861bd6cbc7da3656b51436b99ba3219c97b80ab15d29ff76a2aaaf6"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-triangle.glb",
+      "bytes": 603168,
+      "sha256": "aed5badb1ad67f2dfd90f86689df0a64efb58443bbe74b45b002acc81507df9b"
+    },
+    {
+      "path": "public/models/editor-sources/workshop-wrench.glb",
+      "bytes": 446916,
+      "sha256": "171833a837c79597aa4370144f49854c448e86a6c9f12a0dce2d2ee4d6848c9e"
+    },
+    {
+      "path": "public/models/play-ball-coral.glb",
+      "bytes": 97788,
+      "sha256": "6389af6e32ecae20f44e8d2143c00ffa1a01386c582ca280088b94d9e923b273"
+    },
+    {
+      "path": "public/models/play-ball-teal.glb",
+      "bytes": 97784,
+      "sha256": "06dcf1d8fc0c9b7379e786d368ff0800cd409e9e87060d4ff124c19d3f09143d"
+    },
+    {
+      "path": "public/models/play-ball-yellow.glb",
+      "bytes": 97788,
+      "sha256": "bae2c0b90cf5ac4da2e93f3229cb8c34bfcaa3affd4d57f3e4a48b2483436339"
+    },
+    {
+      "path": "public/models/play-ball.glb",
+      "bytes": 97696,
+      "sha256": "65f9e5f38da05f6b31cd7d156d260a19d9e0f58c9f40492cb3db0bdf256aa6de"
+    },
+    {
+      "path": "public/models/play-coral-block-coral.glb",
+      "bytes": 134244,
+      "sha256": "7e5e4316aa3eee25fd3c3d2e5cee09945d44b4a98fb3b89a7cd5fece0a2a4dc6"
+    },
+    {
+      "path": "public/models/play-coral-block-teal.glb",
+      "bytes": 135940,
+      "sha256": "60ca610ee6f87e5303c5329cb01926c108dbbd5d44c901a789e40659ae4aa166"
+    },
+    {
+      "path": "public/models/play-coral-block-yellow.glb",
+      "bytes": 135800,
+      "sha256": "085b04ade83b515c535a157bb1dd909cf8eb8ff92f4aba05ac57b42b6eec6950"
+    },
+    {
+      "path": "public/models/play-coral-block.glb",
+      "bytes": 209004,
+      "sha256": "9c46c9b07a2441cceade2c6d8afc0a8c869ef7b41d60885b09cb5200c72ed62c"
+    },
+    {
+      "path": "public/models/play-cube.glb",
+      "bytes": 1189800,
+      "sha256": "f6dee8ff98276cdcd908e099c8fbfec41de6ba5c8ec82039a0c7cb1edbc2a637"
+    },
+    {
+      "path": "public/models/play-orange-block-coral.glb",
+      "bytes": 136316,
+      "sha256": "3f76ec94b4d75cb9d9ac452e8b12c9d1fbe814f56ec4ce46e285821ee56aedcd"
+    },
+    {
+      "path": "public/models/play-orange-block-orange.glb",
+      "bytes": 137204,
+      "sha256": "66850d932c15a4f7200073464b88fea4a91a73dee49951451f78f07c8a30819d"
+    },
+    {
+      "path": "public/models/play-orange-block-teal.glb",
+      "bytes": 136820,
+      "sha256": "812f51ec4cd48f209b661f6295d044ceb5ee7d0dca580863838bcb04b5705ff2"
+    },
+    {
+      "path": "public/models/play-orange-block.glb",
+      "bytes": 208960,
+      "sha256": "570cd210aa4795dfdd831ead3c68bce9f3388b32197ad232c2963eafd4a48eb8"
+    },
+    {
+      "path": "public/models/play-parcel-large-coral.glb",
+      "bytes": 668932,
+      "sha256": "898950ff91fe03307510ef606aef0ae877941f1c64b8dfdf25e0760e6e8f72dc"
+    },
+    {
+      "path": "public/models/play-parcel-large-teal.glb",
+      "bytes": 2083260,
+      "sha256": "fc8ba64be40e15e32f49f23a27fb0b3493a6d738445bc0375a9cf81fa8a20c3c"
+    },
+    {
+      "path": "public/models/play-parcel-large-yellow.glb",
+      "bytes": 1937748,
+      "sha256": "5edddd8393d9b853d9c78afbb9796f0d60ecbea064e941ab260606a31c720e24"
+    },
+    {
+      "path": "public/models/play-parcel-large.glb",
+      "bytes": 329464,
+      "sha256": "16c40d867752f9912045e29c74f7128b068b95e67ce7f74677d9f8f00096a5ed"
+    },
+    {
+      "path": "public/models/play-parcel-small-coral.glb",
+      "bytes": 620092,
+      "sha256": "30b079b4da8df704c943962e2e7f60c8e83670cd6bf45a98fbec04dd419492b6"
+    },
+    {
+      "path": "public/models/play-parcel-small-teal.glb",
+      "bytes": 2033480,
+      "sha256": "02d95ee164354d1495bd264ea99df7ee9b7e5b60e044c505938f064acc22bdf3"
+    },
+    {
+      "path": "public/models/play-parcel-small-yellow.glb",
+      "bytes": 1887988,
+      "sha256": "8acefcfaac41840641f6cd5ccf18c4c4d09cfd2f116d3de7446a9b0c9340bf71"
+    },
+    {
+      "path": "public/models/play-parcel-small.glb",
+      "bytes": 329492,
+      "sha256": "2130ca9b697405948412f7dd243cb33f43ebb9a6bbb892aac660369626f6d523"
+    },
+    {
+      "path": "public/models/play-props-organized.glb",
+      "bytes": 14100828,
+      "sha256": "21e4ef35485973c3c6e7f906e9166bc8a4ee04c220e2f0d1fad2e08f1ffd0591"
+    },
+    {
+      "path": "public/models/play-props.glb",
+      "bytes": 14110668,
+      "sha256": "bc6894badd4f7d865e4eaa4d6f24af23c7d2d1cccd47a6eb9761c4dd039a8a6d"
+    },
+    {
+      "path": "public/models/play-ramp.glb",
+      "bytes": 607480,
+      "sha256": "2d5a79c10eb4b4959cd57b8a6b542c54184bba86bcb56e38f35104478047c3b4"
+    },
+    {
+      "path": "public/models/play-wedge-coral.glb",
+      "bytes": 4488,
+      "sha256": "1091ce46cc930519c3a978e7f863a08d63dbe27dbfe6ba0058e4d1598a2501bd"
+    },
+    {
+      "path": "public/models/play-wedge-teal.glb",
+      "bytes": 4488,
+      "sha256": "46ce0454acf8add7b419f453f84c3a36df147e532b4b9484f348969403f5c7b5"
+    },
+    {
+      "path": "public/models/play-wedge-yellow.glb",
+      "bytes": 4492,
+      "sha256": "5fbecfe364ac992c17590a1502fcf9cfb020dce5960486d377d9d80484d83d77"
+    },
+    {
+      "path": "public/models/play-wedge.glb",
+      "bytes": 4472,
+      "sha256": "4e2b66cf02a43a487178fb4e3550bba69f9b6a27f752e84e5611c4c26bacc50c"
+    },
+    {
+      "path": "public/models/workshop-cog.glb",
+      "bytes": 1266948,
+      "sha256": "0ea568cd1c0187eb2020776deea5f21ab2ef6dcb76a6dd558bbd566da8193c10"
+    },
+    {
+      "path": "public/models/workshop-hammer.glb",
+      "bytes": 519748,
+      "sha256": "bd9ac6c08a764392c2b34be6970f7b3d3c5cec825d258fdf0d1aad577e885f9c"
+    },
+    {
+      "path": "public/models/workshop-notebook.glb",
+      "bytes": 1661532,
+      "sha256": "680726a52ca9b306e19e6976028bf19a89255730e5b8aabc11a1b977b313ba52"
+    },
+    {
+      "path": "public/models/workshop-pencil.glb",
+      "bytes": 100036,
+      "sha256": "3e0fce8b602582fe639f87295de3d5256476b4bde07be7b4024776d64ee979fa"
+    },
+    {
+      "path": "public/models/workshop-plant.glb",
+      "bytes": 349304,
+      "sha256": "c332359bf16e9e86f182107bb8c4f5b80c1af37c710c22b721fec19222c60b85"
+    },
+    {
+      "path": "public/models/workshop-screwdriver.glb",
+      "bytes": 61784,
+      "sha256": "45742f06f010da0266c94cc0b57dcd6a696b93725be5e87c71629be1fc85a72c"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-final.glb",
+      "bytes": 7792028,
+      "sha256": "07d9df3c6d257304b8229ade49f19f9fa5dfec7909ae73121abd452fafc320d1"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-high-base.glb",
+      "bytes": 475060,
+      "sha256": "b95c22a6dc207b026e565923ff06bf868c7dde53f33632e46dcca89a205debe5"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-high-no-plants.glb",
+      "bytes": 1934904,
+      "sha256": "a2c06c39ab53d5c51bbcae5ecd43542e75323f6626e550bcfa57a176355afd6e"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-high.glb",
+      "bytes": 1442776,
+      "sha256": "d5d1405d8e102ccd4d016c768d2c1f569874ed4da08b1e6a392e456a42ca7a4a"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-light-no-plants.glb",
+      "bytes": 188372,
+      "sha256": "7e4bcafc0fc20e5cbf53aee9c5b79442e4cbdabf31ecf504ef48eea4ba313335"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-light.glb",
+      "bytes": 358940,
+      "sha256": "4b8b256eee3b25e01fa29e8e6cb4f793697a028a2c96d01851460cd76dcb9aad"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-medium-no-plants.glb",
+      "bytes": 603184,
+      "sha256": "eb56fdd4d1a5aa3d41f19896d0004f413a0b434589539b942ed0b0f647e4e5e3"
+    },
+    {
+      "path": "public/models/workshop-tool-rack-medium.glb",
+      "bytes": 797608,
+      "sha256": "da8923ee0861bd6cbc7da3656b51436b99ba3219c97b80ab15d29ff76a2aaaf6"
+    },
+    {
+      "path": "public/models/workshop-triangle.glb",
+      "bytes": 614976,
+      "sha256": "2559bc81c88ec3ab098f638996dd95511636902fb3203a3de1c07d86ca551c2a"
+    },
+    {
+      "path": "public/models/workshop-wrench.glb",
+      "bytes": 446988,
+      "sha256": "d7692a1c23a532527267c81700cea22111f99030a48fe475a44080b5e9924cf6"
+    }
+  ],
+  "saveMetadataSHA256": "a16c0f0428fa6adb57a7c049fbb4ca77441fdd1c85928480c012da24394afd10"
+}

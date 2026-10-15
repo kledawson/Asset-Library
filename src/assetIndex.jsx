@@ -11,7 +11,7 @@ if(window.location.hash.startsWith('#editor-state=')) {
   } catch {}
   window.history.replaceState(null,'',window.location.pathname);
 }
-document.title='Asset Workshop — Model Library';
+document.title='Asset Library';
 createRoot(document.getElementById('root')).render(new URLSearchParams(window.location.search).get('compare')==='cog'?<CogComparison/>:new URLSearchParams(window.location.search).get('compare')==='tools'?<ToolDetailComparison/>:<AssetPreview />);
 
 

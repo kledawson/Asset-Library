@@ -1,5 +1,18 @@
 # Snapshot verification
 
+## Checkpoint 1.1 — October 14, 2026
+
+- Verified 88 GLBs and their required editor sources, embedded resources, saved metadata, and local imports.
+- Rebuilt the portable catalog from the active application: 18 asset entries and 34 active model versions across two packages.
+- Verified package, lockfile, and shared UI metadata retain checkpoint 1.1 (internal package version 1.1.0).
+- Production build passed with the existing lint warnings. Hosted-storage checks passed for project-subpath URLs, binary saves, shared exports/sources, Previous/Next Save, and reloads.
+- A color-edit smoke test passed through the temporary save service and both Play Prop Set assemblies, preserving unrelated colors and placements. Missing-backup handling left the tested GLB intact.
+- Checked README/changelog targets and gallery images, and scanned source/metadata for common credential patterns.
+- Retained approved model exports, sources, history, concepts, and progress captures; recorded model sizes and SHA-256 hashes in [the 1.1 manifest](releases/1.1-manifest.json).
+- Publication requires the main-branch Pages workflow and live asset/browser checks. GitHub Actions and the release PR provide the final deployment record.
+
+The October 11 records below describe the earlier checkpoint and its deployment.
+
 Verified October 11, 2026 (PDT).
 
 - Model check passed: 32 public GLB files have valid headers and lengths; referenced external resources exist or are embedded.

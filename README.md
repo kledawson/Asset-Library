@@ -1,109 +1,118 @@
 # Asset Library
 
-### A little workshop, built one detail at a time.
+An interactive 3D asset collection and model editor by **Dawson Le**.
 
-A playful 3D asset workshop by **Dawson Le**. Explore a textured wooden rack, inspect its tools, experiment with physics, and edit the pieces that make each asset your own.
+Warm wood, soft colors, brushed metal, and playful forms. Explore complete scenes, inspect individual props, experiment with physics, and edit the parts that bring each asset to life.
 
-![Workshop rack — historical development screenshot](screenshots/cog-color-restored.png)
+[Live Demo](https://kledawson.github.io/Asset-Library/) · [Changelog](CHANGELOG.md) · [Run Locally](#run-locally) · [MIT License](LICENSE)
 
-Warm brass, soft colors, readable silhouettes, and small personal touches define the art direction. The pencil carries **Dawson Le ©** and **#2/DL** lettering inspired by familiar school pencils.
+**Checkpoint 1.1** — Two asset collections, twenty Play Props, and a shared editor with material colors and interactive help.
 
-## Features
+![Play Props in the Organized layout: parcels, a wooden ramp, painted blocks, wedges, balls, and a decorated cube](assets/progress/play-props/2026-10-14_03-31-47_-0700_organized-play-prop-set-v01.png)
 
-- Light, Medium, High, Final, and All rack comparisons.
-- Eight individual assets: screwdriver, wrench, cog, triangle, hammer, plant, pencil, notebook.
-- Consistent camera, rotation ring, reset position, and drop height.
-- Two-stage Drop / Reset physics preview.
-- Whole Item or individual Element selection, teal/orange highlights, and outside-click clearing.
-- Move, rotate, resize, precise adjustments, duplicate, remove, undo/redo, copy/paste.
-- Save actual GLB files, synchronize individual edits into Final, and restore previous/next saves.
-- Draggable, collapsible panels; model comparisons and historical screenshots.
+![Workshop Tool Rack showcase: wooden tool board, brass cog, hand tools, drawers, notebook, and plants](docs/images/2026-10-14_22-26-01_-0700_workshop-rack-showcase-v01.jpg)
 
-## Run locally
+*Collection showcases. Actual app captures are in the expandable gallery below.*
 
-Use Node.js 20 LTS or later. From this repository:
+## Collections
+
+| Collection | Included |
+| --- | --- |
+| **Workshop Tool Rack** | A furnished wooden rack with eight individual assets: screwdriver, wrench, brass cog, hammer, measuring triangle, pencil, notebook, and plant. Light, Medium, High, and Final comparisons. |
+| **Play Props** | Twenty props across eight asset types: wooden ramp, large and small parcels, decorated cube, timber blocks, chunky blocks, wedges, and balls. Loose and Organized set layouts. |
+
+Play Props share a coral, yellow, and teal palette; Chunky Blocks use orange in place of yellow. Colored assets have individual version tabs and an **All** comparison view. Both set layouts reuse the same individual props.
+
+## Explore, Edit, Save
+
+- **Inspect from every angle.** Orbit, pan, zoom, or drag the rotation ring. Shared preview settings keep individual assets consistent.
+- **Try the physics.** Drop Test raises and releases a prop; Reset Prop returns it to the floating preview. Balls bounce and roll.
+- **Edit an item or a part.** Move, rotate, resize, duplicate, remove, and enter precise transforms, with Undo and Redo.
+- **Adjust materials.** Use the color square, Hue and Brightness sliders, or Hex/RGB fields. Select a material on parts with multiple surfaces; retain their existing texture and finish.
+- **Keep scenes in sync.** Saving an individual tool updates the Final rack. Saving a Play Prop updates its matching instance in both Loose and Organized sets.
+- **Preview your own files.** Open GLB temporarily displays a local model in Imported Models.
+
+The bottom-right **i** button opens **Controls & Help**, with expandable sections and interactive shortcut demonstrations. Panels are draggable and collapsible; Model Editor sections collapse individually.
+
+<details>
+<summary><strong>In-App Gallery</strong> — actual captures from version 1.1</summary>
+
+<table>
+<tr>
+<th>Workshop Tool Rack · Final</th>
+<th>Play Props · Loose</th>
+</tr>
+<tr>
+<td><img src="assets/progress/workshop-tool-rack/2026-10-14_22-24-05_-0700_rack-live-v01.jpg" width="420" alt="Actual Asset Library view of the Final workshop rack with preview controls"></td>
+<td><img src="assets/progress/play-props/2026-10-14_22-27-31_-0700_play-props-live-v01.jpg" width="420" alt="Actual Asset Library view of all twenty Play Props in the Loose layout"></td>
+</tr>
+</table>
+
+</details>
+
+## Run Locally
+
+Use **Node.js 20 or later** and npm.
 
 ```sh
 npm ci
 npm start
 ```
 
-Open **http://localhost:3002**. In a second terminal:
+Open **[localhost:3002](http://localhost:3002/)**. Startup also launches the local save service on **127.0.0.1:3001** if it is not already running. If that helper needs to be restarted separately, run `npm run asset-server`.
+
+| Navigation | Shortcut |
+| --- | --- |
+| Previous / next asset | ↑ / ↓ |
+| Previous / next version | ← / → |
+| Previous / next package | Page Up / Page Down |
+| Orbit / zoom / pan | Left drag / wheel / right drag |
+
+Navigation stops at the ends of each list. The in-app help guide covers selection, editing, rotation, and save controls.
+
+## How Saving Works
+
+| | Local development | Published website |
+| --- | --- | --- |
+| Saved models | GLB files and metadata in this project | Binary GLBs in this browser's IndexedDB |
+| Linked scenes | Final rack or both Play Prop Set layouts | The same links, within this browser |
+| Previous / Next Save | Available disk backups | History created in this browser |
+
+Hosted edits persist through reloads but stay on that browser and device. They do not update GitHub; clearing site data removes them. Unsaved editor drafts are also browser-local. Imported GLBs are temporary previews.
+
+<details>
+<summary><strong>Asset source and revision workflow</strong></summary>
+
+Keep approved exports, editor sources, save metadata, backups, and pending revisions together. Individual tool saves update Final while preserving Light, Medium, and High comparisons.
+
+Stage a generated revision, then inspect it and apply it with **Save Model**:
 
 ```sh
-npm run asset-server
+node scripts/stage-asset.cjs tool-pencil:high path/to/candidate.glb
 ```
 
-The save service listens on **127.0.0.1:3001**. Both processes are required for file saving and history restoration. Unsaved drafts remain browser-local.
+Historical modeling scripts include superseded experiments and may depend on older geometry. Use a separate working copy when revisiting them.
+
+</details>
+
+## Development
+
+Built with React, Three.js, React Three Fiber, Drei, and Rapier; Express provides local file saving.
 
 ```sh
 npm run verify:assets
 npm run build
 ```
 
-The build goes into `build/`. This project starts the Asset Library directly.
+The verifier checks model containers, embedded resources, required exports, save metadata, and local imports. Production output goes to `build/`. GitHub Actions publishes pushes to `main` through GitHub Pages.
 
-## Controls
+- [Changes since the Tool Rack release](CHANGELOG.md#11--october-14-2026)
+- [Package plans and asset reuse](docs/ASSET-PACKAGES.md)
+- [Release.Patch versioning](docs/VERSIONING.md)
+- [Detailed development history](docs/history/2026-10-14_1.1-development-log.md)
 
-| Action | Control |
-| --- | --- |
-| Orbit / pan / zoom | Left drag / right drag / scroll |
-| Select | Choose Item or Element, then click |
-| Clear selection | Click outside / Esc |
-| Move / rotate / resize | W / E / R |
-| Copy / paste | Ctrl+C / Ctrl+V |
-| Duplicate | Ctrl+B |
-| Undo / redo | Ctrl+Z / Ctrl+Shift+Z |
-| Enter rack / return to All | Double-click |
-
-All view is read-only. Open Final and its editor to select rack parts. Individual assets are editable in their own views. Selection waits 200 ms to distinguish double-click navigation.
-
-## Repository guide
-
-| Folder | Contents |
-| --- | --- |
-| `src/` | Editor, preview, catalog, selection, material and saving code |
-| `public/models/` | Approved exports and saved-transform metadata |
-| `public/models/editor-sources/` | Geometry baselines needed to reconstruct edits |
-| `scripts/` | Save service, candidate staging, modeling recipes and verification |
-| `.asset-backups/` | Retained save history |
-| `.asset-pending/` | Source history for staged changes |
-| `.asset-candidates/` | Retained experimental candidates |
-| `screenshots/` | Historical screenshots and comparison studies |
-| `catalog/` | Portable asset catalog |
-| `docs/` | Timestamped capture metadata and SHA-256 file inventories |
-
-Textures are embedded in GLBs; verification checks external resources. The driving website, car, track, ramps, and website placement files are excluded. Dependencies and build output are reproducible and not committed. Screenshots document development stages rather than the exact latest appearance.
-
-## Save workflow
-
-Individual Save Model updates its export and linked instances in **Final**. Light, Medium, and High remain comparisons. Keep exports, editor sources, `asset-saves.json`, backups, and pending source history together.
-
-Stage AI revisions without overwriting approved exports:
-
-```sh
-node scripts/stage-asset.cjs tool-pencil:high path/to/candidate.glb
-```
-
-Open the asset and click Save Model. Historical generation scripts are preserved for provenance; some directly write models or rely on earlier geometry. Run those on a separate working copy.
-
-## Live website
-
-**[Open Asset Library](https://kledawson.github.io/Asset-Library/)**
-
-The repository is public at the author's request. GitHub Actions builds and publishes the application on pushes to main. All rack versions and individual assets are included.
-
-On the hosted site, Save Model saves binary GLBs in this browser's IndexedDB and updates linked Final instances. Previous Save / Next Save work for saves made in this browser. These edits survive reloads, but are not written to GitHub or shared with another device. Clearing site data removes local edits. Historical disk backups remain in the repository; hosted history begins with your first browser save.
-
-Local development continues to use the file-writing service. An optional `REACT_APP_WORKSHOP_URL` enables a link to the separate workshop website.
-
-Chrome storage/performance: binary Blob storage, shared Final/source data, no duplicated saved metadata in localStorage, staggered preloading, and obsolete preload-revision cleanup. The source repository keeps the full model and development history; the published website includes only production code and public models.
-
-## Development record
-
-See [CHANGELOG.md](CHANGELOG.md) for the October 10–11 session. [Capture metadata](docs/SNAPSHOT.json) records the UTC timestamp and source hashes; [complete inventory](docs/FILES.json) records packaged files.
+Approved models live in `public/models/`; editing baselines are in `public/models/editor-sources/`. Timestamped concepts and references are archived in `assets/raw-assets/`, and progress screenshots in `assets/progress/`. The separate driving portfolio is outside this repository's application scope.
 
 ## License
 
-Copyright © 2026 Dawson Le. Original code and models use the [MIT License](LICENSE). Dependencies retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
-
+Copyright © 2026 Dawson Le. Code and original models are released under the [MIT License](LICENSE). See [Third-Party Notices](THIRD_PARTY_NOTICES.md) for dependency and typeface information.

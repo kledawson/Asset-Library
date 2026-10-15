@@ -6,7 +6,15 @@ import { Vector3, Matrix4, Quaternion, Euler } from 'three';
 import ItemSelectionBounds from './RackItemBounds';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { addCogReflection, isCogPart } from './CogFinishStable';
-export function EditableModel({ url, assetId, cogReflection, items, selectedItem, setSelectedItem, transformMode, onTransformCommit, onGroupCommit, onPartsLoaded, onExit, readOnly = false, selectionMode = "item" }) {
+import { applyMaterialColors, describeMaterials, disposeColorMaterials } from './materialColors.mjs';
+
+function ColoredMesh({ material: original, colorOverrides, children, ...props }) {
+  const material = useMemo(() => applyMaterialColors(original, colorOverrides), [original, colorOverrides]);
+  useEffect(() => () => disposeColorMaterials(material, original), [material, original]);
+  return <mesh {...props} material={material}>{children}</mesh>;
+}
+
+export function EditableModel({ url, assetId, cogReflection, items, selectedItem, setSelectedItem, transformMode, onTransformCommit, onGroupCommit, onPartsLoaded, onExit, onGroupSelection, readOnly = false, selectionMode = "item" }) {
   const { scene: source } = useLoader(GLTFLoader, url);
   const world = useThree(state => state.scene);
   const orbit = useThree(state => state.controls);
@@ -18,7 +26,7 @@ export function EditableModel({ url, assetId, cogReflection, items, selectedItem
   const releasedAt = useRef(0);
   const pendingSelection = useRef(null);
   const cancelSelection = () => { clearTimeout(pendingSelection.current); pendingSelection.current = null; };
-  useEffect(() => () => clearTimeout(pendingSelection.current), []);
+  useEffect(() => { const cancel = () => { clearTimeout(pendingSelection.current); pendingSelection.current = null; }; window.addEventListener('workshop-help-open',cancel); return () => { cancel(); window.removeEventListener('workshop-help-open',cancel); }; }, []);
   const data = useMemo(() => {
     source.updateMatrixWorld(true);
     const parts = [];
@@ -39,17 +47,22 @@ export function EditableModel({ url, assetId, cogReflection, items, selectedItem
       let ancestor=node;let assetGroup=node.userData.assetGroup;while(ancestor&&!assetGroup){if(/^Asset[ _]/.test(ancestor.name))assetGroup=ancestor.name.replace(/^Asset[ _]/,'');ancestor=ancestor.parent;}
       if (!assetGroup && assetId.startsWith('tool-') && !assetId.startsWith('tool-rack:')) assetGroup = assetId.split(':')[0].slice(5);
       parts.push({ assetGroup, id: `part-${parts.length}`, name: node.name || `Part ${parts.length + 1}`, geometry, material,
-        position: position.toArray(), rotation: [euler.x, euler.y, euler.z], scale: scale.toArray() });
+        materials: describeMaterials(material), position: position.toArray(), rotation: [euler.x, euler.y, euler.z], scale: scale.toArray() });
     });
     return parts;
   }, [source,assetId,cogReflection]);
   const originals = useMemo(() => data.map(({ geometry, material, ...part }) => ({ ...part, kind: 'base', sourceId: part.id })), [data]);
   useEffect(() => { onPartsLoaded(assetId, originals); }, [assetId, onPartsLoaded, originals]);
   useEffect(() => () => { if (orbit) orbit.enabled = true; data.forEach(part => part.geometry.dispose()); }, [orbit, data]);
-  useEffect(()=>{if(readOnly)return;const clear=()=>{cancelSelection();if(!manipulating.current&&performance.now()-releasedAt.current>150){setSelectedGroup(null);setSelectedItem('');}};const key=event=>{if(event.key==='Escape'&&!/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)){if(selectedItem)setSelectedItem('');else setSelectedGroup(null);}};window.addEventListener('rack-editor-clear',clear);window.addEventListener('keydown',key);return()=>{window.removeEventListener('rack-editor-clear',clear);window.removeEventListener('keydown',key);};},[selectedItem,setSelectedItem,readOnly]);
+  useEffect(()=>{if(readOnly)return;const clear=()=>{cancelSelection();if(!manipulating.current&&performance.now()-releasedAt.current>150){setSelectedGroup(null);setSelectedItem('');}};const key=event=>{if(document.querySelector('dialog[data-workshop-help][open]'))return;if(event.key==='Escape'&&!/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)){if(selectedItem)setSelectedItem('');else setSelectedGroup(null);}};window.addEventListener('rack-editor-clear',clear);window.addEventListener('keydown',key);return()=>{window.removeEventListener('rack-editor-clear',clear);window.removeEventListener('keydown',key);};},[selectedItem,setSelectedItem,readOnly]);
   useEffect(() => { clearTimeout(pendingSelection.current); setSelectedGroup(null); }, [selectionMode]);
   const objects = items.length ? items : originals;
   const sources = new Map(data.map(part => [part.id, part]));
+  useEffect(() => {
+    if (!onGroupSelection) return;
+    const ids = !readOnly && !selectedItem && selectedGroup ? objects.filter(item => !item.hidden && (data.find(part => part.id === (item.sourceId || item.id))?.assetGroup || item.assetGroup || item.id) === selectedGroup).map(item => item.id) : [];
+    onGroupSelection(current => current.join('|') === ids.join('|') ? current : ids);
+  }, [objects, data, selectedGroup, selectedItem, readOnly, onGroupSelection]);
   useLayoutEffect(() => { setTarget(readOnly ? null : selectedItem ? refs.current.get(selectedItem) : groupRefs.current.get(selectedGroup) || null); }, [selectedItem, selectedGroup, items, readOnly]);
   return <group dispose={null}>
     {(() => {
@@ -57,7 +70,7 @@ export function EditableModel({ url, assetId, cogReflection, items, selectedItem
       return [...buckets].map(([key,members])=>{const grouped=members.some(item=>sources.get(item.sourceId||item.id)?.assetGroup);const center=grouped?members.reduce((v,item)=>v.add(new Vector3(...item.position)),new Vector3()).divideScalar(members.length):new Vector3();
         return <group key={key} position={center.toArray()} ref={object=>{if(object)groupRefs.current.set(key,object);}}>
           {members.map(item=>{const part=sources.get(item.sourceId||item.id);if(!part)return null;return <group key={item.id} ref={object=>{if(object)refs.current.set(item.id,object);}} position={new Vector3(...item.position).sub(center).toArray()} rotation={item.rotation} scale={item.scale}>
-            <mesh geometry={part.geometry} material={part.material} castShadow receiveShadow onDoubleClick={readOnly ? undefined : event=>{event.stopPropagation();cancelSelection();setSelectedGroup(null);setSelectedItem('');onExit?.();}} onClick={readOnly ? undefined : event=>{
+            <ColoredMesh geometry={part.geometry} material={part.material} colorOverrides={item.colorOverrides} castShadow receiveShadow onDoubleClick={readOnly ? undefined : event=>{event.stopPropagation();cancelSelection();setSelectedGroup(null);setSelectedItem('');onExit?.();}} onClick={readOnly ? undefined : event=>{
               if(event.delta>4||manipulating.current||performance.now()-releasedAt.current<100)return;event.stopPropagation();
               
               cancelSelection();
@@ -67,7 +80,7 @@ export function EditableModel({ url, assetId, cogReflection, items, selectedItem
               setSelectedGroup(grouped ? key : null);
               setSelectedItem(selectionMode === 'element' || !grouped ? item.id : '');
               }, 200);
-            }}>{!readOnly&&(item.id===selectedItem||(!selectedItem&&selectedGroup===key))&&<Edges color={selectedItem?'#d97935':'#397d78'} threshold={24}/>}</mesh>
+            }}>{!readOnly&&(item.id===selectedItem||(!selectedItem&&selectedGroup===key))&&<Edges color={selectedItem?'#d97935':'#397d78'} threshold={24}/>}</ColoredMesh>
           </group>;})}
           {!readOnly&&selectedGroup===key&&groupRefs.current.get(key)&&<ItemSelectionBounds object={groupRefs.current.get(key)} context={!!selectedItem}/>}
         </group>;
