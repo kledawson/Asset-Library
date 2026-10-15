@@ -1,3 +1,4 @@
+import modelRules from './assetModelRules.js';
 import { writeModelFiles, restoreModelFiles } from './assetFiles';
 import { useMemo, useSyncExternalStore } from 'react';
 import { useLoader } from '@react-three/fiber';
@@ -55,7 +56,8 @@ export async function saveModel(key, items) {
     return {...item,name:count > 1 ? name + ' ' + count : name};
   });
   const next = { ...models, [key]: { sourceRevision: current?.sourceRevision, pendingSource: false, items: normalized, history: [current?.revision ? current.items : null], revision: Date.now() } };
-  if (!key.startsWith('tool-rack:')) for(const version of ['final']) next[`tool-rack:${version}`]={...models[`tool-rack:${version}`],items:null,pendingSource:false,nextAvailable:false,sourceRevision:next[key].revision,revision:next[key].revision};
+  for(const assemblyKey of modelRules.linkedAssemblyKeys(key))
+    next[assemblyKey]={...models[assemblyKey],items:null,pendingSource:false,nextAvailable:false,sourceRevision:next[key].revision,revision:next[key].revision};
   await writeModelFiles(key,normalized,models,next);
   publish(next);
   return normalized;

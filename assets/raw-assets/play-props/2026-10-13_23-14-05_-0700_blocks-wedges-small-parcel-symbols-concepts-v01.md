@@ -1,0 +1,1 @@
+Concept board archived at filename time. Shows optional Timber paint edge, Chunky Block silhouette variations, wedge detailing, and wordless black small-parcel handling marks. Reference visual only; no model edits were made.

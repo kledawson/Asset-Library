@@ -1,4 +1,6 @@
 import { DefaultLoadingManager } from 'three';
+import modelRules from './assetModelRules.js';
+import { playSetURL } from './playSetStorage';
 
 export const hosted = !['localhost', '127.0.0.1'].includes(window.location.hostname);
 const base = new URL(process.env.PUBLIC_URL || '/', window.location.origin).pathname.replace(/\/$/, '');
@@ -8,6 +10,10 @@ let state = { files: {}, snapshot: null, previous: {}, next: {} };
 const urls = new Map();
 export function modelURL(url) {
   if (/^(blob:|data:)/.test(url)) return url;
+  if (!hosted) {
+    const savedSetURL = playSetURL(url);
+    if (savedSetURL !== url) return savedSetURL;
+  }
   let name = new URL(url, window.location.href).pathname;
   if (base && name.startsWith(`${base}/`)) name = name.slice(base.length);
   return urls.get(name)?.url || (url.startsWith('/models/') ? publicPath(url) : url);
@@ -64,7 +70,8 @@ export async function hostedRequest(route, body) {
       const bytes = Uint8Array.from(atob(file.data), char => char.charCodeAt(0));
       const blob = new Blob([bytes], { type: 'model/gltf-binary' });
       files[file.name] = blob; names.push(file.name);
-      if (!body.key.startsWith('tool-rack:') && file.name === 'workshop-tool-rack-final.glb') {
+      const linkedNames=modelRules.linkedAssemblyKeys(body.key).map(modelRules.modelFileName);
+      if (linkedNames.includes(file.name)) {
         files[`editor-sources/${file.name}`] = blob; names.push(`editor-sources/${file.name}`);
       }
     }
@@ -78,7 +85,7 @@ export async function hostedRequest(route, body) {
   const files = { ...state.files };
   for (const [name, blob] of Object.entries(restore.files)) { if (blob) files[name] = blob; else delete files[name]; }
   const snapshot = { ...state.snapshot };
-  const keys = body.key.startsWith('tool-rack:') ? [body.key] : [body.key, 'tool-rack:final'];
+  const keys = [body.key,...modelRules.linkedAssemblyKeys(body.key)];
   for (const key of keys) snapshot[key] = { ...restore.snapshot[key], revision: Date.now(), sourceRevision: Date.now(), history: forward ? [null] : [], nextAvailable: !forward };
   await persist({ files, snapshot, previous: forward ? { ...state.previous, [body.key]: current } : state.previous, next: forward ? { ...state.next, [body.key]: null } : { ...state.next, [body.key]: current } });
   return { ok: true, snapshot };

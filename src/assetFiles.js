@@ -1,9 +1,12 @@
-import { Group, Mesh, Vector3, Euler, Quaternion } from 'three';
+import { Group, Mesh, Vector3, Euler, Quaternion, Matrix4 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
 import { seatRackHardware } from './rackHardware.mjs';
 import { refineRackAppearance } from './rackRefinement.mjs';
 import { hosted, hostedRequest } from './hostedStorage';
+import { playSetURL } from './playSetStorage';
+import modelRules from './assetModelRules.js';
+import { applyMaterialColors } from './materialColors.mjs';
 
 const loader = new GLTFLoader();
 async function load(name) { return (await loader.loadAsync(`/models/editor-sources/${name}?v=${Date.now()}`)).scene; }
@@ -40,7 +43,7 @@ function build(source, items) {
     if(!node)continue;
     const geometry=node.geometry.clone();
     if(!/Plant.Leaf|^Leaf[ _]/i.test(node.name)) {geometry.computeBoundingBox();const center=geometry.boundingBox.getCenter(new Vector3());geometry.translate(-center.x,-center.y,-center.z);}
-    const mesh=new Mesh(geometry,node.material);mesh.name=item.name; mesh.userData={...node.userData,assetGroup:item.assetGroup||node.userData.assetGroup};
+    const mesh=new Mesh(geometry,applyMaterialColors(node.material,item.colorOverrides));mesh.name=item.name; mesh.userData={...node.userData,assetGroup:item.assetGroup||node.userData.assetGroup};
     mesh.position.fromArray(item.position);mesh.rotation.set(...item.rotation);mesh.scale.fromArray(item.scale);
     group.add(mesh);
   }
@@ -64,10 +67,42 @@ async function encode(name,model) {
   return {name,data:btoa(data)};
 }
 export async function writeModelFiles(key,items,models,snapshot) {
-  const name=key.startsWith('tool-rack:')?`workshop-tool-rack-${key.split(':')[1]}.glb`:`workshop-${key.split(':')[0].slice(5)}.glb`;
+  const name=modelRules.modelFileName(key);
   const rackName='workshop-tool-rack-final.glb';
   const edited=build(await load(name),items);
   const files=[await encode(name,edited)];
+  if (modelRules.isPlayKey(key)) {
+    if (!key.startsWith('play-props:')) {
+      const id=key.split(':')[0];
+      const variant=modelRules.isPlayVariant(key)?key.split(':')[1]:null;
+      const groupId=variant?`${id}-${variant}`:id;
+      const source=await load(name);
+      source.updateMatrixWorld(true);
+      const sourceParts=[];source.traverse(node=>{if(node.isMesh)sourceParts.push(node);});
+      const matchingSource=node=>sourceParts.find(part=>part.name===node.name)||sourceParts.find(part=>part.material.name===node.material.name&&part.geometry.attributes.position.count===node.geometry.attributes.position.count);
+      for(const assemblyKey of modelRules.linkedAssemblyKeys(key)){
+        const assemblyName=modelRules.modelFileName(assemblyKey);
+        const assembly=(await loader.loadAsync(playSetURL(`/models/${assemblyName}?v=${Date.now()}`))).scene;
+        assembly.updateMatrixWorld(true);
+        let members=[];assembly.traverse(node=>{if(node.isMesh&&node.userData.assetGroup===groupId)members.push(node);});
+        // Older sets had one parcel per size; preserve that save behavior until expanded.
+        if(variant&&!members.length)assembly.traverse(node=>{if(node.isMesh&&node.userData.assetGroup===id)members.push(node);});
+        const anchor=members.find(matchingSource);
+        const part=edited.clone(true);
+        part.traverse(node=>{if(node.isMesh)node.userData={...node.userData,assetGroup:groupId,...(variant?{assetVariant:variant}:{})};});
+        if(anchor){
+          const centered=node=>{node.geometry.computeBoundingBox();return node.matrixWorld.clone().multiply(new Matrix4().makeTranslation(...node.geometry.boundingBox.getCenter(new Vector3()).toArray()));};
+          part.applyMatrix4(assembly.matrixWorld.clone().invert().multiply(centered(anchor)).multiply(centered(matchingSource(anchor)).invert()));
+        }
+        members.forEach(node=>node.removeFromParent());
+        assembly.getObjectByName('Asset '+groupId)?.removeFromParent();
+        part.name='Asset '+groupId;assembly.add(part);
+        files.push(await encode(assemblyName,assembly));
+      }
+    }
+    await request('/save',{key,files,snapshot});
+    return;
+  }
   if(key==='tool-pencil:high' || key==='tool-notebook:high') {
     const id=key==='tool-pencil:high'?'pencil':'notebook';
     const rack=(await loader.loadAsync(`/models/${rackName}?v=${Date.now()}`)).scene;

@@ -1,0 +1,14 @@
+const fs=require('fs');
+const runtimeRoot='C:/Users/dawso/OneDrive/Desktop/portfolio';
+for(const file of ['assetLibrary.js','assetModelRules.js','assetDescriptions.js','playBallMotion.mjs'])fs.copyFileSync('src/'+file,runtimeRoot+'/src/'+file);
+const target=runtimeRoot+'/src/assetFiles.js';fs.writeFileSync(target,fs.readFileSync(target,'utf8').replace('modelRules.isParcelVariant(key)?','modelRules.isPlayVariant(key)?'));
+const preview=runtimeRoot+'/src/AssetPreview.jsx',current=fs.readFileSync('src/AssetPreview.jsx','utf8');let runtime=fs.readFileSync(preview,'utf8');
+runtime=runtime.replace(/function DisplayModel\([\s\S]*?(?=function FloatingPane\()/,current.match(/function DisplayModel\([\s\S]*?(?=function FloatingPane\()/)[0]);
+if(!runtime.includes("from './playBallMotion.mjs'"))runtime="import { BALL_DROP_SETTINGS, ballDropMotion } from './playBallMotion.mjs';\n"+runtime;
+runtime=runtime.replace("if (selectedId.startsWith('play-parcel-')) {","if (assetLibrary.find(item=>item.id===selectedId)?.kind==='individual' && assetLibrary.find(item=>item.id===selectedId)?.versions.length>1) {");
+runtime=runtime.replace("id.startsWith('play-parcel-') && (remembered","nextAsset?.kind==='individual' && nextAsset.versions.length>1 && (remembered");fs.writeFileSync(preview,runtime);
+let test=fs.readFileSync('scripts/test-parcel-variations.mjs','utf8');
+test=test.replace('const loader=new GLTFLoader();',"for(const id of ['coral-block','orange-block','wedge','ball'])for(const color of (id==='orange-block'?['coral','orange','teal']:['coral','yellow','teal']))for(const folder of ['','editor-sources/']){const file='play-'+id+'-'+color+'.glb';await fs.copyFile('public/models/'+folder+file,path.join(root,folder,file));}\nconst loader=new GLTFLoader();");
+test=test.replace("for(const size of ['small','large'])for(const color of ['coral','yellow','teal']){\n  const id='parcel-'+size, file='play-'+id+'-'+color+'.glb';","for(const id of ['coral-block','orange-block','wedge','ball'])for(const color of (id==='orange-block'?['coral','orange','teal']:['coral','yellow','teal'])){\n  const file='play-'+id+'-'+color+'.glb';");
+test=test.replace('All six parcel variants','All twelve block, wedge, and ball variants');fs.writeFileSync('scripts/test-colored-play-props.mjs',test);
+console.log('Catalog and targeted preview/save changes synced.');console.log(require.resolve('@dimforge/rapier3d-compat'));

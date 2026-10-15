@@ -1,7 +1,40 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T13:13:45.930Z",
+  "release": "1.1",
+  "updatedAt": "2026-10-15T05:29:02.766Z",
   "author": "Dawson Le",
+  "packages": [
+    {
+      "id": "workshop-tool-rack",
+      "name": "Workshop Tool Rack",
+      "assetIds": [
+        "tool-rack",
+        "tool-screwdriver",
+        "tool-wrench",
+        "tool-cog",
+        "tool-triangle",
+        "tool-hammer",
+        "tool-plant",
+        "tool-pencil",
+        "tool-notebook"
+      ]
+    },
+    {
+      "id": "play-props",
+      "name": "Play Props",
+      "assetIds": [
+        "play-props",
+        "play-ramp",
+        "play-parcel-large",
+        "play-parcel-small",
+        "play-cube",
+        "play-coral-block",
+        "play-orange-block",
+        "play-wedge",
+        "play-ball"
+      ]
+    }
+  ],
   "assets": [
     {
       "id": "tool-rack",
@@ -9,73 +42,320 @@
       "versions": [
         {
           "id": "light",
+          "label": "Light",
           "model": "public/models/workshop-tool-rack-light.glb",
           "source": "public/models/editor-sources/workshop-tool-rack-light.glb"
         },
         {
           "id": "medium",
+          "label": "Medium",
           "model": "public/models/workshop-tool-rack-medium.glb",
           "source": "public/models/editor-sources/workshop-tool-rack-medium.glb"
         },
         {
           "id": "high",
+          "label": "High",
           "model": "public/models/workshop-tool-rack-high.glb",
           "source": "public/models/editor-sources/workshop-tool-rack-high.glb"
         },
         {
           "id": "final",
+          "label": "Final",
           "model": "public/models/workshop-tool-rack-final.glb",
           "source": "public/models/editor-sources/workshop-tool-rack-final.glb"
         }
       ]
     },
     {
-      "id": "tool-screwdriver",
-      "name": "screwdriver",
-      "model": "public/models/workshop-screwdriver.glb",
-      "source": "public/models/editor-sources/workshop-screwdriver.glb"
-    },
-    {
       "id": "tool-wrench",
-      "name": "wrench",
-      "model": "public/models/workshop-wrench.glb",
-      "source": "public/models/editor-sources/workshop-wrench.glb"
+      "name": "Wrench",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-wrench.glb",
+          "source": "public/models/editor-sources/workshop-wrench.glb"
+        }
+      ]
     },
     {
       "id": "tool-cog",
-      "name": "cog",
-      "model": "public/models/workshop-cog.glb",
-      "source": "public/models/editor-sources/workshop-cog.glb"
-    },
-    {
-      "id": "tool-triangle",
-      "name": "triangle",
-      "model": "public/models/workshop-triangle.glb",
-      "source": "public/models/editor-sources/workshop-triangle.glb"
+      "name": "Brass Cog",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-cog.glb",
+          "source": "public/models/editor-sources/workshop-cog.glb"
+        }
+      ]
     },
     {
       "id": "tool-hammer",
-      "name": "hammer",
-      "model": "public/models/workshop-hammer.glb",
-      "source": "public/models/editor-sources/workshop-hammer.glb"
+      "name": "Hammer",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-hammer.glb",
+          "source": "public/models/editor-sources/workshop-hammer.glb"
+        }
+      ]
+    },
+    {
+      "id": "tool-screwdriver",
+      "name": "Screwdriver",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-screwdriver.glb",
+          "source": "public/models/editor-sources/workshop-screwdriver.glb"
+        }
+      ]
+    },
+    {
+      "id": "tool-triangle",
+      "name": "Measuring Triangle",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-triangle.glb",
+          "source": "public/models/editor-sources/workshop-triangle.glb"
+        }
+      ]
     },
     {
       "id": "tool-plant",
-      "name": "plant",
-      "model": "public/models/workshop-plant.glb",
-      "source": "public/models/editor-sources/workshop-plant.glb"
+      "name": "Potted Plant",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-plant.glb",
+          "source": "public/models/editor-sources/workshop-plant.glb"
+        }
+      ]
     },
     {
       "id": "tool-pencil",
-      "name": "pencil",
-      "model": "public/models/workshop-pencil.glb",
-      "source": "public/models/editor-sources/workshop-pencil.glb"
+      "name": "Pencil",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-pencil.glb",
+          "source": "public/models/editor-sources/workshop-pencil.glb"
+        }
+      ]
     },
     {
       "id": "tool-notebook",
-      "name": "notebook",
-      "model": "public/models/workshop-notebook.glb",
-      "source": "public/models/editor-sources/workshop-notebook.glb"
+      "name": "Notebook",
+      "versions": [
+        {
+          "id": "high",
+          "label": "High",
+          "model": "public/models/workshop-notebook.glb",
+          "source": "public/models/editor-sources/workshop-notebook.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-props",
+      "name": "Play Prop Set",
+      "kind": "assembly",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Loose",
+          "model": "public/models/play-props.glb",
+          "source": "public/models/editor-sources/play-props.glb"
+        },
+        {
+          "id": "organized",
+          "label": "Organized",
+          "model": "public/models/play-props-organized.glb",
+          "source": "public/models/editor-sources/play-props-organized.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-ramp",
+      "name": "Wooden Ramp",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/play-ramp.glb",
+          "source": "public/models/editor-sources/play-ramp.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-parcel-large",
+      "name": "Large Parcel",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "coral",
+          "label": "Coral",
+          "model": "public/models/play-parcel-large-coral.glb",
+          "source": "public/models/editor-sources/play-parcel-large-coral.glb"
+        },
+        {
+          "id": "yellow",
+          "label": "Yellow",
+          "model": "public/models/play-parcel-large-yellow.glb",
+          "source": "public/models/editor-sources/play-parcel-large-yellow.glb"
+        },
+        {
+          "id": "teal",
+          "label": "Teal",
+          "model": "public/models/play-parcel-large-teal.glb",
+          "source": "public/models/editor-sources/play-parcel-large-teal.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-parcel-small",
+      "name": "Small Parcel",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "coral",
+          "label": "Coral",
+          "model": "public/models/play-parcel-small-coral.glb",
+          "source": "public/models/editor-sources/play-parcel-small-coral.glb"
+        },
+        {
+          "id": "yellow",
+          "label": "Yellow",
+          "model": "public/models/play-parcel-small-yellow.glb",
+          "source": "public/models/editor-sources/play-parcel-small-yellow.glb"
+        },
+        {
+          "id": "teal",
+          "label": "Teal",
+          "model": "public/models/play-parcel-small-teal.glb",
+          "source": "public/models/editor-sources/play-parcel-small-teal.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-cube",
+      "name": "Decorated Cube",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/play-cube.glb",
+          "source": "public/models/editor-sources/play-cube.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-coral-block",
+      "name": "Timber Block",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "coral",
+          "label": "Coral",
+          "model": "public/models/play-coral-block-coral.glb",
+          "source": "public/models/editor-sources/play-coral-block-coral.glb"
+        },
+        {
+          "id": "yellow",
+          "label": "Yellow",
+          "model": "public/models/play-coral-block-yellow.glb",
+          "source": "public/models/editor-sources/play-coral-block-yellow.glb"
+        },
+        {
+          "id": "teal",
+          "label": "Teal",
+          "model": "public/models/play-coral-block-teal.glb",
+          "source": "public/models/editor-sources/play-coral-block-teal.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-orange-block",
+      "name": "Chunky Block",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "coral",
+          "label": "Coral",
+          "model": "public/models/play-orange-block-coral.glb",
+          "source": "public/models/editor-sources/play-orange-block-coral.glb"
+        },
+        {
+          "id": "orange",
+          "label": "Orange",
+          "model": "public/models/play-orange-block-orange.glb",
+          "source": "public/models/editor-sources/play-orange-block-orange.glb"
+        },
+        {
+          "id": "teal",
+          "label": "Teal",
+          "model": "public/models/play-orange-block-teal.glb",
+          "source": "public/models/editor-sources/play-orange-block-teal.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-wedge",
+      "name": "Wedge",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "coral",
+          "label": "Coral",
+          "model": "public/models/play-wedge-coral.glb",
+          "source": "public/models/editor-sources/play-wedge-coral.glb"
+        },
+        {
+          "id": "yellow",
+          "label": "Yellow",
+          "model": "public/models/play-wedge-yellow.glb",
+          "source": "public/models/editor-sources/play-wedge-yellow.glb"
+        },
+        {
+          "id": "teal",
+          "label": "Teal",
+          "model": "public/models/play-wedge-teal.glb",
+          "source": "public/models/editor-sources/play-wedge-teal.glb"
+        }
+      ]
+    },
+    {
+      "id": "play-ball",
+      "name": "Play Ball",
+      "kind": "individual",
+      "versions": [
+        {
+          "id": "coral",
+          "label": "Coral",
+          "model": "public/models/play-ball-coral.glb",
+          "source": "public/models/editor-sources/play-ball-coral.glb"
+        },
+        {
+          "id": "yellow",
+          "label": "Yellow",
+          "model": "public/models/play-ball-yellow.glb",
+          "source": "public/models/editor-sources/play-ball-yellow.glb"
+        },
+        {
+          "id": "teal",
+          "label": "Teal",
+          "model": "public/models/play-ball-teal.glb",
+          "source": "public/models/editor-sources/play-ball-teal.glb"
+        }
+      ]
     }
   ]
 }

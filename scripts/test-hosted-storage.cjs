@@ -17,10 +17,11 @@ const context = vm.createContext({
   window: { location: { hostname: 'kledawson.github.io', origin: 'https://kledawson.github.io', href: 'https://kledawson.github.io/Asset-Library/' } },
   process: { env: { PUBLIC_URL: 'https://kledawson.github.io/Asset-Library' } },
   DefaultLoadingManager: { setURLModifier(value) { modifier = value; } },
+  modelRules: require('../src/assetModelRules.js'),
   indexedDB: { open() { const request = {}; setImmediate(() => { request.result = database; request.onsuccess(); }); return request; } },
   fetch: async url => { assert.equal(url, '/Asset-Library/models/asset-saves.json'); return { ok: true, json: async () => structuredClone(records) }; },
 });
-let source = fs.readFileSync('src/hostedStorage.js', 'utf8').replace(/^import .*;\r?\n/, '').replace(/export /g, '');
+let source = fs.readFileSync('src/hostedStorage.js', 'utf8').replace(/^import .*;\r?\n/gm, '').replace(/export /g, '');
 vm.runInContext(source + '\nthis.api={initializeHostedStorage,hostedSnapshot,hostedRequest,modelURL};', context);
 (async () => {
   const { api } = context;

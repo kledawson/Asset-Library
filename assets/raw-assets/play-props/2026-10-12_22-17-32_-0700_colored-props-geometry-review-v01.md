@@ -1,0 +1,1 @@
+Intermediate geometry review that revealed incorrect material face ranges. Superseded by the 22-19-38 review after indexed face ranges were corrected. This is an offline model comparison render, not a screenshot of the live website.

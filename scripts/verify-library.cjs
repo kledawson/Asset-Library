@@ -6,4 +6,8 @@ for(const version of ['light','medium','high','final'])if(!fs.existsSync(path.jo
 for(const asset of ['wrench','cog','hammer','screwdriver','triangle','plant','pencil','notebook'])for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'workshop-'+asset+'.glb')))throw Error('Missing '+asset);
 for(const name of fs.readdirSync(path.join(root,'src'))){const file=path.join(root,'src',name);if(!fs.statSync(file).isFile())continue;for(const match of fs.readFileSync(file,'utf8').matchAll(/(?:from\s*|import\s*)['"](\.\/[^'"]+)['"]/g)){const base=path.resolve(path.dirname(file),match[1]);if(!['','.js','.jsx','.mjs','.css'].some(ext=>fs.existsSync(base+ext)))throw Error('Missing import '+match[1]+' in '+name);}}
 JSON.parse(fs.readFileSync(path.join(root,'public/models/asset-saves.json')));
+const rules=require('../src/assetModelRules.js');
+for(const id of ['props',...rules.playIds])for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'play-'+id+'.glb')))throw Error('Missing Play Props model '+id);
+for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'play-props-organized.glb')))throw Error('Missing Organized Play Prop Set');
+for(const [id,colors] of Object.entries(rules.colorVersions))for(const color of colors)for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'play-'+id+'-'+color+'.glb')))throw Error('Missing color variant '+id+' '+color);
 console.log('Verified '+count+' GLBs, catalog sources, embedded resources, save metadata and local imports.');
