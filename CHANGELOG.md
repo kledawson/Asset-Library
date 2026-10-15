@@ -2,6 +2,8 @@
 
 ## 1.1 — October 14, 2026
 
+Documentation follow-up — October 15: replaced the two README showcase images with actual in-app captures of Organized Play Props and the Final rack. Preserved the previous render/illustration in the visual archive. Added the original October 11 checkpoint to GitHub release history as v1.0; v1.1 remains the latest release.
+
 **Scope:** changes after the published Tool Rack release, through October 14, 2026 (Pacific time).
 
 Baseline: [`b2f4c37`](https://github.com/kledawson/Asset-Library/commit/b2f4c371673b28b77711778d1b46262a3c2faf6d), the last recorded `origin/main` commit, dated October 11, 2026. This is checkpoint **1.1**. The next substantial asset update will use **1.2**.

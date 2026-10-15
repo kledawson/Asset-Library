@@ -8,11 +8,13 @@ Warm wood, soft colors, brushed metal, and playful forms. Explore complete scene
 
 **Checkpoint 1.1** — Two asset collections, twenty Play Props, and a shared editor with material colors and interactive help.
 
-![Play Props in the Organized layout: parcels, a wooden ramp, painted blocks, wedges, balls, and a decorated cube](assets/progress/play-props/2026-10-14_03-31-47_-0700_organized-play-prop-set-v01.png)
+[1.0 · October 11, 2026](https://github.com/kledawson/Asset-Library/releases/tag/v1.0) → [1.1 · October 14, 2026](https://github.com/kledawson/Asset-Library/releases/tag/v1.1)
 
-![Workshop Tool Rack showcase: wooden tool board, brass cog, hand tools, drawers, notebook, and plants](docs/images/2026-10-14_22-26-01_-0700_workshop-rack-showcase-v01.jpg)
+![Actual Asset Library screenshot of Play Props in the Organized layout](assets/progress/play-props/2026-10-15_01-17-41_-0700_organized-in-app-readme-v01.jpg)
 
-*Collection showcases. Actual app captures are in the expandable gallery below.*
+![Actual Asset Library screenshot of the Final Workshop Tool Rack](assets/progress/workshop-tool-rack/2026-10-15_01-17-41_-0700_final-rack-in-app-readme-v01.jpg)
+
+*Captured directly in Asset Library: Play Props · Organized and Workshop Tool Rack · Final.*
 
 ## Collections
 
