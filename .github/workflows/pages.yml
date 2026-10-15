@@ -43,6 +43,8 @@ jobs:
           restore-keys: release-sites-${{ runner.os }}-${{ hashFiles('scripts/build-release-archives.cjs', 'scripts/archive-storage.cjs') }}-
       - name: Build tagged release demos
         run: node scripts/build-release-archives.cjs
+      - name: Link each release changelog
+        run: node scripts/link-release-changelogs.cjs
       - name: Verify archived pages and resource paths
         run: node scripts/verify-release-archives.cjs
       - uses: actions/configure-pages@v5

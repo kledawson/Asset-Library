@@ -6,6 +6,8 @@ The main [Asset Library](https://kledawson.github.io/Asset-Library/) follows `ma
 - [Version 1.1](https://kledawson.github.io/Asset-Library/versions/1.1/) — October 14, 2026 Play Props checkpoint.
 - [Version History](https://kledawson.github.io/Asset-Library/versions/) — all tagged demos, newest first.
 
+Each history card links to its Release Notes and the `CHANGELOG.md` stored in that same tag. Documentation links are added after the frozen app builds, so updating the history page does not invalidate archived application caches.
+
 ## Automatic publication
 
 Pushing `main` updates Latest. Publishing a release, pushing a `vRelease.Patch` tag, or manually running the Pages workflow rebuilds the Pages package with all tagged demos included. The workflow checks out `main` for the deployment tooling, then extracts each tagged app into an isolated build folder. The root app remains the latest `main` code, even when the workflow was triggered by an older tag.

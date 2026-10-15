@@ -2,6 +2,8 @@
 
 ## 1.1 — October 14, 2026
 
+Version-history refinement — October 15: added a Changelog link beside each release's Release Notes, opening the changelog from that exact tag. Future archive builds add these links automatically without rebuilding unchanged archive apps.
+
 Release hosting follow-up — October 15: added live archive demos for tags v1.0 and v1.1, a version-history page, and automatic archive/demo links for future releases. Latest continues to follow main. Archived browser saves and drafts are isolated per version. This completes the 1.1 publication workflow without changing the current assets or incrementing the checkpoint.
 
 Documentation follow-up — October 15: replaced the two README showcase images with actual in-app captures of Organized Play Props and the Final rack. Preserved the previous render/illustration in the visual archive. Added the original October 11 checkpoint to GitHub release history as v1.0; v1.1 remains the latest release.
