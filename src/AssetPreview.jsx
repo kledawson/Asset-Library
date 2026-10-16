@@ -238,11 +238,12 @@ function TransformField({ label, value, step, onChange }) {
 }
 export default function AssetPreview() {
   const [initialView] = useState(() => {
+    const firstView = () => window.matchMedia('(max-width:760px), (max-height:500px) and (pointer:coarse)').matches ? { variant: 'final' } : {};
     try {
       const saved = JSON.parse(sessionStorage.getItem('pocketWorkshop.assetView') || '{}');
       const asset = assetLibrary.find(item=>item.id===saved.assetId);
-      return asset ? { ...saved, variant: (saved.variant==='all' && !asset.noAll) || asset.versions.some(item=>item.id===saved.variant) ? saved.variant : asset.noAll ? asset.versions[0].id : 'all' } : {};
-    } catch { return {}; }
+      return asset ? { ...saved, variant: (saved.variant==='all' && !asset.noAll) || asset.versions.some(item=>item.id===saved.variant) ? saved.variant : asset.noAll ? asset.versions[0].id : 'all' } : firstView();
+    } catch { return firstView(); }
   });
   const rememberedVariants = useRef((() => {
     try { return JSON.parse(localStorage.getItem('pocketWorkshop.parcelVariants.v1') || '{}') || {}; } catch { return {}; }
