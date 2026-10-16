@@ -1,8 +1,13 @@
 # Changelog
 
-## Unreleased — Temporary Mobile Preview
+## Unreleased — Mobile Layout (Planned 1.2)
 
-- Added a separate phone test build at `/Asset-Library/previews/mobile/` while keeping the Latest site and tagged release demos on their existing code. The preview has isolated browser saves and will be removed after review.
+- Added a phone layout with a clear 3D viewing area and a compact control bar for Asset Library, Preview Settings, Model Editor, and Help.
+- Reused the existing panel controls in mobile sheets, preserving package and version selection, preview actions, and model editing while keeping desktop layout unchanged.
+- Moved the phone controls to the top by default and added a drag handle that snaps them to either edge. The open editor uses the opposite edge so the model remains visible.
+- Made the mobile Model Editor a scrollable, height-adjustable panel with the same scrollbar styling as Help, and restored working Hide/Show Labels controls on phones.
+- Integrated the mobile improvements into local main. Publication and the 1.2 version increment are deferred until the next authorized release.
+- Retained the separate test site at `/Asset-Library/previews/mobile/` with isolated browser saves. Keep it available until removal is requested.
 
 ## 1.1 — October 14, 2026
 
