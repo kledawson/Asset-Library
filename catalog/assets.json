@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "release": "1.1",
-  "updatedAt": "2026-10-15T05:29:02.766Z",
+  "release": "1.2",
+  "updatedAt": "2026-10-16T09:30:45.593Z",
   "author": "Dawson Le",
   "packages": [
     {
@@ -32,6 +32,19 @@
         "play-orange-block",
         "play-wedge",
         "play-ball"
+      ]
+    },
+    {
+      "id": "mail-package",
+      "name": "Pocket Post",
+      "assetIds": [
+        "pocket-post",
+        "mail-mailbox",
+        "mail-hand-truck",
+        "mail-scale",
+        "mail-tape-dispenser",
+        "mail-sack",
+        "mail-dispatch-bin"
       ]
     }
   ],
@@ -356,6 +369,104 @@
           "source": "public/models/editor-sources/play-ball-teal.glb"
         }
       ]
+    },
+    {
+      "id": "pocket-post",
+      "name": "Pocket Post Set",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Loose",
+          "model": "public/models/pocket-post.glb",
+          "source": "public/models/editor-sources/pocket-post.glb"
+        },
+        {
+          "id": "organized",
+          "label": "Organized",
+          "model": "public/models/pocket-post-organized.glb",
+          "source": "public/models/editor-sources/pocket-post-organized.glb"
+        }
+      ],
+      "kind": "assembly",
+      "noAll": true
+    },
+    {
+      "id": "mail-mailbox",
+      "name": "Parcel Mailbox",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/mail-mailbox.glb",
+          "source": "public/models/editor-sources/mail-mailbox.glb"
+        }
+      ],
+      "kind": "individual"
+    },
+    {
+      "id": "mail-hand-truck",
+      "name": "Mail Trolley",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/mail-hand-truck.glb",
+          "source": "public/models/editor-sources/mail-hand-truck.glb"
+        }
+      ],
+      "kind": "individual"
+    },
+    {
+      "id": "mail-scale",
+      "name": "Parcel Scale",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/mail-scale.glb",
+          "source": "public/models/editor-sources/mail-scale.glb"
+        }
+      ],
+      "kind": "individual"
+    },
+    {
+      "id": "mail-tape-dispenser",
+      "name": "Tape Dispenser",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/mail-tape-dispenser.glb",
+          "source": "public/models/editor-sources/mail-tape-dispenser.glb"
+        }
+      ],
+      "kind": "individual"
+    },
+    {
+      "id": "mail-sack",
+      "name": "Mail Sack",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/mail-sack.glb",
+          "source": "public/models/editor-sources/mail-sack.glb"
+        }
+      ],
+      "kind": "individual"
+    },
+    {
+      "id": "mail-dispatch-bin",
+      "name": "Dispatch Bin",
+      "versions": [
+        {
+          "id": "default",
+          "label": "Default",
+          "model": "public/models/mail-dispatch-bin.glb",
+          "source": "public/models/editor-sources/mail-dispatch-bin.glb"
+        }
+      ],
+      "kind": "individual"
     }
   ]
 }

@@ -7,6 +7,14 @@ for(const asset of ['wrench','cog','hammer','screwdriver','triangle','plant','pe
 for(const name of fs.readdirSync(path.join(root,'src'))){const file=path.join(root,'src',name);if(!fs.statSync(file).isFile())continue;for(const match of fs.readFileSync(file,'utf8').matchAll(/(?:from\s*|import\s*)['"](\.\/[^'"]+)['"]/g)){const base=path.resolve(path.dirname(file),match[1]);if(!['','.js','.jsx','.mjs','.css'].some(ext=>fs.existsSync(base+ext)))throw Error('Missing import '+match[1]+' in '+name);}}
 JSON.parse(fs.readFileSync(path.join(root,'public/models/asset-saves.json')));
 const rules=require('../src/assetModelRules.js');
+const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog/assets.json')));
+const ids=new Set();
+for(const asset of catalog.assets){if(ids.has(asset.id))throw Error('Duplicate catalog asset '+asset.id);ids.add(asset.id);for(const version of asset.versions)for(const file of [version.model,version.source])if(!file||!fs.existsSync(path.join(root,file)))throw Error('Missing catalog file '+file);}
+for(const pack of catalog.packages)for(const id of pack.assetIds)if(!ids.has(id))throw Error('Unknown package member '+id);
+for(const key of ['pocket-post:default','pocket-post:organized',...rules.mailIds.map(id=>`mail-${id}:default`)]){
+ const name=rules.modelFileName(key);if(!rules.allowedFile(name))throw Error('Mail file is not saveable '+name);
+ for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,name)))throw Error('Missing Pocket Post file '+name);
+}
 for(const id of ['props',...rules.playIds])for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'play-'+id+'.glb')))throw Error('Missing Play Props model '+id);
 for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'play-props-organized.glb')))throw Error('Missing Organized Play Prop Set');
 for(const [id,colors] of Object.entries(rules.colorVersions))for(const color of colors)for(const folder of ['public/models','public/models/editor-sources'])if(!fs.existsSync(path.join(root,folder,'play-'+id+'-'+color+'.glb')))throw Error('Missing color variant '+id+' '+color);

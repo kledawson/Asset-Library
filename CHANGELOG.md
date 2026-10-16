@@ -1,6 +1,12 @@
 # Changelog
 
-## Unreleased — Mobile Layout (Planned 1.2)
+## Unreleased — Pocket Post and Mobile Layout (Planned 1.2)
+
+- Added **Pocket Post**, using Compact Drop, with Loose and Organized assemblies and six reusable entries: Parcel Mailbox, Mail Trolley, Parcel Scale, Tape Dispenser, Mail Sack and Dispatch Bin. Existing parcels remain in Play Props for later reuse.
+- Refined the first shapes toward the chosen concept: honey wood with embedded grain, navy scale body, deeper teal painted metal, cream canvas, coral accents and brass details. Kept global preview lighting unchanged.
+- Linked individual mail saves/restores to both assemblies while preserving each layout's placement. Retained generated candidates, editor sources, saved exports, metadata and backups together.
+- Added open compound collision shapes for mail containers and a spring-driven sack deformation preview during individual Drop Test. Cloth motion uses temporary geometry and simplified collision proxies; full cloth simulation and independent contents remain future work.
+- Archived actual local progress screenshots and retained further mail ideas in the existing package roadmap.
 
 - Added a phone layout with a clear 3D viewing area and a compact control bar for Asset Library, Preview Settings, Model Editor, and Help.
 - Reused the existing panel controls in mobile sheets, preserving package and version selection, preview actions, and model editing while keeping desktop layout unchanged.

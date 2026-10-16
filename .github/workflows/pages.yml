@@ -1,7 +1,7 @@
 name: Deploy Asset Library
 on:
   push:
-    branches: [main]
+    branches: [main, codex/mobile-preview]
     tags: ['v*']
   release:
     types: [published]
@@ -48,13 +48,13 @@ jobs:
       - name: Verify archived pages and resource paths
         run: node scripts/verify-release-archives.cjs
       - name: Check out temporary mobile preview
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/mobile-preview'
         uses: actions/checkout@v4
         with:
           ref: codex/mobile-preview
           path: .mobile-preview
       - name: Build temporary mobile preview
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/mobile-preview'
         run: |
           cd .mobile-preview
           npm ci --no-audit --no-fund
