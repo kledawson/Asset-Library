@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — Mobile Preview
+
+- Added a phone layout with a clear 3D viewing area and a compact bottom bar for Asset Library, Preview Settings, Model Editor, and Help.
+- Reused the existing panel controls in mobile sheets, preserving package and version selection, preview actions, and model editing while keeping desktop layout unchanged.
+- Added an isolated temporary Pages preview for real phone gesture testing; the Latest site and tagged release archives continue to use their existing source snapshots.
+
 ## 1.1 — October 14, 2026
 
 Version-history refinement — October 15: added a Changelog link beside each release's Release Notes, opening the changelog from that exact tag. Future archive builds add these links automatically without rebuilding unchanged archive apps.

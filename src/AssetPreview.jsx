@@ -205,15 +205,16 @@ function DisplayModel({ showOriginal, modelKey, version, index, count, showLabel
     </div></Html>}
   </group>;
 }
-function FloatingPane({ title, right = false, top, children, className = '' }) {
+function FloatingPane({ title, right = false, top, children, className = '', mobileOpen = false, onMobileClose }) {
   const [collapsed, setCollapsed] = useState(false);
   const [position, setPosition] = useState(null);
   const drag = useRef(null);
-  return <section className={`asset-floating-panel ${right ? 'asset-utility-pane' : ''} ${collapsed ? 'asset-pane-collapsed' : ''} ${className}`}
+  const paneCollapsed = collapsed && !mobileOpen;
+  return <section className={`asset-floating-panel ${right ? 'asset-utility-pane' : ''} ${paneCollapsed ? 'asset-pane-collapsed' : ''} ${className}`} data-mobile-open={mobileOpen || undefined} role={mobileOpen ? 'dialog' : undefined} aria-label={mobileOpen ? title : undefined}
     style={position ? { left: position.x, top: position.y, right: 'auto' } : top ? { top } : undefined}>
     <header className="asset-panel-grip"
       onPointerDown={event => {
-        if (event.target.closest('button')) return;
+        if (mobileOpen || event.target.closest('button')) return;
         event.stopPropagation(); const rect = event.currentTarget.parentElement.getBoundingClientRect();
         drag.current = { x: event.clientX - rect.left, y: event.clientY - rect.top };
         event.currentTarget.setPointerCapture(event.pointerId);
@@ -226,9 +227,9 @@ function FloatingPane({ title, right = false, top, children, className = '' }) {
       onPointerUp={event => { drag.current = null; if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }}
       onPointerCancel={() => { drag.current = null; }}>
       <span className="brand-kicker version-kicker">VERSION <span className="version-number">{libraryVersion}</span></span><strong>{title}</strong>
-      <button className="asset-pane-collapse" aria-label={`${collapsed ? 'Expand' : 'Collapse'} ${title}`} aria-expanded={!collapsed} onClick={() => setCollapsed(value => !value)}>{collapsed ? '+' : '−'}</button>
+      <button className="asset-pane-collapse" aria-label={mobileOpen ? `Close ${title}` : `${collapsed ? 'Expand' : 'Collapse'} ${title}`} aria-expanded={!paneCollapsed} onClick={() => mobileOpen ? onMobileClose?.() : setCollapsed(value => !value)}>{mobileOpen ? '×' : collapsed ? '+' : '−'}</button>
     </header>
-    {!collapsed && children}
+    {!paneCollapsed && children}
   </section>;
 }
 function TransformField({ label, value, step, onChange }) {
@@ -262,6 +263,24 @@ export default function AssetPreview() {
   const [editorOpen, setEditorOpen] = useState(initialView.editorOpen === true);
   const [showOriginal, setShowOriginal] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
+  const [mobileView, setMobileView] = useState(() => window.matchMedia('(max-width: 760px), (max-height: 500px) and (pointer: coarse)').matches);
+  const [mobileMenu, setMobileMenu] = useState(null);
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 760px), (max-height: 500px) and (pointer: coarse)');
+    const update = () => setMobileView(query.matches);
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+  useEffect(() => {
+    if (mobileView) setEditorOpen(false);
+    else setMobileMenu(null);
+  }, [mobileView]);
+  useEffect(() => {
+    if (!mobileMenu) return;
+    const closeOnEscape = event => { if (event.key === 'Escape') setMobileMenu(null); };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [mobileMenu]);
   const clipboard = useRef(null);
   const [selectedItemId, setSelectedItemId] = useState('');
   const [selectedGroupIds, setSelectedGroupIds] = useState([]);
@@ -520,7 +539,7 @@ export default function AssetPreview() {
     setSelectedItemId(''); setSelectedId(id); setVariant('all'); setTestDrop(false);setDropRun(0);setShowOriginal(false);setEditorOpen(false);
     } catch { setFileError('Could not open that file. Please choose a valid GLB model.'); }
   }
-  return <main className="portfolio-app asset-fullscreen">
+  return <main className="portfolio-app asset-fullscreen" data-mobile-panel={mobileMenu || undefined}>
     {process.env.REACT_APP_WORKSHOP_URL && <a className="asset-return-button" href={process.env.REACT_APP_WORKSHOP_URL}>← {labels.back}</a>}
     <PreviewError key={reset} urls={versions.map(version => version.url)}><Canvas onPointerMissed={event=>{if(event.type==='click'&&(event.delta ?? 0)<4){setSelectedItemId('');window.dispatchEvent(new Event('rack-editor-clear'));}}} frameloop={testDrop ? 'always' : 'demand'} shadows dpr={[1,1.5]} camera={{position:individualView ? INDIVIDUAL_PREVIEW.cameraPosition : [2.5,1.9,3.8],fov:35}}>
       <color attach="background" args={['#dbc9af']} /><ambientLight intensity={0.4}/><hemisphereLight args={['#fff4df','#8f6b50',0.35]}/>
@@ -535,21 +554,21 @@ export default function AssetPreview() {
 
       <FloorSafeOrbitControls enabled={!helpOpen} target={individualView ? INDIVIDUAL_PREVIEW.cameraTarget : [0,0,0]} />
     </Canvas></PreviewError>
-    <FloatingPane title="Asset Library">
-      <label className="asset-package-field"><span>Package</span><select aria-label="Package" value={selectedPackage.id} onChange={event => chooseAsset(packages.find(item => item.id === event.target.value).assetIds[0])}>{packages.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
-      <label className="asset-package-field"><span>Asset</span><select aria-label="Asset" value={asset.id} onChange={event => chooseAsset(event.target.value)}>{packageAssets.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
+    <FloatingPane title="Asset Library" mobileOpen={mobileView && mobileMenu === 'asset-library'} onMobileClose={() => setMobileMenu(null)}>
+      <label className="asset-package-field"><span>Package</span><select aria-label="Package" value={selectedPackage.id} onChange={event => { chooseAsset(packages.find(item => item.id === event.target.value).assetIds[0]); if (mobileView) setMobileMenu(null); }}>{packages.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
+      <label className="asset-package-field"><span>Asset</span><select aria-label="Asset" value={asset.id} onChange={event => { chooseAsset(event.target.value); if (mobileView) setMobileMenu(null); }}>{packageAssets.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
       <div className="asset-version-field"><span>Versions</span>
-      <div className="asset-variants" role="group" aria-label="Version Tabs">{asset.versions.map(version=><button key={version.id} aria-pressed={asset.versions.length===1 || variant===version.id} onClick={()=>{setTestDrop(false);setDropRun(0);setSelectedItemId('');setVariant(version.id);}}>{asset.versions.length===1?'Default':version.label}</button>)}{asset.versions.length>1&&!asset.noAll&&<button aria-pressed={variant==='all'} onClick={()=>{setTestDrop(false);setDropRun(0);setSelectedItemId('');setVariant('all');}}>All</button>}</div>
+      <div className="asset-variants" role="group" aria-label="Version Tabs">{asset.versions.map(version=><button key={version.id} aria-pressed={asset.versions.length===1 || variant===version.id} onClick={()=>{setTestDrop(false);setDropRun(0);setSelectedItemId('');setVariant(version.id);if(mobileView)setMobileMenu(null);}}>{asset.versions.length===1?'Default':version.label}</button>)}{asset.versions.length>1&&!asset.noAll&&<button aria-pressed={variant==='all'} onClick={()=>{setTestDrop(false);setDropRun(0);setSelectedItemId('');setVariant('all');if(mobileView)setMobileMenu(null);}}>All</button>}</div>
       </div>
       <p className="asset-description">{assetDescription(asset, variant)}</p>
     </FloatingPane>
-    <FloatingPane title="Preview Settings" right className="preview-settings-pane">
+    <FloatingPane title="Preview Settings" right className="preview-settings-pane" mobileOpen={mobileView && mobileMenu === 'preview-settings'} onMobileClose={() => setMobileMenu(null)}>
       <div className="asset-panel-links preview-view-actions" role="group" aria-label="Preview View">
-        <button onClick={()=>{setTestDrop(false);setDropRun(0);setReset(value=>value+1);}}><HelpIcon name="reset-view" /><span>{labels.resetView}</span></button>
-        <button aria-pressed={!showLabels} onClick={()=>setShowLabels(value=>!value)}><HelpIcon name={showLabels ? 'eye' : 'eye-off'} /><StableButtonLabel labels={[labels.hideLabels, labels.showLabels]} value={showLabels ? labels.hideLabels : labels.showLabels} /></button>
+        <button onClick={()=>{setTestDrop(false);setDropRun(0);setReset(value=>value+1);if(mobileView)setMobileMenu(null);}}><HelpIcon name="reset-view" /><span>{labels.resetView}</span></button>
+        <button aria-pressed={!showLabels} onClick={()=>{setShowLabels(value=>!value);if(mobileView)setMobileMenu(null);}}><HelpIcon name={showLabels ? 'eye' : 'eye-off'} /><StableButtonLabel labels={[labels.hideLabels, labels.showLabels]} value={showLabels ? labels.hideLabels : labels.showLabels} /></button>
       </div>
       <div className="asset-panel-links preview-model-actions" role="group" aria-label="Preview Model">
-        {isIndividualAsset(asset.id) && <button disabled={versions.length !== 1} onClick={()=>{if(editorOpen){setDropNotice(true);return;}setTestDrop(value=>!value);setDropRun(value=>value+1);}}><HelpIcon name={testDrop ? 'return' : 'drop'} /><StableButtonLabel labels={[labels.drop, labels.resetProp]} value={testDrop ? labels.resetProp : labels.drop} /></button>}
+        {isIndividualAsset(asset.id) && <button disabled={versions.length !== 1} onClick={()=>{if(editorOpen){setDropNotice(true);return;}setTestDrop(value=>!value);setDropRun(value=>value+1);if(mobileView)setMobileMenu(null);}}><HelpIcon name={testDrop ? 'return' : 'drop'} /><StableButtonLabel labels={[labels.drop, labels.resetProp]} value={testDrop ? labels.resetProp : labels.drop} /></button>}
         <label className="asset-open"><HelpIcon name="open-file" /><span>{labels.openModel}</span><input aria-label={labels.openModel} aria-describedby="open-glb-description" type="file" accept=".glb,model/gltf-binary" onChange={openFile}/></label>
       </div>
       <p id="open-glb-description" className="preview-settings-note">{importedPreview ? 'Temporary preview · Your library is unchanged.' : 'Open GLB previews a local 3D model.'}</p>
@@ -561,9 +580,9 @@ export default function AssetPreview() {
       </div>}
       {fileError && <div className="drop-editor-notice" role="alert"><button className="drop-notice-dismiss" aria-label="Dismiss File Error" onClick={()=>setFileError('')}>×</button><strong>Couldn’t Open Model</strong><p>{fileError}</p></div>}
     </FloatingPane>
-    <FloatingPane title="Model Editor" right top="280px" className="model-editor-pane">
+    <FloatingPane title="Model Editor" right top="280px" className="model-editor-pane" mobileOpen={mobileView && mobileMenu === 'model-editor'} onMobileClose={() => setMobileMenu(null)}>
       <div className="model-editor-actions model-editor-toolbar">
-        <button disabled={importedPreview} aria-pressed={editorOpen} onClick={()=>{setTestDrop(false);setDropRun(0);setShowOriginal(false);setEditorOpen(value=>!value);setSelectedItemId('');}}><StableButtonLabel labels={[labels.editModel, labels.closeEditor]} value={editorOpen ? labels.closeEditor : labels.editModel} /></button>
+        <button disabled={importedPreview} aria-pressed={editorOpen} onClick={()=>{setTestDrop(false);setDropRun(0);setShowOriginal(false);setEditorOpen(value=>!value);setSelectedItemId('');if(mobileView)setMobileMenu(null);}}><StableButtonLabel labels={[labels.editModel, labels.closeEditor]} value={editorOpen ? labels.closeEditor : labels.editModel} /></button>
         {editorOpen && <button aria-pressed={showOriginal} onClick={()=>{setShowOriginal(value=>!value);setSelectedItemId('');}}><StableButtonLabel labels={[labels.showOriginal, labels.showChanges]} value={showOriginal ? labels.showChanges : labels.showOriginal} /></button>}
       </div>
       {importedPreview && <p>Imported models are preview only. Choose a library asset to edit.</p>}
@@ -631,6 +650,14 @@ export default function AssetPreview() {
         </div>
       </>}
     </FloatingPane>
+    <nav className="mobile-view-bar" aria-label="Mobile Viewer Controls">
+      {['Asset Library', 'Preview Settings', 'Model Editor'].map(title => {
+        const key = title.toLowerCase().replace(' ', '-');
+        return <button key={key} aria-expanded={mobileMenu === key} onClick={() => setMobileMenu(current => current === key ? null : key)}>{title}{key === 'model-editor' && editorOpen && <small>Editing</small>}</button>;
+      })}
+      <button onClick={() => { setMobileMenu(null); setHelpOpen(true); }}>Help</button>
+    </nav>
+    {mobileMenu && <button className="mobile-view-scrim" aria-label="Close Mobile Panel" onClick={() => setMobileMenu(null)} />}
     <ControlsHelp open={helpOpen} onOpen={() => setHelpOpen(true)} onClose={() => setHelpOpen(false)} />
   </main>;
 }
