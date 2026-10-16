@@ -308,6 +308,11 @@ button { font: inherit; cursor: pointer; }
 .model-editor-toolbar { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 .model-editor-pane button { min-height:32px; }
 .model-editor-scroll { margin:14px -6px 0 0; padding:0 10px 0 0; min-width:0; min-height:0; border:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#b5ad98 transparent; }
+.model-editor-scroll,.asset-fullscreen .model-editor-pane[data-mobile-open="true"] { scrollbar-width:thin; scrollbar-color:#b5ad98 #fff5e3; scrollbar-gutter:stable; }
+.model-editor-scroll::-webkit-scrollbar,.asset-fullscreen .model-editor-pane[data-mobile-open="true"]::-webkit-scrollbar { width:10px; }
+.model-editor-scroll::-webkit-scrollbar-track,.asset-fullscreen .model-editor-pane[data-mobile-open="true"]::-webkit-scrollbar-track { background:#fff5e3; margin-block:14px; }
+.model-editor-scroll::-webkit-scrollbar-thumb,.asset-fullscreen .model-editor-pane[data-mobile-open="true"]::-webkit-scrollbar-thumb { background:#b5ad98; border:3px solid #fff5e3; border-radius:12px; }
+.model-editor-scroll::-webkit-scrollbar-thumb:hover,.asset-fullscreen .model-editor-pane[data-mobile-open="true"]::-webkit-scrollbar-thumb:hover { background:#8e9e87; }
 .model-editor-section { padding:16px 0; border-top:1px solid #e7d7bf; }
 .model-editor-section > summary { display:flex; align-items:center; justify-content:space-between; min-height:24px; list-style:none; cursor:pointer; font-size:12px; color:#397d78; font-weight:700; border-radius:4px; }
 .model-editor-section > summary::-webkit-details-marker { display:none; }
