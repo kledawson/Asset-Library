@@ -1,4 +1,11 @@
 const descriptions = {
+  'pocket-post': 'A little postal corner, ready for the next delivery.',
+  'mail-mailbox': 'An arched parcel mailbox with a low loading flap.',
+  'mail-hand-truck': 'A teal mail trolley with coral grips and sturdy wheels.',
+  'mail-scale': 'A wooden weighing platform above a cream dial.',
+  'mail-tape-dispenser': 'A coral dispenser with a cream packing-tape roll.',
+  'mail-sack': 'An open cloth sack with a folded rim and a soft drop response.',
+  'mail-dispatch-bin': 'An open sorting bin with a low loading edge and postal markings.',
   'tool-wrench': 'A steel wrench with a subtle stamped detail.',
   'tool-cog': 'A brass cog with warm bronze accents.',
   'tool-hammer': 'A steel hammer with a cushioned grip.',
@@ -24,6 +31,7 @@ const rackDescriptions = {
 };
 
 export function assetDescription(asset, variant) {
+  if (asset.id === 'pocket-post' && variant === 'organized') return 'Six postal props, lined up for a closer look.';
   if (asset.id === 'tool-rack') return rackDescriptions[variant] || rackDescriptions.final;
   if (asset.id === 'play-props' && variant === 'organized') return 'Every play prop lined up for a closer look.';
   if (asset.id.startsWith('play-parcel-')) {

@@ -12,6 +12,8 @@ import { BallCollider, CuboidCollider, Physics, RigidBody } from '@react-three/r
 import { Bounds, Html, useBounds } from '@react-three/drei';
 import FloorSafeOrbitControls from './FloorSafeOrbitControls';
 import { BALL_CONTACT_SETTINGS, BALL_DROP_SETTINGS, ballDropMotion } from './playBallMotion.mjs';
+import MailSackMotion from './MailSackMotion';
+import { mailPreviewColliders } from './mailPreviewPhysics.mjs';
 import { Component, Suspense, startTransition, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Box3, Matrix4, Plane, Quaternion, Vector3 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -133,6 +135,8 @@ function DisplayModel({ showOriginal, modelKey, version, index, count, showLabel
   const controls = useThree(state => state.controls);
   const root = useRef();
   const body = useRef();
+  const sackImpacts = useRef(0);
+  const mailColliders = useMemo(() => mailPreviewColliders(scene, modelKey, modelOffset), [scene, modelKey, modelOffset]);
   useEffect(() => {
     if (!testDrop || !body.current) return;
     // Initialize each fall explicitly so no previous physics pose is reused.
@@ -176,9 +180,9 @@ function DisplayModel({ showOriginal, modelKey, version, index, count, showLabel
   const Body = testDrop ? RigidBody : 'group';
   const offset = index - (count - 1) / 2;
   return <group ref={root} position={isIndividualAsset(modelKey.split(':')[0]) ? [offset * .58, 0, offset * -.381] : [offset * 2.1, 0, offset * -1.38]}>
-    <Body ref={body} key={(testDrop ? 'dropped-' : 'resting-')+dropRun} {...(testDrop ? { type: 'dynamic', colliders: false, ...dropStart, restitution: 0.08, friction: 0.65, linearDamping: 0.08, angularDamping: 0.18, canSleep: false, ...(isBall?BALL_DROP_SETTINGS:{}) } : { position: restingPosition, rotation: [0, 0, 0] })}>
-      {testDrop && (isBall ? <BallCollider args={[Math.max(...dropCollider.halfSize)]} position={dropCollider.center} {...BALL_CONTACT_SETTINGS} /> : <CuboidCollider args={dropCollider.halfSize} position={dropCollider.center} />)}
-      <group rotation-y={testDrop ? 0 : angle} onClick={event => event.stopPropagation()} onDoubleClick={event => { event.stopPropagation(); onOpenVersion(count > 1 ? version.id : 'all'); }}><group position={modelOffset}><group rotation-z={previewTurn}><group rotation-x={previewTilt}>{editable ? <EditableModel key={editorProps.assetId} url={version.url} cogReflection={cogReflection} {...editorProps} /> : <SavedAssetModel url={version.url} modelKey={modelKey} original={showOriginal} cogReflection={cogReflection} />}</group></group></group></group>
+    <Body ref={body} key={(testDrop ? 'dropped-' : 'resting-')+dropRun} {...(testDrop ? { type: 'dynamic', colliders: false, ...dropStart, restitution: 0.08, friction: 0.65, linearDamping: 0.08, angularDamping: 0.18, canSleep: false, ...(modelKey==='mail-sack:default'?{onCollisionEnter:()=>{sackImpacts.current+=1;},angularDamping:1.2,linearDamping:.25}:{}), ...(isBall?BALL_DROP_SETTINGS:{}) } : { position: restingPosition, rotation: [0, 0, 0] })}>
+      {testDrop && (isBall ? <BallCollider args={[Math.max(...dropCollider.halfSize)]} position={dropCollider.center} {...BALL_CONTACT_SETTINGS} /> : mailColliders.length ? mailColliders.map((c,i)=><CuboidCollider key={i} args={c.halfSize} position={c.center} rotation={c.rotation}/>) : <CuboidCollider args={dropCollider.halfSize} position={dropCollider.center} />)}
+      <group rotation-y={testDrop ? 0 : angle} onClick={event => event.stopPropagation()} onDoubleClick={event => { event.stopPropagation(); onOpenVersion(count > 1 ? version.id : 'all'); }}><group position={modelOffset}><group rotation-z={previewTurn}><group rotation-x={previewTilt}><MailSackMotion active={modelKey==='mail-sack:default' && testDrop && !editable} body={body} impacts={sackImpacts}>{editable ? <EditableModel key={editorProps.assetId} url={version.url} cogReflection={cogReflection} {...editorProps} /> : <SavedAssetModel url={version.url} modelKey={modelKey} original={showOriginal} cogReflection={cogReflection} />}</MailSackMotion></group></group></group></group>
     </Body>
     <mesh rotation-x={-Math.PI / 2} position-y={0.001}
       onPointerOver={event => { event.stopPropagation(); setHovered(true); }}

@@ -32,9 +32,17 @@ for(const size of ['small','large'])assetLibrary.find(asset=>asset.id===`play-pa
 for(const id of ['coral-block','orange-block','wedge','ball'])assetLibrary.find(asset=>asset.id===`play-${id}`).versions=(id==='orange-block'?['coral','orange','teal']:['coral','yellow','teal']).map(color=>({id:color,label:color[0].toUpperCase()+color.slice(1),details:`${color} Play Prop`,url:`/models/editor-sources/play-${id}-${color}.glb`}));
 
 // Register another package with its asset IDs; assets keep their own versions.
+assetLibrary.push({id:'pocket-post',name:'Pocket Post Set',kind:'assembly',noAll:true,versions:[
+  {id:'default',label:'Loose',details:'Compact Drop: a floor-level postal corner with a clear mailbox approach.',url:'/models/editor-sources/pocket-post.glb'},
+  {id:'organized',label:'Organized',details:'The same six postal props arranged in tidy rows.',url:'/models/editor-sources/pocket-post-organized.glb'},
+]}, ...[
+  ['mailbox','Parcel Mailbox'],['hand-truck','Mail Trolley'],['scale','Parcel Scale'],['tape-dispenser','Tape Dispenser'],['sack','Mail Sack'],['dispatch-bin','Dispatch Bin'],
+].map(([id,name])=>({id:'mail-'+id,name,kind:'individual',versions:[{id:'default',label:'Default',details:'Pocket Post · first shapes',url:`/models/editor-sources/mail-${id}.glb`}]})));
+
 export const assetPackages = [{
   id: 'workshop-tool-rack', name: 'Workshop Tool Rack',
   assetIds: ['tool-rack', 'tool-screwdriver', 'tool-wrench', 'tool-cog', 'tool-triangle', 'tool-hammer', 'tool-plant', 'tool-pencil', 'tool-notebook'],
-}, {id:'play-props',name:'Play Props',assetIds:['play-props','play-ramp','play-parcel-large','play-parcel-small','play-cube','play-coral-block','play-orange-block','play-wedge','play-ball']}];
+}, {id:'play-props',name:'Play Props',assetIds:['play-props','play-ramp','play-parcel-large','play-parcel-small','play-cube','play-coral-block','play-orange-block','play-wedge','play-ball']},
+{id:'mail-package',name:'Pocket Post',assetIds:['pocket-post','mail-mailbox','mail-hand-truck','mail-scale','mail-tape-dispenser','mail-sack','mail-dispatch-bin']}];
 
 export const isIndividualAsset = id => assetLibrary.find(asset=>asset.id===id)?.kind==='individual' || (id.startsWith('tool-') && id!=='tool-rack');

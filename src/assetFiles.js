@@ -71,8 +71,8 @@ export async function writeModelFiles(key,items,models,snapshot) {
   const rackName='workshop-tool-rack-final.glb';
   const edited=build(await load(name),items);
   const files=[await encode(name,edited)];
-  if (modelRules.isPlayKey(key)) {
-    if (!key.startsWith('play-props:')) {
+  if (modelRules.isPlayKey(key) || modelRules.isMailKey(key)) {
+    if (!modelRules.isAssemblyKey(key)) {
       const id=key.split(':')[0];
       const variant=modelRules.isPlayVariant(key)?key.split(':')[1]:null;
       const groupId=variant?`${id}-${variant}`:id;
