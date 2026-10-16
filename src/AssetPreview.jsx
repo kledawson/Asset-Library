@@ -83,7 +83,7 @@ function PreviewCamera({ assetId, individual }) {
   }, -100);
   return null;
 }
-function DisplayModel({ showOriginal, modelKey, version, index, count, showLabels, testDrop, dropRun, editable, editorProps, onOpenVersion }) {
+function DisplayModel({ showOriginal, modelKey, version, index, count, showLabels, mobile, testDrop, dropRun, editable, editorProps, onOpenVersion }) {
   const [angle, setAngle] = useState(0);
   const isBall = modelKey.startsWith('play-ball:');
   const dropStart = useMemo(() => {
@@ -200,18 +200,41 @@ function DisplayModel({ showOriginal, modelKey, version, index, count, showLabel
       <ringGeometry args={[radius * 0.94, radius, 80]} />
       <meshBasicMaterial color="#626262" transparent opacity={dragging ? 0.60 : hovered ? 0.42 : 0.24} depthWrite={false} polygonOffset polygonOffsetFactor={-1} polygonOffsetUnits={-1} />
     </mesh>
-    {showLabels && !editable && <Html center position={[0, -0.15, radius * 0.8]}><div className="asset-model-label">
+    {showLabels && !editable && <Html center position={[0, mobile && isIndividualAsset(modelKey.split(':')[0]) ? .18 : -.15, radius * 0.8]}><div className="asset-model-label">
       <button aria-label={`Rotate ${version.label} left`} onClick={() => rotateItem(-Math.PI / 8)}>↶</button><span>{version.label}</span><button aria-label={`Rotate ${version.label} right`} onClick={() => rotateItem(Math.PI / 8)}>↷</button>
     </div></Html>}
   </group>;
 }
-function FloatingPane({ title, right = false, top, children, className = '', mobileOpen = false, onMobileClose }) {
+function FloatingPane({ title, right = false, top, children, className = '', mobileOpen = false, mobileResizable = false, onMobileClose }) {
   const [collapsed, setCollapsed] = useState(false);
   const [position, setPosition] = useState(null);
+  const [mobileHeight, setMobileHeight] = useState(null);
   const drag = useRef(null);
+  const resize = useRef(null);
   const paneCollapsed = collapsed && !mobileOpen;
-  return <section className={`asset-floating-panel ${right ? 'asset-utility-pane' : ''} ${paneCollapsed ? 'asset-pane-collapsed' : ''} ${className}`} data-mobile-open={mobileOpen || undefined} role={mobileOpen ? 'dialog' : undefined} aria-label={mobileOpen ? title : undefined}
-    style={position ? { left: position.x, top: position.y, right: 'auto' } : top ? { top } : undefined}>
+  const mobileEditor = mobileOpen && mobileResizable;
+  return <section className={`asset-floating-panel ${right ? 'asset-utility-pane' : ''} ${paneCollapsed ? 'asset-pane-collapsed' : ''} ${className}`} data-mobile-open={mobileOpen || undefined} data-mobile-resizable={mobileEditor || undefined} role={mobileOpen ? 'dialog' : undefined} aria-label={mobileOpen ? title : undefined}
+    style={{ ...(position ? { left: position.x, top: position.y, right: 'auto' } : top ? { top } : {}), ...(mobileEditor && mobileHeight ? { '--mobile-editor-height': `${mobileHeight}px` } : {}) }}>
+    {mobileEditor && <button type="button" className="mobile-editor-resize" aria-label="Drag to resize Model Editor" title="Drag down to shrink the editor"
+      onPointerDown={event => {
+        resize.current = { pointerId: event.pointerId, startY: event.clientY, height: event.currentTarget.parentElement.getBoundingClientRect().height };
+        event.currentTarget.setPointerCapture(event.pointerId);
+      }}
+      onPointerMove={event => {
+        if (resize.current?.pointerId !== event.pointerId) return;
+        const next = resize.current.height - (event.clientY - resize.current.startY);
+        setMobileHeight(Math.round(Math.max(185, Math.min(window.innerHeight - 150, next))));
+      }}
+      onPointerUp={event => {
+        resize.current = null;
+        if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      }}
+      onPointerCancel={() => { resize.current = null; }}
+      onKeyDown={event => {
+        if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+        event.preventDefault();
+        setMobileHeight(value => Math.max(185, Math.min(window.innerHeight - 150, (value || Math.round(window.innerHeight * .42)) + (event.key === 'ArrowUp' ? 40 : -40))));
+      }}><span /></button>}
     <header className="asset-panel-grip"
       onPointerDown={event => {
         if (mobileOpen || event.target.closest('button')) return;
@@ -266,6 +289,14 @@ export default function AssetPreview() {
   const [helpOpen, setHelpOpen] = useState(false);
   const [mobileView, setMobileView] = useState(() => window.matchMedia('(max-width: 760px), (max-height: 500px) and (pointer: coarse)').matches);
   const [mobileMenu, setMobileMenu] = useState(null);
+  const [mobileBarEdge, setMobileBarEdge] = useState(() => {
+    try { return localStorage.getItem('pocketWorkshop.mobileBarEdge') === 'bottom' ? 'bottom' : 'top'; } catch { return 'top'; }
+  });
+  const [mobileBarShift, setMobileBarShift] = useState(0);
+  const mobileBarDrag = useRef(null);
+  useEffect(() => {
+    try { localStorage.setItem('pocketWorkshop.mobileBarEdge', mobileBarEdge); } catch {}
+  }, [mobileBarEdge]);
   useEffect(() => {
     const query = window.matchMedia('(max-width: 760px), (max-height: 500px) and (pointer: coarse)');
     const update = () => setMobileView(query.matches);
@@ -354,7 +385,7 @@ export default function AssetPreview() {
     const pointerEnd = () => { navigationDrag.current = false; };
     const navigate = event => {
       if (!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','PageUp','PageDown'].includes(event.key) || event.ctrlKey || event.metaKey || event.altKey) return;
-      if (!navigationDrag.current && event.target.closest?.('input, textarea, .model-editor-pane select, [role="slider"], [contenteditable="true"]')) return;
+      if (!navigationDrag.current && event.target.closest?.('input, textarea, .model-editor-pane select, .mobile-view-handle, .mobile-editor-resize, [role="slider"], [contenteditable="true"]')) return;
       const state = navigationState.current;
       if (state.saving || state.helpOpen) return;
       event.preventDefault(); event.stopPropagation();
@@ -540,14 +571,14 @@ export default function AssetPreview() {
     setSelectedItemId(''); setSelectedId(id); setVariant('all'); setTestDrop(false);setDropRun(0);setShowOriginal(false);setEditorOpen(false);
     } catch { setFileError('Could not open that file. Please choose a valid GLB model.'); }
   }
-  return <main className="portfolio-app asset-fullscreen" data-mobile-panel={mobileMenu || undefined}>
+  return <main className="portfolio-app asset-fullscreen" data-mobile-panel={mobileMenu || undefined} data-mobile-edge={mobileBarEdge}>
     {process.env.REACT_APP_WORKSHOP_URL && <a className="asset-return-button" href={process.env.REACT_APP_WORKSHOP_URL}>← {labels.back}</a>}
     <PreviewError key={reset} urls={versions.map(version => version.url)}><Canvas onPointerMissed={event=>{if(event.type==='click'&&(event.delta ?? 0)<4){setSelectedItemId('');window.dispatchEvent(new Event('rack-editor-clear'));}}} frameloop={testDrop ? 'always' : 'demand'} shadows dpr={[1,1.5]} camera={{position:individualView ? INDIVIDUAL_PREVIEW.cameraPosition : [2.5,1.9,3.8],fov:35}}>
       <color attach="background" args={['#dbc9af']} /><ambientLight intensity={0.4}/><hemisphereLight args={['#fff4df','#8f6b50',0.35]}/>
       <directionalLight position={[-3,5,4]} intensity={1.25} color="#fff0d7" castShadow shadow-mapSize={[1024,1024]} shadow-camera-left={-5} shadow-camera-right={5} shadow-camera-top={5} shadow-camera-bottom={-5} shadow-bias={-0.0002}/>
       <Physics gravity={[0,-9.81,0]} timeStep={1/60}>
       <Suspense fallback={null}><Bounds key={`${asset.id}:${variant}`} fit={false} clip={false} damping={0} margin={1.3}>
-        {versions.map((version,index) => <DisplayModel key={`${asset.id}:${version.id}`} modelKey={`${asset.id}:${version.id}`} version={version} index={index} count={versions.length} showLabels={showLabels} onOpenVersion={id => { setTestDrop(false); setDropRun(0); setSelectedItemId(''); setShowOriginal(false); setVariant(id); }} testDrop={testDrop && isIndividualAsset(asset.id)}
+        {versions.map((version,index) => <DisplayModel key={`${asset.id}:${version.id}`} modelKey={`${asset.id}:${version.id}`} version={version} index={index} count={versions.length} showLabels={showLabels} mobile={mobileView} onOpenVersion={id => { setTestDrop(false); setDropRun(0); setSelectedItemId(''); setShowOriginal(false); setVariant(id); }} testDrop={testDrop && isIndividualAsset(asset.id)}
         dropRun={dropRun} showOriginal={showOriginal} editable={canEdit && editorOpen && !saving && !showOriginal && versions.length === 1} editorProps={{ selectionMode, onGroupSelection: setSelectedGroupIds, onExit: () => { setSelectedItemId(''); setVariant(asset.noAll ? asset.versions[0].id : 'all'); }, assetId: editKey, items: objectItems, selectedItem: selectedItemId, setSelectedItem: setSelectedItemId, transformMode, onGroupCommit: (key,changes) => { if(key===editKey)updateObjectItems(items=>items.map(item=>changes[item.id]?{...item,...changes[item.id]}:item)); }, onTransformCommit: commitTransform, onPartsLoaded: registerModelParts }} />)}<PreviewCamera assetId={`${asset.id}:${variant}`} individual={individualView} /></Bounds></Suspense>
       <RigidBody type="fixed" colliders={false}><CuboidCollider args={[100,0.05,100]} position={[0,-0.055,0]} friction={0.65} restitution={0.08}/></RigidBody>
       </Physics>
@@ -581,7 +612,7 @@ export default function AssetPreview() {
       </div>}
       {fileError && <div className="drop-editor-notice" role="alert"><button className="drop-notice-dismiss" aria-label="Dismiss File Error" onClick={()=>setFileError('')}>×</button><strong>Couldn’t Open Model</strong><p>{fileError}</p></div>}
     </FloatingPane>
-    <FloatingPane title="Model Editor" right top="280px" className="model-editor-pane" mobileOpen={mobileView && mobileMenu === 'model-editor'} onMobileClose={() => setMobileMenu(null)}>
+    <FloatingPane title="Model Editor" right top="280px" className="model-editor-pane" mobileOpen={mobileView && mobileMenu === 'model-editor'} mobileResizable={editorOpen && canEdit && versions.length === 1} onMobileClose={() => setMobileMenu(null)}>
       <div className="model-editor-actions model-editor-toolbar">
         <button disabled={importedPreview} aria-pressed={editorOpen} onClick={()=>{setTestDrop(false);setDropRun(0);setShowOriginal(false);setEditorOpen(value=>!value);setSelectedItemId('');if(mobileView)setMobileMenu(null);}}><StableButtonLabel labels={[labels.editModel, labels.closeEditor]} value={editorOpen ? labels.closeEditor : labels.editModel} /></button>
         {editorOpen && <button aria-pressed={showOriginal} onClick={()=>{setShowOriginal(value=>!value);setSelectedItemId('');}}><StableButtonLabel labels={[labels.showOriginal, labels.showChanges]} value={showOriginal ? labels.showChanges : labels.showOriginal} /></button>}
@@ -651,14 +682,33 @@ export default function AssetPreview() {
         </div>
       </>}
     </FloatingPane>
-    <nav className="mobile-view-bar" aria-label="Mobile Viewer Controls">
+    <nav className="mobile-view-bar" aria-label="Mobile Viewer Controls" style={mobileBarShift ? { transform: `translateY(${mobileBarShift}px)` } : undefined}>
+      <button type="button" className="mobile-view-handle" aria-label="Drag controls to top or bottom" title="Drag controls to the other edge"
+        onPointerDown={event => {
+          mobileBarDrag.current = { pointerId: event.pointerId, startY: event.clientY };
+          event.currentTarget.setPointerCapture(event.pointerId);
+        }}
+        onPointerMove={event => {
+          if (mobileBarDrag.current?.pointerId !== event.pointerId) return;
+          const delta = event.clientY - mobileBarDrag.current.startY;
+          setMobileBarShift(Math.round(mobileBarEdge === 'top' ? Math.max(0, delta) : Math.min(0, delta)));
+        }}
+        onPointerUp={event => {
+          if (mobileBarDrag.current?.pointerId === event.pointerId && Math.abs(event.clientY - mobileBarDrag.current.startY) > 12) setMobileBarEdge(event.clientY < window.innerHeight / 2 ? 'top' : 'bottom');
+          mobileBarDrag.current = null; setMobileBarShift(0);
+          if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+        }}
+        onPointerCancel={() => { mobileBarDrag.current = null; setMobileBarShift(0); }}
+        onKeyDown={event => {
+          if (event.key === 'ArrowUp' || event.key === 'ArrowDown') { event.preventDefault(); setMobileBarEdge(event.key === 'ArrowUp' ? 'top' : 'bottom'); }
+        }}><span /></button>
       {['Asset Library', 'Preview Settings', 'Model Editor'].map(title => {
         const key = title.toLowerCase().replace(' ', '-');
         return <button key={key} aria-expanded={mobileMenu === key} onClick={() => setMobileMenu(current => current === key ? null : key)}>{title}{key === 'model-editor' && editorOpen && <small>Editing</small>}</button>;
       })}
       <button onClick={() => { setMobileMenu(null); setHelpOpen(true); }}>Help</button>
     </nav>
-    {mobileMenu && <button className="mobile-view-scrim" aria-label="Close Mobile Panel" onClick={() => setMobileMenu(null)} />}
+    {mobileMenu && mobileMenu !== 'model-editor' && <button className="mobile-view-scrim" aria-label="Close Mobile Panel" onClick={() => setMobileMenu(null)} />}
     <ControlsHelp open={helpOpen} onOpen={() => setHelpOpen(true)} onClose={() => setHelpOpen(false)} />
   </main>;
 }

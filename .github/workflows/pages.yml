@@ -1,7 +1,7 @@
 name: Deploy Asset Library
 on:
   push:
-    branches: [main, codex/mobile-preview]
+    branches: [main]
     tags: ['v*']
   release:
     types: [published]
