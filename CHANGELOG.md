@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — Temporary Mobile Preview
+
+- Added a separate phone test build at `/Asset-Library/previews/mobile/` while keeping the Latest site and tagged release demos on their existing code. The preview has isolated browser saves and will be removed after review.
+
 ## 1.1 — October 14, 2026
 
 Version-history refinement — October 15: added a Changelog link beside each release's Release Notes, opening the changelog from that exact tag. Future archive builds add these links automatically without rebuilding unchanged archive apps.

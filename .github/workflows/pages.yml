@@ -47,6 +47,23 @@ jobs:
         run: node scripts/link-release-changelogs.cjs
       - name: Verify archived pages and resource paths
         run: node scripts/verify-release-archives.cjs
+      - name: Check out temporary mobile preview
+        if: github.ref == 'refs/heads/main'
+        uses: actions/checkout@v4
+        with:
+          ref: codex/mobile-preview
+          path: .mobile-preview
+      - name: Build temporary mobile preview
+        if: github.ref == 'refs/heads/main'
+        run: |
+          cd .mobile-preview
+          npm ci --no-audit --no-fund
+          npm run verify:assets
+          node scripts/prepare-mobile-preview.cjs
+          PUBLIC_URL=/Asset-Library/previews/mobile REACT_APP_WORKSHOP_URL= CI=false npm run build
+          cd ..
+          mkdir -p build/previews/mobile
+          cp -a .mobile-preview/build/. build/previews/mobile/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
